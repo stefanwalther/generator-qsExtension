@@ -18,9 +18,7 @@ define([], function () {
     };
 
 
-    // *
     // Return values
-    // 
     return {
         type: "items",
         component: "accordion",

@@ -7,7 +7,7 @@ var chalk = require('chalk');
 
 var QvextGenerator = yeoman.generators.Base.extend({
   init: function () {
-    this.pkg = require('../package.json');
+    this.pkg = require("../package.json");
 
     this.on('end', function () {
       if (!this.options['skip-install']) {
@@ -23,31 +23,37 @@ var QvextGenerator = yeoman.generators.Base.extend({
     //this.log(this.yeoman);
 
     // replace it with a short and sweet description of your generator
-    this.log(chalk.magenta('You\'re using the fantastic Qvext generator.'));
+    this.log(chalk.magenta('You\'re using the fantastic QvExt generator.'));
 
-    var prompts = [{
-      name: 'extensionName',
-      message: 'What\'s the name of the extension?'
-    },
-    {
-      name: 'extensionDescription',
-      message: 'Describe your extension:'
-    },
-    {
-      name: 'authorName',
-      message: 'What\'s your name?'
-    }    
-    ];
+      var prompts = [
+          {
+              name: 'extensionName',
+              message: 'What\'s the name of the extension?'
+          },
+          {
+              name: 'extensionNamespace',
+              message: 'What\'s the namespace for your extension?'
+          },
+          {
+              name: 'extensionDescription',
+              message: 'Describe your extension:'
+          },
+          {
+              name: 'authorName',
+              message: 'What\'s your name?'
+          }
+      ];
 
-    this.prompt(prompts, function (props) {
-      this.extensionName = props.extensionName;
-      this.extensionDescription = props.extensionDescription;
-      this.authorName = props.authorName;
+      this.prompt(prompts, function (props) {
+          this.extensionName = props.extensionName;
+          this.extensionNamespace = props.extensionNamespace;
+          this.extensionDescription = props.extensionDescription;
+          this.authorName = props.authorName;
 
-      this.publishingYear = new Date().getFullYear();
+          this.publishingYear = new Date().getFullYear();
 
-      done();
-    }.bind(this));
+          done();
+      }.bind(this));
   },
 
   root: function () {
@@ -63,11 +69,14 @@ var QvextGenerator = yeoman.generators.Base.extend({
     this.template('_changes.md', 'CHANGES.md');
 
 
+    // sample dir
+    this.mkdir('sample');
+
     // src dir
     this.mkdir('src');
-    this.template('_extension.js', 'src/' + this.extensionName.toLowerCase() + '.js');
+    this.template('_extension.js', 'src/' + this.extensionNamespace.toLowerCase() + '-' +  + this.extensionName.toLowerCase() + '.js');
       this.template('_extension.qext', 'src/' + this.extensionName.toLowerCase() + '.qext');
-      this.template('_extension-properties.js', 'src/' + this.extensionName.toLowerCase() + '-properties.js');
+      this.template('_extension-properties.js', 'src/' + this.extensionNamespace.toLowerCase() + '-' + this.extensionName.toLowerCase() + '-properties.js');
 
     // scr/lib
     this.mkdir('src/lib');

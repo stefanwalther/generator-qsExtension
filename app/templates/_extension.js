@@ -6,11 +6,13 @@ function ($, properties) {
 
     return {
 
-        // Properties
+        //#region Properties
         definition: properties,
+        //#endregion
 
-        // Template
+        //#region Template
         //template: '',
+        //#endregion
 
         // Initial Properties
         //initialProperties: {
@@ -24,12 +26,33 @@ function ($, properties) {
         //    }
         //},
 
-        // Snapshot Definition
+        //#region Snapshot Definition
         snapshot: {
             canTakeSnapshot: true
         },
+        //#endregion
 
-        // Paint
+        //#region Resize
+        resize : function() {
+            //do nothing
+        },
+        //#endregion
+
+        //#region clearSelectedValues
+        clearSelectedValues : function($element) {
+
+        },
+        //#endregion
+
+        //#region Controller
+        controller: [
+            ['$scope'],
+            function ($scope) {}
+
+        ],
+        //#endregion
+
+        //#region Paint
         paint: function ($element, layout) {
       
             //#region Console: Basic objects
@@ -45,6 +68,7 @@ function ($, properties) {
 
 
         }
+        //#endregion
     };
 
 });
