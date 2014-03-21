@@ -2,14 +2,18 @@
 
 ## Todos & Ideas:
 
+### Bugfixes
+* Namespace does not work
+
 ### Trivial Additions
 * Add version
 * Add MIT license if appropriate
-
+* Add property to ask if VisualStudio-Regions should be added
 
 ### IMPORTANT: 
 * Create a basic Visual Studio template (including the post-build event)
 * Test if whitespace can be used for the name, otherwise remove it
+* Add automated tests
 
 ### General
 * Check how bower can be used the best way
@@ -17,7 +21,8 @@
 
 ### Script.js template
 * Pre-generate some comments
-* Generate some console-logging
+* Generate some console-logging (could also be placed to an optional file??)
+* Create options to work with Angular best-practices (controller, factory, etc.)
 
 ### gruntfile.js
 * Create a zip-file

@@ -41,6 +41,12 @@ var QvextGenerator = yeoman.generators.Base.extend({
           {
               name: 'authorName',
               message: 'What\'s your name?'
+          },
+          {
+              type: "confirm",
+              name:'useVSRegions',
+              message: 'Use Visual Studio regions in JavaScript files?',
+              default: false
           }
       ];
 
@@ -49,6 +55,16 @@ var QvextGenerator = yeoman.generators.Base.extend({
           this.extensionNamespace = props.extensionNamespace;
           this.extensionDescription = props.extensionDescription;
           this.authorName = props.authorName;
+          this.vsRegion = function(comment) {
+              if (props.useVSRegions === true) {
+                return '//#region ' + comment;
+              }
+          };
+          this.vsRegionEnd = function(comment) {
+            if (props.useVSRegions === true) {
+               return '//#endregion';
+            }
+          };
 
           this.publishingYear = new Date().getFullYear();
 
@@ -66,7 +82,7 @@ var QvextGenerator = yeoman.generators.Base.extend({
     this.copy('_gitignore.txt', '.gitignore');
     this.template('_readme.md', 'README.md');
     this.template('_license.md', 'LICENSE.md');
-    this.template('_changes.md', 'CHANGES.md');
+    this.template('_ChangeLog.md', 'CHANGES.md');
 
 
     // sample dir
@@ -74,9 +90,9 @@ var QvextGenerator = yeoman.generators.Base.extend({
 
     // src dir
     this.mkdir('src');
-    this.template('_extension.js', 'src/' + this.extensionNamespace.toLowerCase() + '-' +  + this.extensionName.toLowerCase() + '.js');
+    this.template('_extension.js', 'src/' + this.extensionName.toLowerCase() + '.js');
       this.template('_extension.qext', 'src/' + this.extensionName.toLowerCase() + '.qext');
-      this.template('_extension-properties.js', 'src/' + this.extensionNamespace.toLowerCase() + '-' + this.extensionName.toLowerCase() + '-properties.js');
+      this.template('_extension-properties.js', 'src/' + this.extensionName.toLowerCase() + '-properties.js');
 
     // scr/lib
     this.mkdir('src/lib');

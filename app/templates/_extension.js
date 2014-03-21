@@ -6,15 +6,15 @@ function ($, properties) {
 
     return {
 
-        //#region Properties
+        <%= vsRegion('Properties') %>
         definition: properties,
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        //#region Template
+        <%= vsRegion('Template') %>
         //template: '',
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        // Initial Properties
+        <%= vsRegion('Initial Properties') %>
         //initialProperties: {
         //    qHyperCubeDef: {
         //        qDimensions: [],
@@ -25,50 +25,51 @@ function ($, properties) {
         //        }]
         //    }
         //},
+        <%= vsRegionEnd() %>
 
-        //#region Snapshot Definition
+        <%= vsRegion('Snapshot Definition') %>
         snapshot: {
             canTakeSnapshot: true
         },
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        //#region Resize
+        <%= vsRegion('Resize') %>
         resize : function() {
             //do nothing
         },
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        //#region clearSelectedValues
+        <%= vsRegion('clearSelectedValues') %>
         clearSelectedValues : function($element) {
 
         },
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        //#region Controller
+        <%= vsRegion('Controller') %>
         controller: [
             ['$scope'],
             function ($scope) {}
 
         ],
-        //#endregion
+        <%= vsRegionEnd() %>
 
-        //#region Paint
+        <%= vsRegion('Paint') %>
         paint: function ($element, layout) {
       
-            //#region Console: Basic objects
+            <%= vsRegion('Console: Basic objects') %>
             console.groupCollapsed('Basic Objects');
             console.info('$element:');
             console.log($element);
             console.info('layout:');
             console.log(layout);
             console.groupEnd();
-            //#endregion
+            <%= vsRegionEnd() %>
 
             $element.html('This is extension <%= extensionName%>');
 
 
         }
-        //#endregion
+        <%= vsRegionEnd() %>
     };
 
 });

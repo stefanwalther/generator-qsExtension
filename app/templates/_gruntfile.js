@@ -83,7 +83,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'dist/<%= extensionNamespace.toLowerCase() + '-' + extensionName.toLowerCase() %>.js': ['dist/<%= extensionNamespace.toLowerCase() + '-' + extensionName.toLowerCase() %>.js']
+                    'dist/<%= extensionName.toLowerCase() %>.js': ['dist/<%= extensionName.toLowerCase() %>.js']
                 }
             }
         }

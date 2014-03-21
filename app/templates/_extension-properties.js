@@ -17,6 +17,27 @@ define([], function () {
         uses: "sorting"
     };
 
+    testSetting = {
+        ref: "settings.test",
+        label: "Test:",
+        type: "string",
+        expression: "optional",
+        show: true
+    };
+
+    settings = {
+        uses: "settings",
+        items: {
+            settings: {
+                type: "items",
+                label: "Settings",
+                items: {
+                    testSetting: testSetting
+                }
+            }
+        }
+    };
+
 
     // Return values
     return {
@@ -27,7 +48,7 @@ define([], function () {
             measures: measures,
             sorting: sorting,
             //addons: addons,
-            //settings: settings
+            settings: settings
 
         }
     };
