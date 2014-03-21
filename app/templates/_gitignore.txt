@@ -1,3 +1,4 @@
+.idea/
 Resources/
 Tests/
 web.*.config
