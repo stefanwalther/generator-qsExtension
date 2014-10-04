@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-qvext' ]; then cd .. && eval "mv $currentfolder generator-qvext" && cd generator-qvext; fi
+  - if [ "$currentfolder" != 'generator-qsExtension' ]; then cd .. && eval "mv $currentfolder generator-qsExtension" && cd generator-qsExtension; fi
 

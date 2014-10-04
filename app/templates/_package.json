@@ -1,20 +1,24 @@
 {
-  "name": "<%= extensionName%>",
-  "version": "0.0.1",
-  "description": "<%= extensionDescription %>",
-  "main": "gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    ""
-  ],
-  "author": "<%=authorName%>",
-  "license": "MIT",
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-clean": "~0.5.0"
-  }
+    "name": "<%= extensionName%>",
+    "version": "0.0.2",
+    "description": "<%= extensionDescription %>",
+    "main": "gruntfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        ""
+    ],
+    "author": "<%=authorName%>",
+    "license": "MIT",
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-copy": "~0.5.0",
+        "grunt-contrib-uglify": "~0.4.0",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-compress": "~0.8.0",
+        "grunt-cleanempty": "~0.2.1",
+        "grunt-contrib-cssmin": "~0.10.0",
+        "grunt-replace": "~0.7.8"
+    }
 }

@@ -4,11 +4,15 @@
 
 ### Bugfixes
 * Namespace does not work
+* Remove white-spaces caused by vsNet-Regions  
+(replace it with WebStorm regions: http://blog.jetbrains.com/webide/2012/03/new-in-4-0-custom-code-folding-regions/)
 
-### Trivial Additions
+### Trivial Additions/Changes
 * Add version
 * Add MIT license if appropriate
 * Add property to ask if VisualStudio-Regions should be added
+* Rename `dist` to `dir`
+	* change also in .gitignore
 
 ### IMPORTANT: 
 * Create a basic Visual Studio template (including the post-build event)

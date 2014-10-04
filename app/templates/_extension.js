@@ -1,75 +1,73 @@
+/*global define,require,window,console,_ */
+/*jslint    devel:true,
+            white: true
+ */
 define([
-    'jquery',
-    './<%= extensionName.toLowerCase() %>-properties'
+        'jquery',
+        'underscore',
+        './<%= extensionName.toLowerCase() %>-properties'
 ],
-function ($, properties) {
+function ($, _, properties) {
+
+    'use strict';
 
     return {
 
-        <%= vsRegion('Properties') %>
+        // Properties
         definition: properties,
-        <%= vsRegionEnd() %>
+        // (Properties)
 
-        <%= vsRegion('Template') %>
+        // Angular Template
         //template: '',
-        <%= vsRegionEnd() %>
+        // (Angular Template)
 
-        <%= vsRegion('Initial Properties') %>
-        //initialProperties: {
-        //    qHyperCubeDef: {
-        //        qDimensions: [],
-        //        qMeasures: [],
-        //        qInitialDataFetch: [{
-        //            qWidth: 2,
-        //            qHeight: 50
-        //        }]
-        //    }
-        //},
-        <%= vsRegionEnd() %>
+        // Initial Properties
+        initialProperties: {
+            qHyperCubeDef: {
+                qDimensions: [],
+                qMeasures: [],
+                qInitialDataFetch: [{
+                    qWidth: 2,
+                    qHeight: 50
+                }]
+            }
+        },
+        // (Initial Properties)
 
-        <%= vsRegion('Snapshot Definition') %>
+        // Snapshot yes/no
         snapshot: {
             canTakeSnapshot: true
         },
-        <%= vsRegionEnd() %>
+        // (Snapshot)
 
-        <%= vsRegion('Resize') %>
+        // Resize
         resize : function() {
             //do nothing
         },
-        <%= vsRegionEnd() %>
+        // (Resize)
 
-        <%= vsRegion('clearSelectedValues') %>
-        clearSelectedValues : function($element) {
+//        clearSelectedValues : function($element) {
+//
+//        },
 
-        },
-        <%= vsRegionEnd() %>
+        // Angular Controller
+        controller: ['$scope', function ($scope) {
 
-        <%= vsRegion('Controller') %>
-        controller: [
-            ['$scope'],
-            function ($scope) {}
+        }],
+        // (Angular Controller)
 
-        ],
-        <%= vsRegionEnd() %>
-
-        <%= vsRegion('Paint') %>
+        // Paint
         paint: function ($element, layout) {
       
-            <%= vsRegion('Console: Basic objects') %>
             console.groupCollapsed('Basic Objects');
             console.info('$element:');
             console.log($element);
             console.info('layout:');
             console.log(layout);
             console.groupEnd();
-            <%= vsRegionEnd() %>
 
-            $element.html('This is extension <%= extensionName%>');
-
-
+            $element.html('This is extension "<%= extensionName%>"');
         }
-        <%= vsRegionEnd() %>
     };
 
 });

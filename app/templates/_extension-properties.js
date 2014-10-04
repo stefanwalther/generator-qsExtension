@@ -1,31 +1,32 @@
+/*global define*/
 define([], function () {
 
     
-    dimensions = {
+    var dimensions = {
         uses: "dimensions",
         min: 0,
         max: 1
     };
 
-    measures = {
+    var measures = {
         uses: "measures",
         min: 0,
         max: 1
     };
 
-    sorting = {
+    var sorting = {
         uses: "sorting"
     };
 
-    testSetting = {
+    var testSetting = {
         ref: "settings.test",
-        label: "Test:",
+        label: "Tes t:",
         type: "string",
         expression: "optional",
         show: true
     };
 
-    settings = {
+    var settings = {
         uses: "settings",
         items: {
             settings: {

@@ -1,10 +1,10 @@
 {
-  "name": "generator-qvext",
+  "name": "generator-qsExtension",
   "version": "0.0.1",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for Qlik Sense Extensions",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "stefanwalther/generator-qvext",
+  "repository": "qlikdev/generator-qsExtension",
   "author": {
     "name": "Stefan Walther",
     "email": "",
@@ -27,7 +27,8 @@
     "chalk": "~0.4.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "underscore": "~1.7.0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"

@@ -1,0 +1,5 @@
+/* Styles for <%= extensionName%> */
+
+.qv-object-<%= extensionNamespace%><%= extensionName%> {
+
+}
