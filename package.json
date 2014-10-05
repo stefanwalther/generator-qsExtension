@@ -1,6 +1,6 @@
 {
   "name": "generator-qsextension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yeoman generator for Qlik Sense Extensions",
   "license": "MIT",
   "main": "app/index.js",
@@ -11,9 +11,6 @@
   "author": "Stefan Walther (https://github.com/stefanwalther)",
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "mocha"
   },
   "files": [
     "app"
@@ -37,8 +34,5 @@
   "bugs": {
     "url": "https://github.com/qlikdev/generator-qsExtension/issues"
   },
-  "homepage": "https://github.com/qlikdev/generator-qsExtension",
-  "directories": {
-    "test": "test"
-  }
+  "homepage": "https://github.com/qlikdev/generator-qsExtension"
 }
