@@ -1,7 +1,7 @@
 {
 	"name" : "<%= extensionName %>",
 	"description" : "<%= extensionDescription %>",
-	"icon" : "extension",
+	"icon" : "<%= extensionType%>",
 	"type" : "visualization",
 	"version": "0.1",
 	"preview" : "bar",

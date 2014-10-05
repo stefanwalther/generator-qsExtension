@@ -3,4 +3,4 @@ node_modules/
 temp/
 test/
 
-/try
+try/

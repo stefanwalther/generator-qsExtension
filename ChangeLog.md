@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.4 (2014-10-05)
+* Added grunt/node_modules to _gitignore.txt 
+* Added selection list for the extension-type
+* Deleted templates/_bower.json
+* Deleted tempaltes/_config.yml
+
 ## v0.0.3
 * Added Namespace 
 
