@@ -35,8 +35,17 @@ md c:\yo\myFirstExtension && cd $_
 
 Run yo generator-qsextension
 ```
-yo generator-qsExtension
+yo qsextension
 ```
+
+Follow the instructions ...
+
+### Features
+
+* Generating a default structure of a working Qlik Sense Extension
+* Built-In deployment system based on Grunt
+    * Extension will be deployed to the local extension folder
+    * A zip file will be automatically generated
 
 ## Author
 Stefan Walther (http://www.qlikblog.at)
