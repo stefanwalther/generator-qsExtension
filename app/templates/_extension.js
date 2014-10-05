@@ -5,10 +5,10 @@
 define([
         'jquery',
         'underscore',
-        './<%= extensionName.toLowerCase() %>-properties'
+        './<%= extensionName.toLowerCase() %>-properties',
+        'text!./lib/css/style.css'
 ],
-function ($, _, properties) {
-
+function ($, _, properties, css) {
     'use strict';
 
     return {
@@ -16,10 +16,6 @@ function ($, _, properties) {
         // Properties
         definition: properties,
         // (Properties)
-
-        // Angular Template
-        //template: '',
-        // (Angular Template)
 
         // Initial Properties
         initialProperties: {
@@ -50,13 +46,19 @@ function ($, _, properties) {
 //
 //        },
 
+
+        // Angular Template
+        //template: '',
+        // (Angular Template)
+
+
         // Angular Controller
         controller: ['$scope', function ($scope) {
 
         }],
         // (Angular Controller)
 
-        // Paint
+        // Paint Method
         paint: function ($element, layout) {
       
             console.groupCollapsed('Basic Objects');

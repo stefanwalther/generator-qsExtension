@@ -1,7 +1,0 @@
-language: node_js
-node_js:
-  - '0.10'
-before_install:
-  - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-qsExtension' ]; then cd .. && eval "mv $currentfolder generator-qsExtension" && cd generator-qsExtension; fi
-

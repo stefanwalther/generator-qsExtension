@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var _ = require('underscore');
+var moment = require('moment');
 
 
 var qsExtension = yeoman.generators.Base.extend({
@@ -46,6 +47,27 @@ var qsExtension = yeoman.generators.Base.extend({
               message: 'Describe your extension:'
           },
           {
+              type: 'list',
+              name: 'extensionType',
+              message: 'What\'s the type of your extension? This will define the icon used (Default: extension).',
+              default: "extension",
+              choices: [
+                  "extension",
+                  "bar-chart-vertical",
+                  "line-chart",
+                  "pie-chart",
+                  "gauge-chart",
+                  "scatter-chart",
+                  "text-image",
+                  "table",
+                  "list",
+                  "filterpane",
+                  "treemap"
+              ]
+
+
+          },
+          {
               name: 'authorName',
               message: 'What\'s your name?'
           }
@@ -53,10 +75,15 @@ var qsExtension = yeoman.generators.Base.extend({
 
       this.prompt(prompts, function (props) {
           this.extensionName = props.extensionName;
+          this.extensionType = props.extensionType;
           this.extensionNamespace = _.isEmpty(props.extensionNamespace) ? '' : props.extensionNamespace + '-';
           this.extensionDescription = props.extensionDescription;
           this.authorName = props.authorName;
-          this.publishingYear = new Date().getFullYear();
+
+
+          var d = new Date();
+          this.publishingYear = d.getFullYear();
+          this.creationDate = moment(d).format('YYYY-MM-DD');
 
           done();
       }.bind(this));
@@ -65,11 +92,9 @@ var qsExtension = yeoman.generators.Base.extend({
   root: function () {
     
     // root
-    this.copy('_bower.json', 'bower.json');
     this.copy('_gitattributes.txt', '.gitattributes');
     this.copy('_gitignore.txt', '.gitignore');
     this.copy('_editorconfig', 'editorconfig');
-    this.copy('_config.yml', 'config.yml');
 
 
     // Grunt

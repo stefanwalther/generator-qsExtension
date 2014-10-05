@@ -1,5 +1,8 @@
 # Change Log
 
-## Version 0.0.1
+Qlik Sense Extension <%=extensionName %>
+
+## Version 0.0.1 (<%= creationDate %>)
 Date: 
 - Initial Version
+
