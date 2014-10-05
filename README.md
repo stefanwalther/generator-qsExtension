@@ -30,7 +30,8 @@ Initialize the generator by entering the following command into your command pro
 
 Make a new directory, and cd into it:
 ```
-md c:\yo\myFirstExtension && cd $_
+md c:\yo\myFirstExtension
+cd c:\yo\myFirstExtension
 ```
 
 Run yo generator-qsextension
@@ -42,19 +43,19 @@ Follow the instructions ...
 
 ### Generated Folder Structure
 
-**`build`**
+**build**
 Destination of compressed automated builds (.zip-files).
 
-**`dist`**
+**dist**
 Destination of automated builds
 
-**`grunt`**
+**grunt**
 Source of the Grunt-based build system.
 
-**`src`**
+**src**
 Source files.
 
-**`src/lib/`**
+**src/lib**
 Suggested folder structure for assets included in the extension.
 
 ### Features
