@@ -40,6 +40,23 @@ yo qsextension
 
 Follow the instructions ...
 
+### Generated Folder Structure
+
+**`build`**
+Destination of compressed automated builds (.zip-files).
+
+**`dist`**
+Destination of automated builds
+
+**`grunt`**
+Source of the Grunt-based build system.
+
+**`src`**
+Source files.
+
+**`src/lib/`**
+Suggested folder structure for assets included in the extension.
+
 ### Features
 
 * Generating a default structure of a working Qlik Sense Extension
