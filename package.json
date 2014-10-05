@@ -17,19 +17,20 @@
   ],
   "keywords": [
     "npm",
-    "yeoman-generator"
+    "yeoman-generator",
+    "Qlik Sense"
   ],
   "dependencies": {
     "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
     "underscore": "~1.7.0",
+    "chalk": "~0.4.0",
     "moment": "~2.8.3"
   },
+  "devDependencies": {
+    "mocha": "*"
+  },
   "peerDependencies": {
-    "yo": ">=1.0.0"
+    "yo": ">=1.0.4"
   },
   "bugs": {
     "url": "https://github.com/qlikdev/generator-qsExtension/issues"

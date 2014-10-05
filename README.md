@@ -7,18 +7,19 @@ This little tool is based on YEOMAN (http://yeoman.io/) and allows you to create
 
 ## Installation
 
-* Install nodeJs (http://nodejs.org/)
-* Open the Node.js command prompt and install yo
+Install nodeJs (http://nodejs.org/)
+Open the Node.js command prompt and install yo
  
 
-`npm install -g yo
-`
+```
+npm install -g yo
+```
 
-* Download the `qenerator-qsExtension` from GitHub
+Download the `qenerator-qsExtension` from GitHub
 
-
-`npm install -g generator-qsextension
-`
+```
+npm install -g generator-qsextension
+```
 
 ## Documentation
 
@@ -26,10 +27,16 @@ This little tool is based on YEOMAN (http://yeoman.io/) and allows you to create
 
 Initialize the generator by entering the following command into your command prompt:
 
-`md c:\yo\myFirstExtension
-cd c:\yo\myFirstExtension
-yo qsExtension
-`
+
+Make a new directory, and cd into it:
+```
+md c:\yo\myFirstExtension && cd $_
+```
+
+Run yo generator-qsextension
+```
+yo generator-qsExtension
+```
 
 ## Author
 Stefan Walther (http://www.qlikblog.at)
