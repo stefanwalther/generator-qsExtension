@@ -43,19 +43,19 @@ Follow the instructions ...
 
 ### Generated Folder Structure
 
-**build**
+**build**  
 Destination of compressed automated builds (.zip-files).
 
-**dist**
+**dist**  
 Destination of automated builds
 
-**grunt**
+**grunt**  
 Source of the Grunt-based build system.
 
-**src**
+**src**  
 Source files.
 
-**src/lib**
+**src/lib**  
 Suggested folder structure for assets included in the extension.
 
 ### Features
