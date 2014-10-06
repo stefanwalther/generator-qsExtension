@@ -2,8 +2,18 @@
 'use strict';
 var path = require( 'path' );
 var helpers = require( 'yeoman-generator' ).test;
+var assert = require( 'assert' );
 
 describe( 'qsExtension generator', function () {
+
+    var inputs = {
+        'extensionName': 'MyExtension',
+        'extensionNamespace': 'swr',
+        'extensionDescription': 'A simple extension to test',
+        'extensionType': 'line-chart',
+        'authorName': 'Stefan Walther'
+    };
+
     beforeEach( function ( done ) {
         helpers.testDirectory( path.join( __dirname, '../test/try' ), function ( err ) {
 
@@ -23,28 +33,34 @@ describe( 'qsExtension generator', function () {
     it( 'creates expected files', function ( done ) {
         var expected = [
 
+            // root
             '.gitattributes',
             '.gitignore',
             'editorconfig',
 
+            // src
             'src/CHANGES.md',
             'src/LICENSE.md',
             'src/README.md',
+            'src/' + inputs.extensionName + '-properties.js',
+            'src/' + inputs.extensionName + '-initialproperties.js',
+            'src/' + inputs.extensionNamespace + '-' + inputs.extensionName + '.js',
 
-            'src/lib/css/style.css'
+            // lib
+            'src/lib/css/style.css',
+
+            // grunt
+            'grunt/gruntfile.js',
+            'grunt/gruntReplacements.json',
+            'grunt/gruntReplacements_build.json',
+            'grunt/gruntReplacements_release.json'
         ];
 
-        helpers.mockPrompt( this.app, {
-            'extensionName': 'MyExtension',
-            'extensionNamespace': 'swr',
-            'extensionDescription': 'A simple extension to test',
-            'extensionType': 'line-chart',
-            'authorName': 'Stefan Walther'
-        } );
+        helpers.mockPrompt( this.app, inputs );
 
         this.app.options['skip-install'] = true;
         this.app.run( {}, function () {
-            helpers.assertFile( expected );
+            assert.file( expected );
             done();
         } );
     } );

@@ -6,29 +6,16 @@ define([
         'jquery',
         'underscore',
         './<%= extensionName.toLowerCase() %>-properties',
+        './<%= extensionName.toLowerCase() %>-initialproperties',
         'text!./lib/css/style.css'
 ],
-function ($, _, properties, css) {
+function ($, _, props, initProps css) {
     'use strict';
 
     return {
 
-        // Properties
-        definition: properties,
-        // (Properties)
-
-        // Initial Properties
-        initialProperties: {
-            qHyperCubeDef: {
-                qDimensions: [],
-                qMeasures: [],
-                qInitialDataFetch: [{
-                    qWidth: 2,
-                    qHeight: 50
-                }]
-            }
-        },
-        // (Initial Properties)
+        definition: props,
+        initialProperties: initProps,
 
         // Snapshot yes/no
         snapshot: {

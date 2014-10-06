@@ -129,6 +129,7 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.template( '_extension.js', 'src/' + this.extensionNamespace + this.extensionName.toLowerCase() + '.js' );
         this.template( '_extension.qext', 'src/' + this.extensionNamespace + this.extensionName.toLowerCase() + '.qext' );
         this.template( '_extension-properties.js', 'src/' + this.extensionName.toLowerCase() + '-properties.js' );
+        this.template( '_extension-initialproperties.js', 'src/' + this.extensionName.toLowerCase() + '-initialproperties.js' );
         this.template( '_readme.md', 'src/README.md' );
         this.template( '_license.md', 'src/LICENSE.md' );
         this.template( '_ChangeLog.md', 'src/CHANGES.md' );
