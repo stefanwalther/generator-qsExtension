@@ -16,17 +16,16 @@ IF $(ConfigurationName) == Debug (
 
 module.exports = function (grunt) {
 
-    var target = grunt.option('target') || 'debug';
+    //var target = grunt.option('target') || 'debug';
 
     // Configuration Options:
     // ~~
-    // LocalExtensionPath: Path used by Qlik Sense Desktop
-    // ExtensionName: Name of the extension
-    // mangle: set if mangling should be activated 
-    // dropConsole: Drop all console.log, console.* code-pieces in the distributed files 
+    // LocalExtensionPath: Path used by Qlik Sense Desktop (will be determined automatically)
+    // ExtensionName: Name of the extension (Defined by prompt)
+    // dropConsole: Drop all console.log, console.* code-pieces in the distributed files
     //              (Should be always true for production mode)
     var config = {
-        LocalExtensionPath: "d:/Documents/Qlik/Sense/Extensions",
+        LocalExtensionPath: "<%= localExtensionDir %>",
         ExtensionName: "<%= extensionName %>",
         ExtensionNamespace: "<%= extensionNamespace %>",
 

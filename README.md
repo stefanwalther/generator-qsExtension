@@ -66,7 +66,11 @@ Suggested folder structure for assets included in the extension.
     * A zip file will be automatically generated
 
 ## Author
-Stefan Walther (http://www.qlikblog.at)
+### Stefan Walther 
+* http://www.qlikblog.at
+* http://github.com/stefanwalther
+* http://twitter.com/waltherstefan
 
 ## License
-MIT
+Copyright (c) 2014 Stefan Walther, contributors.
+Release under the MIT license.

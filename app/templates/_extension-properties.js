@@ -20,7 +20,7 @@ define([], function () {
 
     var testSetting = {
         ref: "settings.test",
-        label: "Tes t:",
+        label: "Test Setting:",
         type: "string",
         expression: "optional",
         show: true
