@@ -172,7 +172,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-cleanempty');
 
-    grunt.registerTask('build', [
+    grunt.registerTask('dev', [
 
         'clean:dist',
         'clean:local',

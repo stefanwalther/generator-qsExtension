@@ -17,11 +17,8 @@ function ($, _, props, initProps css) {
         definition: props,
         initialProperties: initProps,
 
-        // Snapshot yes/no
-        snapshot: {
-            canTakeSnapshot: true
-        },
-        // (Snapshot)
+        snapshot: { canTakeSnapshot: true },
+
 
         // Resize
         resize : function() {

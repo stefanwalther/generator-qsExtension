@@ -114,11 +114,11 @@ var qsExtension = yeoman.generators.Base.extend( {
 
         // Grunt
         this.mkdir( 'grunt' );
-        this.template( '_gruntfile.js', 'grunt/gruntfile.js' );
-        this.template( '_package.json', 'grunt/package.json' );
-        this.template( '_gruntReplacements.json', 'grunt/gruntReplacements.json' );
-        this.template( '_gruntReplacements_build.json', 'grunt/gruntReplacements_build.json' );
-        this.template( '_gruntReplacements_release.json', 'grunt/gruntReplacements_release.json' );
+        this.template( 'grunt/_gruntfile.js', 'grunt/gruntfile.js' );
+        this.template( 'grunt/_package.json', 'grunt/package.json' );
+        this.template( 'grunt/_gruntReplacements.json', 'grunt/gruntReplacements.json' );
+        this.template( 'grunt/_gruntReplacements_build.json', 'grunt/gruntReplacements_build.json' );
+        this.template( 'grunt/_gruntReplacements_release.json', 'grunt/gruntReplacements_release.json' );
 
 
         // sample dir
