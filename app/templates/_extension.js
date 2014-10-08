@@ -9,7 +9,7 @@ define([
         './<%= extensionName.toLowerCase() %>-initialproperties',
         'text!./lib/css/style.css'
 ],
-function ($, _, props, initProp, cssContent) {
+function ($, _, props, initProps, cssContent) {
     'use strict';
 
     $("<style>").html(cssContent).appendTo("head");
