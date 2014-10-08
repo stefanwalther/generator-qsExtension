@@ -35,6 +35,9 @@ var qsExtension = yeoman.generators.Base.extend( {
         utils.getExtensionPath().then( function ( result ) {
             that.localExtensionDir = result;
             done();
+        } ).catch( function ( err ) {
+            console.error('Could  not retrieve the local extension path', err);
+            done();
         });
     },
 
@@ -91,6 +94,7 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.prompt( prompts, function ( props ) {
 
             this.extensionName = props.extensionName;
+            this.extensionNameSafe = this.extensionName.replace(/\s/g, "");
             this.extensionType = props.extensionType;
             this.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
             this.extensionDescription = props.extensionDescription;
@@ -110,15 +114,30 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.copy( '_gitattributes.txt', '.gitattributes' );
         this.copy( '_gitignore.txt', '.gitignore' );
         this.copy( '_editorconfig', 'editorconfig' );
+        this.template( '_readme.md', 'README.md' );
+        this.template( '_license.md', 'LICENSE.md' );
+        this.template( '_ChangeLog.md', 'CHANGELOG.md' );
 
 
         // Grunt
         this.mkdir( 'grunt' );
-        this.template( 'grunt/_gruntfile.js', 'grunt/gruntfile.js' );
+        this.template( 'grunt/_grunt-config.yml', 'grunt/grunt-config.yml');
+
+        this.template( 'grunt/_gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
+        this.template( 'grunt/_gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
+        this.template( 'grunt/_gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
+        this.template( 'grunt/_gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+
+        this.template( 'grunt/_gruntfile.js', 'grunt/Gruntfile.js' );
+
+        this.template( 'grunt/_gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
+        this.template( 'grunt/_gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
+
+
         this.template( 'grunt/_package.json', 'grunt/package.json' );
-        this.template( 'grunt/_gruntReplacements.json', 'grunt/gruntReplacements.json' );
-        this.template( 'grunt/_gruntReplacements_build.json', 'grunt/gruntReplacements_build.json' );
-        this.template( 'grunt/_gruntReplacements_release.json', 'grunt/gruntReplacements_release.json' );
+        this.template( 'grunt/_gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
+        this.template( 'grunt/_gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
+        this.template( 'grunt/_gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
 
         // sample dir
@@ -126,13 +145,12 @@ var qsExtension = yeoman.generators.Base.extend( {
 
         // src dir
         this.mkdir( 'src' );
-        this.template( '_extension.js', 'src/' + this.extensionNamespace + this.extensionName.toLowerCase() + '.js' );
-        this.template( '_extension.qext', 'src/' + this.extensionNamespace + this.extensionName.toLowerCase() + '.qext' );
-        this.template( '_extension-properties.js', 'src/' + this.extensionName.toLowerCase() + '-properties.js' );
-        this.template( '_extension-initialproperties.js', 'src/' + this.extensionName.toLowerCase() + '-initialproperties.js' );
-        this.template( '_readme.md', 'src/README.md' );
-        this.template( '_license.md', 'src/LICENSE.md' );
-        this.template( '_ChangeLog.md', 'src/CHANGES.md' );
+        this.template( '_extension.js', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.js' );
+        this.template( '_extension.qext', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.qext' );
+        this.template( '_extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
+        this.template( '_extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
+
+
 
         // scr/lib
         this.mkdir( 'src/lib' );

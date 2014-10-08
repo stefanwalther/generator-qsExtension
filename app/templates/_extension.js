@@ -21,12 +21,9 @@ function ($, _, props, initProp, cssContent) {
 
         snapshot: { canTakeSnapshot: true },
 
-
-        // Resize
         resize : function() {
             //do nothing
         },
-        // (Resize)
 
 //        clearSelectedValues : function($element) {
 //
@@ -37,12 +34,12 @@ function ($, _, props, initProp, cssContent) {
         //template: '',
         // (Angular Template)
 
-
         // Angular Controller
         controller: ['$scope', function ($scope) {
 
         }],
         // (Angular Controller)
+
 
         // Paint Method
         paint: function ($element, layout) {
@@ -56,6 +53,7 @@ function ($, _, props, initProp, cssContent) {
 
             $element.html('This is extension "<%= extensionName%>"');
         }
+        // (Paint Method)
     };
 
 });

@@ -58,12 +58,35 @@ Source files.
 **src/lib**  
 Suggested folder structure for assets included in the extension.
 
-### Features
+
+
+# Features
 
 * Generating a default structure of a working Qlik Sense Extension
 * Built-In deployment system based on Grunt
     * Extension will be deployed to the local extension folder
     * A zip file will be automatically generated
+
+## Generated Grunt Deployment
+The Grunt based deployment offers two different modes, `dev` and `release`:
+
+### dev Task
+
+* Preparations
+	* Delete existing content in the `dist` directory
+	* All directories and files are copied to the `dist` directory
+	* Variables are replaced in all files or the `src` folder, first by using gruntReplacements.json, then gruntReplacments_dev.json
+* Cleanup Tasks
+	* Typical development files will be deleted (*.tmp, *.tmpl, *.log, *.bak, *.less)
+	* Empty folders are deleted
+* Deployment to Qlik Sense Desktop
+	* All modified files of the dist folder will be copied to the local Qlik Sense Extension directory (first the entire content of the target folder will be deleted)
+* Package
+	* Finally the content of the extension will be zipped to a fill called %ExtensionName%_dev.zip and stored to the `build` directory. 
+
+### release Task
+
+*Not released, yet.*
 
 ## Author
 ### Stefan Walther 

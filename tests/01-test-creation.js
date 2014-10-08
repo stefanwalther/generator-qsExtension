@@ -4,10 +4,11 @@ var path = require( 'path' );
 var helpers = require( 'yeoman-generator' ).test;
 var assert = require( 'assert' );
 
-describe( 'qsExtension generator', function () {
+describe( 'Expected files ', function () {
 
     var inputs = {
-        'extensionName': 'MyExtension',
+        'extensionName': 'My Extension',
+        'extensionNameSafe': 'MyExtension',
         'extensionNamespace': 'swr',
         'extensionDescription': 'A simple extension to test',
         'extensionType': 'line-chart',
@@ -30,30 +31,36 @@ describe( 'qsExtension generator', function () {
         }.bind( this ) );
     } );
 
-    it( 'creates expected files', function ( done ) {
+    it( 'are created', function ( done ) {
         var expected = [
 
             // root
             '.gitattributes',
             '.gitignore',
             'editorconfig',
+            'CHANGELOG.md',
+            'LICENSE.md',
+            'README.md',
 
             // src
-            'src/CHANGES.md',
-            'src/LICENSE.md',
-            'src/README.md',
-            'src/' + inputs.extensionName + '-properties.js',
-            'src/' + inputs.extensionName + '-initialproperties.js',
-            'src/' + inputs.extensionNamespace + '-' + inputs.extensionName + '.js',
+            'src/' + inputs.extensionNameSafe + '-properties.js',
+            'src/' + inputs.extensionNameSafe + '-initialproperties.js',
+            'src/' + inputs.extensionNamespace + '-' + inputs.extensionNameSafe + '.js',
 
             // lib
             'src/lib/css/style.css',
 
             // grunt
-            'grunt/gruntfile.js',
-            'grunt/gruntReplacements.json',
-            'grunt/gruntReplacements_build.json',
-            'grunt/gruntReplacements_release.json'
+            'grunt/grunt-config.yml',
+            'grunt/Gruntfile.clean.js',
+            'grunt/Gruntfile.cleanempty.js',
+            'grunt/Gruntfile.compress.js',
+            'grunt/Gruntfile.copy.js',
+            'grunt/Gruntfile.js',
+            'grunt/Gruntfile.replace.js',
+            'grunt/gruntReplacements.yml',
+            'grunt/gruntReplacements_dev.yml',
+            'grunt/gruntReplacements_release.yml'
         ];
 
         helpers.mockPrompt( this.app, inputs );

@@ -2,31 +2,22 @@
 /*jshint
  camelcase: false
  */
-const fs = require( "fs" );
+var fs = require( "fs" );
 
-module.exports = function( grunt ) {
-    'use strict';
+module.exports = function (grunt) {
 
-    // Global Configs
-    var config = {
-        LocalExtensionPath: "<%= localExtensionDir %>",
-        ExtensionName: "<%= extensionName %>",
-        ExtensionNamespace: "<%= extensionNamespace %>",
-        mangle: false,
-        dropConsole: false,
-        beautify: false,
+    // Target can be either "release" or "dev"
+    var target = grunt.option('target') || 'dev';
 
-        // less options
-        lessCompress: false,
-        lessYuiCompress: false,
-        lessCleanCss: false,
-        lessOptimization: 2,
+    grunt.option['debug'] = true;
 
-        // Variables & replacement
-        replacements_build: grunt.file.readJSON('replacements_build.json'),
-        replacements_release: grunt.file.readJSON('replacements_release.json')
-
+    var replacements = {
+        general: grunt.file.readYAML('gruntReplacements.yml'),
+        dev: grunt.file.readYAML('gruntReplacements_dev.yml'),
+        release: grunt.file.readYAML('gruntReplacements_release.yml')
     };
+    grunt.config.set( 'replacements', replacements);
+    grunt.config.set( 'config', grunt.file.readYAML('grunt-config.yml'));
 
     var cfg = {};
     // parse all configured tasks automatically:
@@ -39,5 +30,44 @@ module.exports = function( grunt ) {
     } );
 
     grunt.initConfig( cfg );
+
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-cleanempty');
+
+    grunt.registerTask('dev', [
+
+        // Copy to dist
+        'clean:empty_dist',
+        'copy:copy_to_dist',
+
+        // Replacemetns
+        'replace:general',
+        'replace:dev',
+
+        // Cleanup
+        'clean:devFiles',
+        'cleanempty:all',
+
+        // Deploy to Qlik Sense Desktop
+        'clean:empty_desktop',
+        'copy:copy_to_desktop',
+
+        // Zip
+        'compress:dev'
+
+
+
+    ]);
+
+    grunt.registerTask('release', [
+
+
+
+    ]);
 
 };

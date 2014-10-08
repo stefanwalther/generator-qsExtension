@@ -1,3 +1,14 @@
+# -------------------------------------------------------------------
+# General Settings
+general:
+  LocalExtensionPath: "<%= localExtensionDir %>"
+  ExtensionName: "<%= extensionName %>"
+  ExtensionNameSafe: "<%= extensionNameSafe %>"
+  ExtensionNamespace: "<%= extensionNamespace %>"
+  Version:            '0.0.1'
+
+# -------------------------------------------------------------------
+# Settings for the Dev build
 dev:
   less:
     lessCompress: false
@@ -10,6 +21,9 @@ dev:
     beautify: true
     preserveCommments: true
     compress: false
+
+# -------------------------------------------------------------------
+# Settings for the Release build
 release:
   less:
       lessCompress: true

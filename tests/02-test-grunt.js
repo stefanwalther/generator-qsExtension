@@ -8,11 +8,11 @@ var grunt = require('grunt');
 
 describe( 'Generated Grunt tasks', function (  ) {
 
-    it( 'start properly', function () {
-        grunt.task.init( function (  ) {
-            
-        })
-    })
+//    it( 'start properly', function () {
+//        grunt.task.init( function (  ) {
+//
+//        })
+//    })
     
     
 });
