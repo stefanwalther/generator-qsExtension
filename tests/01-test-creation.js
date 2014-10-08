@@ -60,7 +60,8 @@ describe( 'Expected files ', function () {
             'grunt/Gruntfile.replace.js',
             'grunt/gruntReplacements.yml',
             'grunt/gruntReplacements_dev.yml',
-            'grunt/gruntReplacements_release.yml'
+            'grunt/gruntReplacements_release.yml',
+            'grunt/package.json'
         ];
 
         helpers.mockPrompt( this.app, inputs );

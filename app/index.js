@@ -10,7 +10,6 @@ var utils = require( './utils' );
 var qsExtension = yeoman.generators.Base.extend( {
     init: function () {
 
-        //console.log('1: init');
         this.pkg = require( "../package.json" );
 
         this.on( 'end', function () {
@@ -44,9 +43,6 @@ var qsExtension = yeoman.generators.Base.extend( {
     askFor: function () {
         //console.log('3: askFor');
         var done = this.async();
-
-        // have Yeoman greet the user
-        //this.log(this.yeoman);
 
         // replace it with a short and sweet description of your generator
         this.log( chalk.magenta( 'You\'re using qsExtension generator.' ) );

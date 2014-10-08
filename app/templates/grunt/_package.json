@@ -1,5 +1,5 @@
 {
-    "name": "<%= extensionName%>",
+    "name": "<%= extensionNameSafe%>",
     "version": "0.0.1",
     "description": "<%= extensionDescription %>",
     "main": "gruntfile.js",
