@@ -29,7 +29,7 @@
     "q": "^1.0.1",
     "underscore": "~1.7.0",
     "winreg": "0.0.12",
-    "yeoman-generator": "~0.16.0"
+    "yeoman-generator": "^0.16.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
