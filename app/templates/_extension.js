@@ -5,8 +5,8 @@
 define([
         'jquery',
         'underscore',
-        './<%= extensionName.toLowerCase() %>-properties',
-        './<%= extensionName.toLowerCase() %>-initialproperties',
+        './<%= extensionNameSafe.toLowerCase() %>-properties',
+        './<%= extensionNameSafe.toLowerCase() %>-initialproperties',
         'text!./lib/css/style.css'
 ],
 function ($, _, props, initProps, cssContent) {
