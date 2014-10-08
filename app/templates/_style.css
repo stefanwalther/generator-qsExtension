@@ -1,6 +1,6 @@
 /* Styles for <%= extensionName%> */
 
-/* Recommended pattern for styling your objects
+/* Recommended pattern for styling your objects */
 .qv-object-<%= extensionNamespace%><%= extensionName%> {
 
 }
