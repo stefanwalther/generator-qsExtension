@@ -3,7 +3,9 @@
 Simple YeoMan Generator for Qlik Sense Extensions.
 
 ## Usage
-This little tool is based on YEOMAN (http://yeoman.io/) and allows you to create a starter-kit for Qlik Sense Extensions in less than five minutes.
+This little tool is based on YEOMAN (http://yeoman.io/) and allows you to create a starter-kit for Qlik Sense Extensions in **less than two minutes**.
+
+[![](https://raw.githubusercontent.com/QlikDev/generator-qsExtension/master/resources/qsExtension_Generator_YouTube.png)](https://www.youtube.com/watch?v=-WvWoMpAxwg)
 
 ## Installation
 
