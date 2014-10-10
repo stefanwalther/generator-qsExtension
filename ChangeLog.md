@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.11
+* Features:
+    * Added tests to install the generated npm packages for the Grunt deployments
+
 ## Version 0.0.9
 * Fixes:
     * Extension Name with whitespaces
