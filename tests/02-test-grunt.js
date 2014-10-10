@@ -31,4 +31,28 @@ describe( 'Grunt tasks', function (  ) {
                     done();
             } )
     });
+
+    it('dev task works properly', function ( done ) {
+        require( 'child_process' ).exec(
+            'grunt',
+            {cwd: gruntDir},
+            function ( err, stdout, stderr ) {
+
+                assert(!err);
+                done();
+            });
+
+    });
+
+    it('release task works properly', function ( done ) {
+        require( 'child_process' ).exec(
+            'grunt -release',
+            {cwd: gruntDir},
+            function ( err, stdout, stderr ) {
+
+                assert(!err);
+                done();
+            });
+
+    })
 });

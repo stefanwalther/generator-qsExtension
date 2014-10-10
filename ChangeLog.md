@@ -1,8 +1,12 @@
 # ChangeLog
 
+## Version 0.0.12
+* Features:
+    * Added tests to run both the dev and release task of the generated Grunt deployments
+
 ## Version 0.0.11
 * Features:
-    * Added tests to install the generated npm packages for the Grunt deployments
+    * Added tests to install the npm packages of the generated Grunt deployments
 
 ## Version 0.0.9
 * Fixes:
