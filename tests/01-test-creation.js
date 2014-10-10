@@ -16,7 +16,7 @@ describe( 'Expected files ', function () {
     };
 
     beforeEach( function ( done ) {
-        helpers.testDirectory( path.join( __dirname, '../test/try' ), function ( err ) {
+        helpers.testDirectory( path.join( __dirname, '/try' ), function ( err ) {
 
             if ( err ) {
                 return done( err );

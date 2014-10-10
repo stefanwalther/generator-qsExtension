@@ -33,7 +33,9 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "mocha": "*"
+    "mocha": "*",
+    "npm": "^2.1.2",
+    "rimraf": "^2.2.8"
   },
   "peerDependencies": {
     "yo": ">=1.0.4"

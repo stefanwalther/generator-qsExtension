@@ -3,6 +3,7 @@
 var assert = require( 'assert' );
 
 describe( 'qsExtension generator', function () {
+
     it( 'can be imported without blowing up', function () {
         var app = require( '../app/index' );
         assert( app !== undefined );
@@ -11,5 +12,4 @@ describe( 'qsExtension generator', function () {
         var utils = require( '../app/utils' );
         assert( utils != undefined );
     } )
-
 } );

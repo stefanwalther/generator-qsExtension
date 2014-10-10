@@ -1,6 +1,5 @@
 .idea/
 node_modules/
 temp/
-test/
 
-try/
+tests/try/
