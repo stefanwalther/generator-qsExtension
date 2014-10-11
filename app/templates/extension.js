@@ -51,12 +51,11 @@ function ($, _, props, initProps, cssContent) {
             console.log(layout);
             console.groupEnd();
 
+            $element.empty();
             var $helloWorld = $(document.createElement('div'));
-            $helloWorld.addClass('helloWorld');
-            $helloWorld.html('This is the extension "<%= extensionName%>"');
-
+            $helloWorld.addClass('hello-world');
+            $helloWorld.html('Hello World from the extension "<%= extensionName%>"');
             $element.append($helloWorld);
-
 
         }
         // (Paint Method)
