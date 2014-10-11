@@ -1,7 +1,7 @@
 /* Styles for <%= extensionName%> */
 
 /* Recommended pattern for styling your objects */
-.qv-object-<%= extensionNamespace%><%= extensionNameSafe%> .hello-world {
+.qv-object-<%= extensionNamespace.toLowerCase()%><%= extensionNameSafe.toLowerCase()%> .hello-world {
     color:#333;
     font-weight:bold;
 }
