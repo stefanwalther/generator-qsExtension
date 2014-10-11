@@ -26,10 +26,10 @@ dev:
 # Settings for the Release build
 release:
   less:
-      lessCompress: true
-      lessYuiCompress: true
-      lessCleanCss: true
-      lessOptimization: 2
+    lessCompress: true
+    lessYuiCompress: true
+    lessCleanCss: true
+    lessOptimization: 2
   uglify:
     mangle: true
     drop_console: true
