@@ -21,7 +21,6 @@ module.exports = {
                         var dir = path.join(items[i].value, 'Qlik/Sense/Extensions' ).replace(/\\/g, "\\\\");
 
                         deferred.resolve(dir);
-
                     }
                 }
             });
@@ -29,7 +28,6 @@ module.exports = {
         catch (err) {
             deferred.reject (err);
         }
-
         return deferred.promise;
 
     }

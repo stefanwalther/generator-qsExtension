@@ -1,6 +1,6 @@
 {
   "name": "generator-qsextension",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Yeoman generator for Qlik Sense Extensions",
   "license": "MIT",
   "main": "app/index.js",
@@ -12,7 +12,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "os": ["win32"],
+  "os": [
+    "win32"
+  ],
   "files": [
     "app"
   ],
@@ -28,9 +30,9 @@
     "chalk": "~0.4.0",
     "moment": "~2.8.3",
     "q": "^1.0.1",
-    "underscore": "~1.7.0",
+    "underscore": "^1.7.0",
     "winreg": "0.0.12",
-    "yeoman-generator": "^0.16.0"
+    "yeoman-generator": "^0.17.7"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

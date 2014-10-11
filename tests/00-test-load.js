@@ -1,6 +1,9 @@
 /*global describe, beforeEach, it*/
 'use strict';
 var assert = require( 'assert' );
+var path = require('path');
+var rimraf = require( 'rimraf' )
+var utils = require( './utils.js' );
 
 describe( 'qsExtension generator', function () {
 
