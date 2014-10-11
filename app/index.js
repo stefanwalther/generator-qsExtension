@@ -112,12 +112,12 @@ var qsExtension = yeoman.generators.Base.extend( {
     root: function () {
 
         // root
-        this.copy( '_gitattributes.txt', '.gitattributes' );
-        this.copy( '_gitignore.txt', '.gitignore' );
-        this.copy( '_editorconfig', 'editorconfig' );
-        this.template( '_readme.md', 'README.md' );
-        this.template( '_license.md', 'LICENSE.md' );
-        this.template( '_ChangeLog.md', 'CHANGELOG.md' );
+        this.copy( 'gitattributes.txt', '.gitattributes' );
+        this.copy( 'gitignore.txt', '.gitignore' );
+        this.copy( 'editorconfig', 'editorconfig' );
+        this.template( 'readme.md', 'README.md' );
+        this.template( 'license.md', 'LICENSE.md' );
+        this.template( 'ChangeLog.md', 'CHANGELOG.md' );
 
 
         // Grunt
@@ -143,10 +143,10 @@ var qsExtension = yeoman.generators.Base.extend( {
 
         // src dir
         this.mkdir( 'src' );
-        this.template( '_extension.js', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.js' );
-        this.template( '_extension.qext', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.qext' );
-        this.template( '_extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
-        this.template( '_extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
+        this.template( 'extension.js', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.js' );
+        this.template( 'extension.qext', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.qext' );
+        this.template( 'extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
+        this.template( 'extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
 
         // scr/lib
         this.mkdir( 'src/lib' );

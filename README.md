@@ -73,6 +73,7 @@ Suggested folder structure for assets included in the extension.
 
 ## Generated Grunt Deployment
 The Grunt based deployment offers two different modes, `dev` and `release`:
+The settings for both tasks can be changed in `grunt/grunt-config.yml` file.
 
 ### dev Task
 
