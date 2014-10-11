@@ -22,6 +22,7 @@
         "grunt-contrib-compress": "~0.8.0",
         "grunt-cleanempty": "~0.2.1",
         "grunt-contrib-cssmin": "~0.10.0",
-        "grunt-replace": "~0.7.8"
+        "grunt-replace": "~0.7.8",
+        "grunt-contrib-less": "~0.11.0"
     }
 }

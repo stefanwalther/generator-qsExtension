@@ -78,8 +78,12 @@ var qsExtension = yeoman.generators.Base.extend( {
                     "filterpane",
                     "treemap"
                 ]
-
-
+            },
+            {
+                type: 'confirm',
+                name: 'lessSupport',
+                message: 'Would you like to include Less suppport?',
+                default: true
             },
             {
                 name: 'authorName',
@@ -95,6 +99,7 @@ var qsExtension = yeoman.generators.Base.extend( {
             this.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
             this.extensionDescription = props.extensionDescription;
             this.authorName = props.authorName;
+            this.lessSupport = props.lessSupport;
 
             var d = new Date();
             this.publishingYear = d.getFullYear();
@@ -117,27 +122,24 @@ var qsExtension = yeoman.generators.Base.extend( {
 
         // Grunt
         this.mkdir( 'grunt' );
-        this.template( 'grunt/_grunt-config.yml', 'grunt/grunt-config.yml');
+        this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml');
 
-        this.template( 'grunt/_gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
-        this.template( 'grunt/_gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
-        this.template( 'grunt/_gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
-        this.template( 'grunt/_gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+        this.template( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
+        this.template( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
+        this.template( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
+        this.template( 'grunt/gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+        // Gruntfile.Less will be added in the createStyles task
 
-        this.template( 'grunt/_gruntfile.js', 'grunt/Gruntfile.js' );
+        this.template( 'grunt/gruntfile.js', 'grunt/Gruntfile.js' );
 
-        this.template( 'grunt/_gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
-        this.template( 'grunt/_gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
-
+        this.template( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
+        this.template( 'grunt/gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
 
         this.template( 'grunt/_package.json', 'grunt/package.json' );
-        this.template( 'grunt/_gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
-        this.template( 'grunt/_gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
-        this.template( 'grunt/_gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
+        this.template( 'grunt/gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
+        this.template( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
+        this.template( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
-
-        // sample dir
-        this.mkdir( 'sample' );
 
         // src dir
         this.mkdir( 'src' );
@@ -146,14 +148,11 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.template( '_extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
         this.template( '_extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
 
-
-
         // scr/lib
         this.mkdir( 'src/lib' );
+        this.mkdir( 'src/lib/css' );
         this.mkdir( 'src/lib/js' );
         this.mkdir( 'src/lib/external' );
-        this.mkdir( 'src/lib/css' );
-        this.template( '_style.css', 'src/lib/css/style.css' );
         this.mkdir( 'src/lib/images' );
         this.mkdir( 'src/lib/fonts' );
         this.mkdir( 'src/lib/icons' );
@@ -161,9 +160,24 @@ var qsExtension = yeoman.generators.Base.extend( {
 
         // Build Dir
         this.mkdir( 'build' );
-
-        // dist Dir
         this.mkdir( 'dist' );
+    },
+
+    createStyles: function () {
+
+        console.log('lessSupport: ', this.lessSupport);
+
+        if (this.lessSupport === true) {
+            this.mkdir( 'src/lib/less' );
+            this.template( '_root.less', 'src/lib/less/_root.less' );
+            this.template( 'styles.less', 'src/lib/less/styles.less');
+            this.template( 'variables.less', 'src/lib/less/variables.less');
+            this.template( 'style_Less.css', 'src/lib/css/style.css' );
+            this.template( 'grunt/gruntfile.less.js', 'grunt/Gruntfile.less.js' );
+
+        } else {
+            this.template( 'style_noLess.css', 'src/lib/css/style.css' );
+        }
     }
 } );
 

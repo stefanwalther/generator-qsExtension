@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.13
+* Features:
+    * Added (optional) support for Less
+
 ## Version 0.0.12
 * Features:
     * Added tests to run both the dev and release task of the generated Grunt deployments

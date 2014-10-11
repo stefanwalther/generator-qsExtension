@@ -80,6 +80,7 @@ The Grunt based deployment offers two different modes, `dev` and `release`:
 	* Delete existing content in the `dist` directory
 	* All directories and files are copied to the `dist` directory
 	* Variables are replaced in all files or the `src` folder, first by using gruntReplacements.json, then gruntReplacments_dev.json
+	* If Less-Support is chosen: Style-Sheet generation based on the defined .less files 
 * Cleanup Tasks
 	* Typical development files will be deleted (*.tmp, *.tmpl, *.log, *.bak, *.less)
 	* Empty folders are deleted
