@@ -1,9 +1,8 @@
-/*global describe, beforeEach, it */
+/*global require, describe, beforeEach, it */
 'use strict';
 var path = require( 'path' );
 var helpers = require( 'yeoman-generator' ).test;
 var assert = require( 'assert' );
-
 var grunt = require('grunt');
 
 
@@ -46,13 +45,13 @@ describe( 'Grunt tasks', function (  ) {
     it( 'npm packages are installed', function ( done ) {
 
         require( 'child_process' ).exec
-            ( 'npm install '
-            , {cwd: gruntDir}
-            , function ( err, stdout, stderr ) {
-
+            (
+                'npm install ',
+                {cwd: gruntDir},
+                function ( err, stdout, stderr ) {
                     assert(!err)
                     done();
-            } )
+            } );
     });
 
     it('dev task works properly', function ( done ) {
@@ -63,7 +62,6 @@ describe( 'Grunt tasks', function (  ) {
                 assert(!err);
                 done();
             });
-
     });
 
     it('release task works properly', function ( done ) {
