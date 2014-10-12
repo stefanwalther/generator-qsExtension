@@ -88,7 +88,7 @@ The `dev` task will run trough the following steps, defined in the file `grunt/G
 	* Delete existing content in the distribution directory (`dist`)
 	* Copy all directory and files from the `src` folder to the `dist` folder
 	* Replace variables in all files of the `dist` folder. Variables are defined in the file `grunt/gruntReplacements.yml`, then `gruntReplacments_release.yml`
-	* If **Less-Support is chosen: Generate the style sheet `dist/lib/style.css` based on the definition in `dist/lib/less/_root.less`. In release mode the generated style-sheet will be compressed and optimized.
+	* If Less-Support is chosen: Generate the style sheet `dist/lib/style.css` based on the definition in `dist/lib/less/_root.less`. In release mode the generated style-sheet will be compressed and optimized.
 * **Cleanup Tasks**
 	* Typical development files will be deleted (*.tmp, *.tmpl, *.log, *.bak, *.less)
 	* All empty folders in `dist` will be deleted
