@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dev', [
 
-        // Copy to dist
+        // Clean 'dist' and copy all relevant files to 'dist'
         'clean:empty_dist',
         'copy:copy_to_dist',
 
@@ -51,12 +51,13 @@ module.exports = function (grunt) {
         'replace:general',
         'replace:dev',
 
+        // Less support: <%= lessSupport %>
+        <% if (lessSupport) {%>'less:dev',<% } %>
+
         // Cleanup
         'clean:devFiles',
         'cleanempty:all',
 
-        // Less support: <%= lessSupport %>
-        <% if (lessSupport) {%>'less:dev',<% } %>
 
         // Deploy to Qlik Sense Desktop
         'clean:empty_desktop',
@@ -71,9 +72,30 @@ module.exports = function (grunt) {
 
     grunt.registerTask('release', [
 
-        // Copy to dist
+        // Clean 'dist' and copy all relevant files to 'dist'
         'clean:empty_dist',
-        'copy:copy_to_dist'
+        'copy:copy_to_dist',
+
+        // Replacements
+        'replace:general',
+        'replace:release',
+
+        // Less support: <%= lessSupport %>
+        <% if (lessSupport) {%>'less:release',<% } %>
+
+        'uglify:release',
+
+        // Cleanup
+        'clean:devFiles',
+        'cleanempty:all',
+
+        // Deploy to Qlik Sense Desktop
+        'clean:empty_desktop',
+        'copy:copy_to_desktop',
+
+        // Zip
+        'compress:release'
+
 
     ]);
 

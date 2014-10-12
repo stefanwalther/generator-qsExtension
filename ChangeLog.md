@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Version 0.0.15
+* Features:
+    * Added support for the release Grunt task
+    * Extended documentation (Readme.md)
+
 ## Version 0.0.14
 * Features:
     * Added (optional) support for Less

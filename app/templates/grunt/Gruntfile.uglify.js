@@ -3,130 +3,26 @@
  camelcase: false
  */
 module.exports = function (grunt) {
-
     'use strict';
+
+    var config = grunt.config.data.config;
+
     return {
 
         options: {
-            mangle: true,
-            beautify: false,
-            preserveComments: false,
+            mangle: config.release.uglify.mangle,
+            beautify: config.release.uglify.beautify,
+            preserveComments: config.release.uglify.preserveComments,
             compress: {
-                drop_console: true
+                drop_console: config.release.uglify.drop_console
             }
         },
-        main: {
+        release: {
             files: {
-                '../dist/qwidget.js': ['../dist/qwidget.js'],
-                '../dist/qwidget-properties.js': ['../dist/qwidget-properties.js']
+                '../dist/qwidget.js': ['../dist/' + config.general.ExtensionNamespace + config.general.ExtensonNameSafe + '.js'],
+                '../dist/qwidget-properties.js': ['../dist/' + config.general.ExtensonNameSafe + '-properties.js']
 
             }
-        },
-        config: {
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/config/',
-                    src: ['*.js', '**/*.js'],
-                    dest: '../dist/config/'
-
-                }
-            ]
-        },
-        services: {
-            options: {
-                mangle: true,
-                beautify: false,
-                preserveComments: false,
-                compress: {
-                    drop_console: true
-                }
-            },
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/services/',
-                    src: ['*.js', '**/*.js'],
-                    dest: '../dist/services/'
-
-                }
-            ]
-        },
-        directives: {
-            options: {
-                mangle: true,
-                beautify: false,
-                preserveComments: false,
-                compress: {
-                    drop_console: true
-                }
-            },
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/directives/',
-                    src: ['*.js', '**/*.js'],
-                    dest: '../dist/directives/'
-                }
-            ]
-        },
-        components: {
-            options: {
-                mangle: true,
-                beautify: false,
-                preserveComments: false,
-                compress: {
-                    drop_console: true
-                }
-            },
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/components/',
-                    src: ['*.js', '**/*.js','!*.min.js', '!**/*.min.js'],
-                    dest: '../dist/components/'
-
-                }
-            ]
-        },
-        filter: {
-            options: {
-                mangle: true,
-                beautify: false,
-                preserveComments: false,
-                compress: {
-                    drop_console: true
-                }
-            },
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/filter/',
-                    src: ['*.js', '**/*.js'],
-                    dest: '../dist/filter/'
-
-                }
-            ]
-        },
-        modules: {
-            options: {
-                mangle: true,
-                beautify: false,
-                preserveComments: false,
-                compress: {
-                    drop_console: true
-                }
-            },
-            files: [
-                {
-                    expand: true,
-                    cwd: '../dist/modules/',
-                    src: ['*.js', '**/*.js'],
-                    dest: '../dist/modules/'
-
-                }
-            ]
         }
-
     };
 };

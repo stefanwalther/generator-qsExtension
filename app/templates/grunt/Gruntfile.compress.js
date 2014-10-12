@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         },
         release: {
             options: {
-                archive: '../build/' + config.general.ExtensionNameSafe + '_'  + '.zip'
+                archive: '../build/' + config.general.ExtensionNameSafe + '_v'  + config.general.Version + '.zip'
             },
             files: [
                 {expand: true, cwd: '../dist/', src: ['**'], dest: '/'}
