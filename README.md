@@ -13,7 +13,7 @@ Have a look at the following video to get an idea how this tool works and can **
 ## Installation
 
 Install nodeJs (http://nodejs.org/)
-Open the Node.js command prompt and install `yo`
+Open the Node.js command prompt and install `yo` using the **Node.js command prompt**
  
 
     npm install -g yo
