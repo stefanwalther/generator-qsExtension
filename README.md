@@ -23,9 +23,7 @@ Download the `qenerator-qsExtension` from GitHub
 
     npm install -g generator-qsextension
 
-## Documentation
-
-### Start the Generator
+## Start the Generator
 
 Start the generator by entering the following commands into your **Node.js command prompt**:
 
@@ -123,12 +121,12 @@ For executing one of the two tasks, enter the following commands in your command
     grunt dev
 
 
-## Author
-### Stefan Walther 
+# Author
+## Stefan Walther 
 * http://www.qlikblog.at
 * http://github.com/stefanwalther
 * http://twitter.com/waltherstefan
 
-## License
+# License
 Copyright (c) 2014 Stefan Walther, contributors.
 Release under the MIT license.
