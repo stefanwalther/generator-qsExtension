@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.16
+* Features:
+    * Added an additional Grunt task to create a ZIP-file containing only the source (without installed Node packages)
+
 ## Version 0.0.15
 * Features:
     * Added support for the release Grunt task

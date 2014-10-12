@@ -30,6 +30,19 @@ module.exports = function (grunt) {
                     dest: '/'
                 }
             ]
+        },
+        source: {
+            options: {
+                archive: '../build/<%=projectConfig.general.ExtensionNameSafe%>_src_v<%=projectConfig.general.Version%>.zip'
+            },
+            files: [
+                {
+                    expand: true,
+                    cwd: '../',
+                    src: ['src/**/*', 'grunt/**/*','!grunt/node_modules/**/*'],
+                    dest: '/'
+                }
+            ]
         }
     };
 };

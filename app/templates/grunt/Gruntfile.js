@@ -80,6 +80,12 @@ module.exports = function (grunt) {
 
     ]);
 
+    grunt.registerTask('source', [
+
+        'compress:source'
+    ]);
+
+
     // Pointer to dev task
     grunt.registerTask('default', 'dev');
 

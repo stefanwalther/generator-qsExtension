@@ -64,12 +64,12 @@ The generator-qsExtension
 | **`src/lib/external`**| Put external libraries (e.g. Javascript libraries) into this folder, they will not be modified in any of the Grunt-tasks.
 
 ### Generated Grunt Deployment
-The Grunt based deployment offers two different modes, `dev` and `release`:
-The settings for both tasks can be changed in `grunt/grunt-config.yml` file.
+The Grunt based deployment offers three different modes, `dev`, `release` and `source`:
+The settings for the `dev` and `release` task can be changed in `grunt/grunt-config.yml` file.
 
-#### dev Task
+#### Dev Task (Development Deployment)
 
-The dev task will run trough the following steps, defined in the file `grunt/Gruntfile.js`:
+The `dev` task will run trough the following steps, defined in the file `grunt/Gruntfile.js`:
 
 * **Preparations**
 	* **Delete existing content** in the distribution directory (`dist`)
@@ -84,7 +84,7 @@ The dev task will run trough the following steps, defined in the file `grunt/Gru
 * **Package**
 	* Finally the content of the extension will be zipped to a fill called `%ExtensionName%_dev.zip` and stored to the `build` directory. 
 
-#### release Task
+#### Release Task (Release Deployment)
 
 * **Preparations**
 	* **Delete existing content** in the distribution directory (`dist`)
@@ -101,6 +101,8 @@ The dev task will run trough the following steps, defined in the file `grunt/Gru
 * **Package**
 	* Finally the content of the extension will be zipped to a fill called `%ExtensionName%_dev.zip` and stored to the `build` directory. 
 
+#### Source Task
+The source task creates a ZIP-file containing the `src` and the `grunt` folder (without installed NodeJs packages) following the schema `%ExtensionName%_**src**_v%Version%.zip`. You'll find the generated file in the `build` folder.
 
 ### Grunt Task Configuration
 
