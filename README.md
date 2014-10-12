@@ -65,68 +65,67 @@ The generator-qsExtension
 The Grunt based deployment offers three different modes, `dev`, `release` and `source`:
 The settings for the `dev` and `release` task can be changed in `grunt/grunt-config.yml` file.
 
-#### Dev Task (Development Deployment)
-
+**Dev Task (Development Deployment)**
 The `dev` task will run trough the following steps, defined in the file `grunt/Gruntfile.js`:
 
-* **Preparations**
+* Preparations
 	* Delete existing content in the distribution directory (`dist`)
 	* Copy all directory and files from the `src` folder to the `dist` folder
 	* Replace variables in all files of the `dist` folder. Variables are defined in the file `grunt/gruntReplacements.yml`, then `gruntReplacments_dev.yml`
 	* If Less-Support is chosen: Generate the style sheet `dist/lib/style.css` based on the definition in `dist/lib/less/_root.less`. The generated style-sheet will not be compressed and optimized in `dev` mode.
-* **Cleanup Tasks**
+* Cleanup Tasks
 	* Typical development files will be deleted (*.tmp, *.tmpl, *.log, *.bak, *.less)
 	* All empty folders in `dist` will be deleted
-* **Deployment to Qlik Sense Desktop**
+* Deployment to Qlik Sense Desktop
 	* All modified files of the dist folder will be copied to the local Qlik Sense Extension directory (first the entire content of the target folder will be deleted)
-* **Package**
+* Package
 	* Finally the content of the extension will be zipped to a fill called `%ExtensionName%_dev.zip` and stored to the `build` directory. 
 
-#### Release Task (Release Deployment)
+**Release Task (Release Deployment)**
 
-* **Preparations**
+* Preparations
 	* Delete existing content in the distribution directory (`dist`)
 	* Copy all directory and files from the `src` folder to the `dist` folder
 	* Replace variables in all files of the `dist` folder. Variables are defined in the file `grunt/gruntReplacements.yml`, then `gruntReplacments_release.yml`
 	* If Less-Support is chosen: Generate the style sheet `dist/lib/style.css` based on the definition in `dist/lib/less/_root.less`. In release mode the generated style-sheet will be compressed and optimized.
-* **Cleanup Tasks**
+* Cleanup Tasks
 	* Typical development files will be deleted (*.tmp, *.tmpl, *.log, *.bak, *.less)
 	* All empty folders in `dist` will be deleted
-* **Optimization & Uglification**
+* Optimization & Uglification
 	* All generated scripts will be optimized (compressed) and uglified.
-* **Deployment to Qlik Sense Desktop**
+* Deployment to Qlik Sense Desktop
 	* All modified files of the dist folder will be copied to the local Qlik Sense Extension directory (first the entire content of the target folder will be deleted)
-* **Package**
+* Package
 	* Finally the content of the extension will be zipped to a fill called `%ExtensionName%_dev.zip` and stored to the `build` directory. 
 
-#### Source Task
+**Source Task**  
 The source task creates a ZIP-file containing the `src` and the `grunt` folder (without installed NodeJs packages) following the schema `%ExtensionName%_**src**_v%Version%.zip`. You'll find the generated file in the `build` folder.
 
-### Grunt Task Configuration
+**Grunt Task Configuration**
 
 As a result of the generator you'll find a file called `grunt-config.yml` in the `grunt` folder.
 This file can be used to configure the behavior of both the `dev` and the `release` task.
 
-### Run Grunt Tasks
+**Run Grunt Tasks**  
 For executing one of the two tasks, enter the following commands in your command-prompt:
 
-**Release Task:**
+Release Task:
 
     cd grunt
     grunt release
 
-**Development Task:**
+Development Task:
 
     cd grunt
     grunt dev
 
 
-# Author
-## Stefan Walther 
+## Author
+**Stefan Walther** 
 * http://www.qlikblog.at
 * http://github.com/stefanwalther
 * http://twitter.com/waltherstefan
 
-# License
+## License
 Copyright (c) 2014 Stefan Walther, contributors.
 Release under the MIT license.
