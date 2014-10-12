@@ -2,8 +2,7 @@
 module.exports = function (grunt) {
     'use strict';
 
-    var config = grunt.config.data.config;
-
+    grunt.loadNpmTasks('grunt-contrib-copy');
     return {
         copy_to_dist: {
             expand: true,                   // allow dynamic building
@@ -17,7 +16,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '../dist/',
             src: '**',
-            dest: config.general.LocalExtensionPath + '/' + config.general.ExtensionNameSafe + '/'
+            dest: '<%= projectConfig.general.LocalExtensionPath%>/<%= projectConfig.general.ExtensionNameSafe%>/'
         }
     };
 };

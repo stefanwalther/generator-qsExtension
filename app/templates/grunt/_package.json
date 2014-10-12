@@ -1,7 +1,7 @@
 {
-    "name": "<%= extensionNameSafe%>",
+    "name": "Grunt-Deployment-<%= extensionNameSafe%>",
     "version": "0.0.1",
-    "description": "<%= extensionDescription %>",
+    "description": "Grunt tasks (dev + release) for the Qlik Sense extension <%= extensionName %>",
     "main": "gruntfile.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     ],
     "author": "<%=authorName%>",
     "license": "MIT",
-    "devDependencies": {
+    "dependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-copy": "~0.6.0",
         "grunt-contrib-uglify": "~0.4.0",

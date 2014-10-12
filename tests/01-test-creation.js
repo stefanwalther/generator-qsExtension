@@ -1,4 +1,4 @@
-/*global describe, beforeEach, it */
+/*global require, describe, beforeEach, it */
 'use strict';
 var path = require( 'path' );
 var helpers = require( 'yeoman-generator' ).test;
@@ -68,6 +68,7 @@ describe( 'Running qsExtension Generator ', function () {
 
             // grunt
             'grunt/grunt-config.yml',
+            'grunt/Gruntfile.projectConfig.js',
             'grunt/Gruntfile.clean.js',
             'grunt/Gruntfile.cleanempty.js',
             'grunt/Gruntfile.compress.js',

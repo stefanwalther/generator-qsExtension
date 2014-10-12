@@ -5,24 +5,28 @@
 module.exports = function (grunt) {
     'use strict';
 
-    var config = grunt.config.data.config;
-
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     return {
 
         options: {
-            mangle: config.release.uglify.mangle,
-            beautify: config.release.uglify.beautify,
-            preserveComments: config.release.uglify.preserveComments,
+            mangle: ('<%= projectConfig.release.uglify.mangle%>' === 'true'),
+            beautify: ('<%= projectConfig.release.uglify.beautify%>' === 'true'),
+            preserveComments: ('<%= projectConfig.release.uglify.preserveComments%>' === 'true'),
             compress: {
-                drop_console: config.release.uglify.drop_console
+                drop_console: ('<%= projectConfig.release.uglify.drop_console%>' === 'true')
             }
         },
         release: {
-            files: {
-                '../dist/qwidget.js': ['../dist/' + config.general.ExtensionNamespace + config.general.ExtensonNameSafe + '.js'],
-                '../dist/qwidget-properties.js': ['../dist/' + config.general.ExtensonNameSafe + '-properties.js']
-
-            }
+            files: [
+                {
+                    src: ['../dist/<%= projectConfig.general.ExtensionNamespace %><%= projectConfig.general.ExtensionNameSafe%>.js'],
+                    dest: '../dist/<%= projectConfig.general.ExtensionNamespace %><%= projectConfig.general.ExtensionNameSafe%>.js'
+                },
+                {
+                    src: ['../dist/<%= projectConfig.general.ExtensionNameSafe%>-properties.js'],
+                    dest: '../dist/<%= projectConfig.general.ExtensionNameSafe%>-properties.js'
+                }
+            ]
         }
     };
 };

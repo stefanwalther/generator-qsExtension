@@ -1,3 +1,7 @@
+/*global define, require, console, process*/
+/*jshint
+ camelcase: false
+ */
 'use strict';
 var util = require( 'util' );
 var path = require( 'path' );
@@ -123,22 +127,19 @@ var qsExtension = yeoman.generators.Base.extend( {
         // Grunt
         this.mkdir( 'grunt' );
         this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml');
-
-        this.template( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
-        this.template( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
-        this.template( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
-        this.template( 'grunt/gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+        this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectConfig.js' );
+        this.copy( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
+        this.copy( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
+        this.copy( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
+        this.copy( 'grunt/gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
         // Gruntfile.Less will be added in the createStyles task
-
         this.template( 'grunt/gruntfile.js', 'grunt/Gruntfile.js' );
-
-        this.template( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
-        this.template( 'grunt/gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
-
-        this.template( 'grunt/_package.json', 'grunt/package.json' );
-        this.template( 'grunt/gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
-        this.template( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
-        this.template( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
+        this.copy( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
+        this.copy( 'grunt/gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
+        this.copy( 'grunt/_package.json', 'grunt/package.json' );
+        this.copy( 'grunt/gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
+        this.copy( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
+        this.copy( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
 
         // src dir
@@ -173,7 +174,7 @@ var qsExtension = yeoman.generators.Base.extend( {
             this.template( 'styles.less', 'src/lib/less/styles.less');
             this.template( 'variables.less', 'src/lib/less/variables.less');
             this.template( 'style_Less.css', 'src/lib/css/style.css' );
-            this.template( 'grunt/gruntfile.less.js', 'grunt/Gruntfile.less.js' );
+            this.copy( 'grunt/gruntfile.less.js', 'grunt/Gruntfile.less.js' );
 
         } else {
             this.template( 'style_noLess.css', 'src/lib/css/style.css' );

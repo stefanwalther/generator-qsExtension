@@ -1,5 +1,6 @@
 /*global define*/
 define( [], function () {
+    'use strict';
     return {
         qHyperCubeDef: {
             qDimensions: [],
@@ -11,5 +12,5 @@ define( [], function () {
                 }
             ]
         }
-    }
+    };
 } )

@@ -1,18 +1,19 @@
 /*global module*/
 module.exports = function (grunt) {
-
     'use strict';
 
-    var repl = grunt.config.data.replacements;
+    grunt.loadNpmTasks('grunt-replace');
 
-    // Replace variables like the Urls for the help, the version, etc.
+    /**
+     * Replace variables like the Urls for the help, the version, etc.
+     */
     return {
 
         general: {
             options: {
                 patterns: [
                     {
-                        json: repl.general
+                        json: grunt.file.readYAML('gruntReplacements.yml')
                     }
                 ]
             },
@@ -28,7 +29,7 @@ module.exports = function (grunt) {
             options: {
                 patterns: [
                     {
-                        json: repl.dev
+                        json: grunt.file.readYAML('gruntReplacements_dev.yml')
                     }
                 ]
             },
@@ -44,7 +45,7 @@ module.exports = function (grunt) {
             options: {
                 patterns: [
                     {
-                        json: repl.release
+                        json: grunt.file.readYAML('gruntReplacements_release.yml')
                     }
                 ]
             },

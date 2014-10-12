@@ -2,8 +2,7 @@
 module.exports = function( grunt ) {
     'use strict';
 
-    var config = grunt.config.data.config;
-
+    grunt.loadNpmTasks('grunt-cleanempty');
     return {
 
         options: {

@@ -6,18 +6,7 @@ var fs = require( "fs" );
 
 module.exports = function (grunt) {
 
-    // Target can be either "release" or "dev"
-    var target = grunt.option('target') || 'dev';
-
-    grunt.option['debug'] = true;
-
-    var replacements = {
-        general: grunt.file.readYAML('gruntReplacements.yml'),
-        dev: grunt.file.readYAML('gruntReplacements_dev.yml'),
-        release: grunt.file.readYAML('gruntReplacements_release.yml')
-    };
-    grunt.config.set( 'replacements', replacements);
-    grunt.config.set( 'config', grunt.file.readYAML('grunt-config.yml'));
+    grunt.option['debug'] = false;
 
     var cfg = {};
     // parse all configured tasks automatically:
@@ -30,15 +19,6 @@ module.exports = function (grunt) {
     } );
 
     grunt.initConfig( cfg );
-
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-cleanempty');
-    <% if (lessSupport) {%>grunt.loadNpmTasks('grunt-contrib-less');<% } %>
 
 
     grunt.registerTask('dev', [
@@ -83,11 +63,12 @@ module.exports = function (grunt) {
         // Less support: <%= lessSupport %>
         <% if (lessSupport) {%>'less:release',<% } %>
 
-        'uglify:release',
-
         // Cleanup
         'clean:devFiles',
         'cleanempty:all',
+
+        // Optimization & Uglification
+        'uglify:release',
 
         // Deploy to Qlik Sense Desktop
         'clean:empty_desktop',

@@ -2,24 +2,33 @@
 module.exports = function (grunt) {
     'use strict';
 
-    var config = grunt.config.data.config;
-
+    grunt.loadNpmTasks('grunt-contrib-compress');
     return {
 
         dev: {
             options: {
-                archive: '../build/' + config.general.ExtensionNameSafe +'_dev.zip'
+                archive: '../build/<%=projectConfig.general.ExtensionNameSafe%>_dev.zip'
             },
             files: [
-                {expand: true, cwd: '../dist/', src: ['**'], dest: '/'}
+                {
+                    expand: true,
+                    cwd: '../dist/',
+                    src: ['**'],
+                    dest: '/'
+                }
             ]
         },
         release: {
             options: {
-                archive: '../build/' + config.general.ExtensionNameSafe + '_v'  + config.general.Version + '.zip'
+                archive: '../build/<%=projectConfig.general.ExtensionNameSafe%>_v<%=projectConfig.general.Version%>.zip'
             },
             files: [
-                {expand: true, cwd: '../dist/', src: ['**'], dest: '/'}
+                {
+                    expand: true,
+                    cwd: '../dist/',
+                    src: ['**'],
+                    dest: '/'
+                }
             ]
         }
     };
