@@ -65,7 +65,8 @@ The generator-qsExtension
 The Grunt based deployment offers three different modes, `dev`, `release` and `source`:
 The settings for the `dev` and `release` task can be changed in `grunt/grunt-config.yml` file.
 
-**Dev Task (Development Deployment)**
+**Dev Task (Development Deployment)**  
+
 The `dev` task will run trough the following steps, defined in the file `grunt/Gruntfile.js`:
 
 * Preparations
@@ -101,8 +102,7 @@ The `dev` task will run trough the following steps, defined in the file `grunt/G
 **Source Task**  
 The source task creates a ZIP-file containing the `src` and the `grunt` folder (without installed NodeJs packages) following the schema `%ExtensionName%_**src**_v%Version%.zip`. You'll find the generated file in the `build` folder.
 
-**Grunt Task Configuration**
-
+**Grunt Task Configuration**  
 As a result of the generator you'll find a file called `grunt-config.yml` in the `grunt` folder.
 This file can be used to configure the behavior of both the `dev` and the `release` task.
 
