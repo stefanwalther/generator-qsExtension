@@ -10,9 +10,32 @@ var grunt = require('grunt');
 describe( 'Grunt tasks', function (  ) {
 
     var gruntDir;
-    before( function () {
-        process.chdir(__dirname + '/try/grunt');
-        gruntDir = process.cwd();
+    before( function ( done ) {
+
+        var options = {
+            'skip-install-message': true,
+            'skip-install': true,
+            'skip-welcome-message': true,
+            'skip-message': true
+        };
+        var inputs = {
+            'extensionName': 'My Extension',
+            'extensionNameSafe': 'MyExtension',
+            'extensionNamespace': 'swr',
+            'extensionDescription': 'A simple extension to test',
+            'extensionType': 'line-chart',
+            'authorName': 'Stefan Walther',
+            'lessSupport': true
+        };
+        helpers.run(path.join( __dirname, '../app'))
+            .inDir(path.join( __dirname, './try'))
+            .withOptions(options)
+            .withPrompts(inputs)
+            .on('end', function (  ) {
+                process.chdir(__dirname + '/try/grunt');
+                gruntDir = process.cwd();
+                done();
+            });
     });
 
     it ( 'package.json exists'  , function ( done ) {
@@ -37,7 +60,6 @@ describe( 'Grunt tasks', function (  ) {
             'grunt',
             {cwd: gruntDir},
             function ( err, stdout, stderr ) {
-
                 assert(!err);
                 done();
             });
@@ -49,7 +71,6 @@ describe( 'Grunt tasks', function (  ) {
             'grunt -release',
             {cwd: gruntDir},
             function ( err, stdout, stderr ) {
-
                 assert(!err);
                 done();
             });
