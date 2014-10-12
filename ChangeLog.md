@@ -3,7 +3,10 @@
 ## Version 0.0.15
 * Features:
     * Added support for the release Grunt task
+    * Added Mocha tests for the Grunt tasks
     * Extended documentation (Readme.md)
+    * All Grunt tasks (both dev and release) are fully configurable using the grunt-config.yml file
+    * Documentation for the Grunt configuration (grunt/grunt-config.yml)
 
 ## Version 0.0.14
 * Features:
@@ -29,7 +32,6 @@
     * Separated Grunt tasks to a separate folder
     * Documented grunt tasks for dev
     * Improved tests
-
 
 ## Version 0.0.7
 * Determine folder for local deployment automatically (%USERPROFILE%\My Documents\Qlik\Sense\Extensions)
