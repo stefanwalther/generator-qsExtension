@@ -4,6 +4,9 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     return {
+        options: {
+          processContentExclude: ['**/*.{png,gif,jpg,ico,psd}']
+        },
         copy_to_dist: {
             expand: true,                   // allow dynamic building
             cwd: '../src/',                 // change base dir

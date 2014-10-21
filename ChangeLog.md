@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.17
+* Fixes:
+    * Images were corrupted during deployment
+
 ## Version 0.0.16
 * Features:
     * Added an additional Grunt task to create a ZIP-file containing only the source (without installed Node packages)
