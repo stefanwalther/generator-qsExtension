@@ -1,4 +1,10 @@
-/*global define,require,window,console,_ */
+/*global
+            define,
+            require,
+            window,
+            console,
+            _
+*/
 /*jslint    devel:true,
             white: true
  */
@@ -43,7 +49,7 @@ function ($, _, props, initProps, cssContent) {
 
         // Paint Method
         paint: function ($element, layout) {
-      
+
             console.groupCollapsed('Basic Objects');
             console.info('$element:');
             console.log($element);

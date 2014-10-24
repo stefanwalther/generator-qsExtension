@@ -14,9 +14,12 @@ general:
   # Namespace
   ExtensionNamespace:   "<%= extensionNamespace %>"
 
+  # Description of the Extension as defined in the generator
+  ExtensionDescription: "<%= extensionDescription %>"
+
   # Version of the extension, will be re-used in several areas,
   # e.g the generated .zip-file in the 'release' Grunt-task
-  Version:              '0.0.1'
+  Version:              "0.0.1"
 
 # -------------------------------------------------------------------
 # Settings for the 'dev' Grunt task
