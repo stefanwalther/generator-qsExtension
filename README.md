@@ -53,7 +53,7 @@ The generator-qsExtension
 | Folder 				| Description 											|
 | --------------------- | -----------------------------------------------------	|
 | **`build`**			| Destination of compressed automated builds (.zip-files), defined in the Grunt task "`grunt/Gruntfile.compress.js`"
-| **`dist`**			| Distributionof automated builds
+| **`dist`**			| Distribution target of automated builds
 | **`grunt`**			| Source of the [Grunt-based](http://gruntjs.com/) build system.
 | **`src`**				| Root of source files.
 | **`src/lib`**			| Suggested folder structure for assets included in the extension.
