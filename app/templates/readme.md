@@ -11,8 +11,8 @@
 
 ## Change Log
 
-See CHANGELOG.md
+See [CHANGELOG.md](ChangeLog.md)
 
 ## License & Copyright
 
-See LICENSE.md
+See [LICENSE.md](License.md)
