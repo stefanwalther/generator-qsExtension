@@ -42,15 +42,22 @@ describe( 'Grunt tasks', function (  ) {
         done();
     });
 
+  /**
+   * Add a timeout of about 20000 ms to the mocha options: --timeout 20000
+   */
     it( 'npm packages are installed', function ( done ) {
 
         require( 'child_process' ).exec
             (
-                'npm install ',
-                {cwd: gruntDir},
+                'npm install',
+                {
+                  cwd: gruntDir
+                },
                 function ( err, stdout, stderr ) {
-                    assert(!err)
-                    done();
+                  if (err) { throw err; }
+
+                  assert(!err);
+                  done();
             } );
     });
 
