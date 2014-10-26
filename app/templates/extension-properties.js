@@ -1,7 +1,7 @@
 /*global define*/
 define([], function () {
+  'use strict';
 
-    
     var dimensions = {
         uses: "dimensions",
         min: 0,
