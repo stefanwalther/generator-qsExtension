@@ -1,21 +1,22 @@
 /*global require, describe, beforeEach, it */
-'use strict';
-var path = require( 'path' );
-var helpers = require( 'yeoman-generator' ).test;
-var assert = require( 'assert' );
-var assert = require( 'yeoman-generator' ).assert;
-var fs = require('fs');
-var utils = require('./utils');
-var _ = require('underscore');
+(function () {
+  'use strict';
 
+  var path = require( 'path' );
+  var helpers = require( 'yeoman-generator' ).test;
+  var assert = require( 'assert' );
+  var assert = require( 'yeoman-generator' ).assert;
+  var fs = require( 'fs' );
+  var utils = require( './utils' );
+  var _ = require( 'underscore' );
 
-describe( 'Running qsExtension Generator ', function () {
+  describe( 'Running qsExtension Generator ', function () {
 
     var options = {
-        'skip-install-message': true,
-        'skip-install': true,
-        'skip-welcome-message': true,
-        'skip-message': true
+      'skip-install-message': true,
+      'skip-install'        : true,
+      'skip-welcome-message': true,
+      'skip-message'        : true
     };
 
     beforeEach( function ( done ) {
@@ -33,90 +34,94 @@ describe( 'Running qsExtension Generator ', function () {
 //            );
 //            done();
 //        }.bind(this));
-        done();
-    });
+      done();
+    } );
 
-    describe('creates', function (  ) {
+    describe( 'creates', function () {
 
-        var inputs = {
-            'extensionName': 'My Extension',
-            'extensionNameSafe': 'MyExtension',
-            'extensionNamespace': 'swr',
-            'extensionDescription': 'A simple extension to test',
-            'extensionType': 'line-chart',
-            'authorName': 'Stefan Walther'
-        };
+      var inputs = {
+        'extensionName'       : 'My Extension',
+        'extensionNameSafe'   : 'MyExtension',
+        'extensionNamespace'  : 'swr',
+        'extensionDescription': 'A simple extension to test',
+        'extensionType'       : 'line-chart',
+        'authorName'          : 'Stefan Walther'
+      };
 
-        var expectedFiles = [
+      var expectedFiles = [
 
-            // root
-            '.gitattributes',
-            '.gitignore',
-            'editorconfig',
-            'CHANGELOG.md',
-            'LICENSE.md',
-            'README.md',
+        // root
+        '.gitattributes',
+        '.gitignore',
+        'editorconfig',
+        'CHANGELOG.md',
+        'LICENSE.md',
+        'README.md',
 
-            // src
-            'src/' + inputs.extensionNameSafe + '-properties.js',
-            'src/' + inputs.extensionNameSafe + '-initialproperties.js',
-            'src/' + inputs.extensionNamespace + '-' + inputs.extensionNameSafe + '.js',
+        // src
+        'src/' + inputs.extensionNameSafe + '-properties.js',
+        'src/' + inputs.extensionNameSafe + '-initialproperties.js',
+        'src/' + inputs.extensionNamespace + '-' + inputs.extensionNameSafe + '.js',
 
-            // dist
-            'dist/',
-            'build/',
+        // dist
+        'dist/',
+        'build/',
 
-            // grunt
-            'grunt/grunt-config.yml',
-            'grunt/Gruntfile.projectConfig.js',
-            'grunt/Gruntfile.clean.js',
-            'grunt/Gruntfile.cleanempty.js',
-            'grunt/Gruntfile.compress.js',
-            'grunt/Gruntfile.copy.js',
-            'grunt/Gruntfile.js',
-            'grunt/Gruntfile.replace.js',
-            'grunt/gruntReplacements.yml',
-            'grunt/gruntReplacements_dev.yml',
-            'grunt/gruntReplacements_release.yml',
-            'grunt/package.json',
+        // grunt
+        'grunt/grunt-config.yml',
+        'grunt/Gruntfile.projectConfig.js',
+        'grunt/Gruntfile.clean.js',
+        'grunt/Gruntfile.cleanempty.js',
+        'grunt/Gruntfile.compress.js',
+        'grunt/Gruntfile.copy.js',
+        'grunt/Gruntfile.js',
+        'grunt/Gruntfile.replace.js',
+        'grunt/gruntReplacements.yml',
+        'grunt/gruntReplacements_dev.yml',
+        'grunt/gruntReplacements_release.yml',
+        'grunt/package.json',
 
-            'src/lib/css/style.css'
+        'src/lib/css/style.css',
+        'src/lib/js/extensionUtils.js'
 
-        ];
-        var expectedFilesLess = [
-            'src/lib/less/_root.less',
-            'src/lib/less/styles.less',
-            'src/lib/less/variables.less',
-            'grunt/Gruntfile.less.js'
-        ];
+      ];
+      var expectedFilesLess = [
+        'src/lib/less/_root.less',
+        'src/lib/less/styles.less',
+        'src/lib/less/variables.less',
+        'grunt/Gruntfile.less.js'
+      ];
 
-        it('the expected files with default options', function ( done ) {
+      it( 'the expected files with default options', function ( done ) {
 
-            helpers.run(path.join( __dirname, '../app'))
-                .inDir(path.join( __dirname, './try'))  // Clear the directory and set it as the CWD
-                .withOptions(options)            // Mock options passed in
-                .withPrompts( _.extend(inputs, {lessSupport: false}))          // Mock the prompt answers
-                .on('end', function (  ) {
-                    assert.file(expectedFiles);
-                    assert.noFile(expectedFilesLess);
-                    done();
-                });
+        helpers.run( path.join( __dirname, '../app' ) )
+          .inDir( path.join( __dirname, './try' ) )  // Clear the directory and set it as the CWD
+          .withOptions( options )            // Mock options passed in
+          .withPrompts( _.extend( inputs, {lessSupport: false} ) )          // Mock the prompt answers
+          .on( 'end', function () {
+            assert.file( expectedFiles );
+            assert.noFile( expectedFilesLess );
+            done();
+          } );
 
-        });
+      } );
 
-        it('the expected files if lessSupport is TRUE', function ( done ) {
+      it( 'the expected files if lessSupport is TRUE', function ( done ) {
 
-            helpers.run(path.join( __dirname, '../app'))
-                .inDir(path.join( __dirname, './try'))  // Clear the directory and set it as the CWD
-                .withOptions(options)            // Mock options passed in
-                .withPrompts( _.extend(inputs, {lessSupport: true}))          // Mock the prompt answers
-                .on('end', function (  ) {
-                    assert.file( _.extend(expectedFiles, expectedFilesLess));
-                    done();
-                });
+        helpers.run( path.join( __dirname, '../app' ) )
+          .inDir( path.join( __dirname, './try' ) )  // Clear the directory and set it as the CWD
+          .withOptions( options )            // Mock options passed in
+          .withPrompts( _.extend( inputs, {lessSupport: true} ) )          // Mock the prompt answers
+          .on( 'end', function () {
+            assert.file( _.extend( expectedFiles, expectedFilesLess ) );
+            done();
+          } );
 
-        });
+      } );
 
-    });
+    } );
 
-} );
+  } );
+
+
+}());

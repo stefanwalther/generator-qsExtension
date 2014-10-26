@@ -119,6 +119,9 @@ Development Task:
     cd grunt
     grunt dev
 
+## ChangeLog
+
+See [ChangeLog](ChangeLog.md).
 
 ## Author
 **Stefan Walther** 

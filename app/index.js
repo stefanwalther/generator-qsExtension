@@ -149,7 +149,7 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.template( 'extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
         this.template( 'extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
 
-        // scr/lib
+        // src/lib
         this.mkdir( 'src/lib' );
         this.mkdir( 'src/lib/css' );
         this.mkdir( 'src/lib/js' );
@@ -158,6 +158,9 @@ var qsExtension = yeoman.generators.Base.extend( {
         this.mkdir( 'src/lib/fonts' );
         this.mkdir( 'src/lib/icons' );
         this.mkdir( 'src/lib/data' );
+
+        // src/lib/content
+        this.copy( 'lib/js/extensionUtils.js', 'src/lib/js/extensionUtils.js');
 
         // Build Dir
         this.mkdir( 'build' );

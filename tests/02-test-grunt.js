@@ -1,9 +1,9 @@
-/*global require, describe, beforeEach, it */
+/*global require, describe, xdescribe, it, xit, before, after, beforeEach, afterEach, console  */
 'use strict';
 var path = require( 'path' );
 var helpers = require( 'yeoman-generator' ).test;
 var assert = require( 'assert' );
-var grunt = require('grunt');
+var grunt = require( 'grunt' );
 
 
 describe( 'Grunt tasks', function (  ) {
@@ -73,5 +73,5 @@ describe( 'Grunt tasks', function (  ) {
                 done();
             });
 
-    })
+    });
 });

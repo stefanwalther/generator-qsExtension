@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.18
+* Features:
+  * Added lib/js/extensionUtils.js file to be able to add common functions to an extension
+
 ## Version 0.0.17
 * Fixes:
     * Images were corrupted during deployment

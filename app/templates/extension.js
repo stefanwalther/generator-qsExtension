@@ -13,12 +13,13 @@ define([
         'underscore',
         './<%= extensionNameSafe.toLowerCase() %>-properties',
         './<%= extensionNameSafe.toLowerCase() %>-initialproperties',
+        './lib/js/extensionUtils.js',
         'text!./lib/css/style.css'
 ],
-function ($, _, props, initProps, cssContent) {
+function ($, _, props, initProps, extensionUtils, cssContent) {
     'use strict';
 
-    $("<style>").html(cssContent).appendTo("head");
+    extensionUtils.addStyleToHeader(cssContent);
 
     return {
 
