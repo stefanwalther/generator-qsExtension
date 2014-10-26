@@ -62,6 +62,7 @@
         'src/' + inputs.extensionNameSafe + '-properties.js',
         'src/' + inputs.extensionNameSafe + '-initialproperties.js',
         'src/' + inputs.extensionNamespace + '-' + inputs.extensionNameSafe + '.js',
+        'src/.jshintrc',
 
         // dist
         'dist/',

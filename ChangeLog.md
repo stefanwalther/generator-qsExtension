@@ -4,7 +4,11 @@
 Date: 2014-10-26
 * Features:
   * Added `lib/js/extensionUtils.js` file to be able to add common functions to an extension
-  * Better ChangeLog
+  * Improved generated `CHANGELOG.md`
+  * Improved generated `README.md`
+  * Added `.jshintrc` to `src` directory
+* Fixes:
+  * Fixed `npm install` test in `tests/00-test-grunt.js`
 
 ## Version 0.0.17
 * Fixes:

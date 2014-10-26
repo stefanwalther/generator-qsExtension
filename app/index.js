@@ -133,6 +133,7 @@
       this.copy( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
       this.copy( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
       this.copy( 'grunt/gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+
       // Gruntfile.Less will be added in the createStyles task
       this.template( 'grunt/gruntfile.js', 'grunt/Gruntfile.js' );
       this.copy( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
@@ -148,6 +149,8 @@
       this.template( 'extension.qext', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.qext' );
       this.template( 'extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
       this.template( 'extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
+      this.copy( '.jshintrc', 'src/.jshintrc' );
+
 
       // src/lib
       this.mkdir( 'src/lib' );
