@@ -1,8 +1,10 @@
 # ChangeLog
 
 ## Version 0.0.18
+Date: 2014-10-26
 * Features:
-  * Added lib/js/extensionUtils.js file to be able to add common functions to an extension
+  * Added `lib/js/extensionUtils.js` file to be able to add common functions to an extension
+  * Better ChangeLog
 
 ## Version 0.0.17
 * Fixes:
