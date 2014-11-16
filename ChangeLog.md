@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Version 0.0.19
+Date: 2014-11-16
+* Fixes:
+  * Fixed minor bugfix in extension file which caused an "Invalid Visualization"
+
 ## Version 0.0.18
 Date: 2014-10-26
 * Features:

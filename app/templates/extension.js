@@ -13,7 +13,7 @@ define([
         'underscore',
         './<%= extensionNameSafe.toLowerCase() %>-properties',
         './<%= extensionNameSafe.toLowerCase() %>-initialproperties',
-        './lib/js/extensionUtils.js',
+        './lib/js/extensionUtils',
         'text!./lib/css/style.css'
 ],
 function ($, _, props, initProps, extensionUtils, cssContent) {
