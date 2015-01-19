@@ -22,7 +22,7 @@ module.exports = {
                     if (items[i].name === 'Personal') {
                         var dir = path.join(items[i].value, 'Qlik/Sense/Extensions' ).replace(/\\/g, "\\\\");
 
-                        dir = dir.replace('%USERPROFILE%', process.env['USERPROFILE']);
+                        dir = dir.replace('%USERPROFILE%', process.env['USERPROFILE' ].replace(/\\/g, "\\\\"));
 
                         deferred.resolve( dir );
                     }
