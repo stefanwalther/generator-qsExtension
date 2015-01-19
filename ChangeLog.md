@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Version 0.0.20
+Date: 2015-01-19
+* Fixes:
+  * Fixed an issue that images in Dev get corrupted during the Grunt deployment.
+
 ## Version 0.0.19
 Date: 2014-11-16
 * Fixes:
