@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '../dist/',
             src: '**',
-            dest: '<%= projectConfig.general.LocalExtensionPath%>/<%= projectConfig.general.ExtensionNameSafe%>/'
+            dest: '<%= projectConfig.general.LocalExtensionPath%>/<%= projectConfig.general.ExtensionNamespace%><%= projectConfig.general.ExtensionNameSafe%>/'
         }
     };
 };

@@ -1,5 +1,10 @@
 # ChangeLog
 
+## Version 0.0.21
+Date: 
+* Fixes:
+  * Included namespace for the Grunt deployment to the local desktop.
+
 ## Version 0.0.20
 Date: 2015-01-19
 * Fixes:
