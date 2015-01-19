@@ -4,6 +4,7 @@
 Date: 
 * Fixes:
   * Included namespace for the Grunt deployment to the local desktop.
+  * Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
 
 ## Version 0.0.20
 Date: 2015-01-19

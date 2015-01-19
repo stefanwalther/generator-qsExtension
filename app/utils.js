@@ -1,3 +1,5 @@
+/*global module, define, require*/
+'use strict';
 var async = require('async');
 var Winreg = require( 'winreg' );
 var path = require( 'path' );
@@ -20,15 +22,17 @@ module.exports = {
                     if (items[i].name === 'Personal') {
                         var dir = path.join(items[i].value, 'Qlik/Sense/Extensions' ).replace(/\\/g, "\\\\");
 
-                        deferred.resolve(dir);
+                        dir = dir.replace('%USERPROFILE%', process.env['USERPROFILE']);
+
+                        deferred.resolve( dir );
                     }
                 }
             });
         }
         catch (err) {
-            deferred.reject (err);
+            deferred.reject( err );
         }
         return deferred.promise;
 
     }
-}
+};
