@@ -3,4 +3,4 @@
 ## Version 0.0.1
 Date: <%= creationDate%>
 
-* Initial Commmit
+* Initial Commit
