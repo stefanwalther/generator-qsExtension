@@ -2,6 +2,9 @@
 define([], function () {
   'use strict';
 
+  // ****************************************************************************************
+  // Dimensions & Measures
+  // ****************************************************************************************
     var dimensions = {
         uses: "dimensions",
         min: 0,
@@ -18,6 +21,10 @@ define([], function () {
         uses: "sorting"
     };
 
+  // ****************************************************************************************
+  // Other Settings
+  // ****************************************************************************************
+
     var testSetting = {
         ref: "settings.test",
         label: "Test Setting:",
@@ -26,7 +33,11 @@ define([], function () {
         show: true
     };
 
-    var settings = {
+  // ****************************************************************************************
+  // Property Panel Definition
+  // ****************************************************************************************
+
+    var propertyPanelDefinition = {
         uses: "settings",
         items: {
             settings: {
@@ -49,7 +60,7 @@ define([], function () {
             measures: measures,
             sorting: sorting,
             //addons: addons,
-            settings: settings
+            settings: propertyPanelDefinition
 
         }
     };
