@@ -28,7 +28,7 @@ function ($, _, props, initProps, extensionUtils, cssContent) {
 
         snapshot: { canTakeSnapshot: true },
 
-        resize : function() {
+        resize : function( $element, layout ) {
             //do nothing
         },
 
@@ -49,7 +49,7 @@ function ($, _, props, initProps, extensionUtils, cssContent) {
 
 
         // Paint Method
-        paint: function ($element, layout) {
+        paint: function ( $element, layout ) {
 
             console.groupCollapsed('Basic Objects');
             console.info('$element:');
