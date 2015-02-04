@@ -1,4 +1,4 @@
-.idea/
+
 Resources/
 Tests/
 web.*.config
@@ -8,6 +8,9 @@ grunt/node_modules/
 bower_components/
 
 
+# =========================
+# Visual Studio
+# =========================
 #https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
@@ -86,6 +89,11 @@ UpgradeLog*.htm
 # SQL Server files
 App_Data/*.mdf
 App_Data/*.ldf
+
+# =========================
+# Webstorm
+# =========================
+.idea/
 
 # =========================
 # Windows detritus
