@@ -11,8 +11,8 @@
 define([
         'jquery',
         'underscore',
-        './<%= extensionNameSafe.toLowerCase() %>-properties',
-        './<%= extensionNameSafe.toLowerCase() %>-initialproperties',
+        './properties',
+        './initialproperties',
         './lib/js/extensionUtils',
         'text!./lib/css/style.css'
 ],

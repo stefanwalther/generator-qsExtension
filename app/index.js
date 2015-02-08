@@ -147,8 +147,8 @@
       this.mkdir( 'src' );
       this.template( 'extension.js', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.js' );
       this.template( 'extension.qext', 'src/' + this.extensionNamespace + this.extensionNameSafe.toLowerCase() + '.qext' );
-      this.template( 'extension-properties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-properties.js' );
-      this.template( 'extension-initialproperties.js', 'src/' + this.extensionNameSafe.toLowerCase() + '-initialproperties.js' );
+      this.template( 'extension-properties.js', 'src/properties.js' );
+      this.template( 'extension-initialproperties.js', 'src/initialproperties.js' );
       this.copy( '.jshintrc', 'src/.jshintrc' );
 
 
