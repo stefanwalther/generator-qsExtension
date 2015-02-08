@@ -161,6 +161,7 @@
       this.mkdir( 'src/lib/fonts' );
       this.mkdir( 'src/lib/icons' );
       this.mkdir( 'src/lib/data' );
+      this.mkdir( 'src/lib/partials' );
 
       // src/lib/content
       this.copy( 'lib/js/extensionUtils.js', 'src/lib/js/extensionUtils.js' );
