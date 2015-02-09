@@ -53,7 +53,6 @@
         // root
         '.gitattributes',
         '.gitignore',
-        'editorconfig',
         'CHANGELOG.md',
         'LICENSE.md',
         'README.md',

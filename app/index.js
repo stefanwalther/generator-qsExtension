@@ -120,7 +120,6 @@
       // root
       this.copy( 'gitattributes.txt', '.gitattributes' );
       this.copy( 'gitignore.txt', '.gitignore' );
-      this.copy( 'editorconfig', 'editorconfig' );
       this.template( 'readme.md', 'README.md' );
       this.template( 'license.md', 'LICENSE.md' );
       this.template( 'ChangeLog.md', 'CHANGELOG.md' );
