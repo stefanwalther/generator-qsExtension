@@ -8,6 +8,7 @@
 - [ ] Add parameters to check in to a GitHub repository automatically (should also be added to gruntfile.js)
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
+- [ ] Add a default image (with the required image dimensions)
 
 ### Script.js template
 - [ ] Pre-generate some comments
@@ -24,4 +25,5 @@
 - [X] Delete the 'dist' folder immediately after the build (??)
 - [ ] Create some basic log-files (?)
 - [X] Add parameters for 'debug', 'release'
+- [ ] Add jsLint support
 
