@@ -25,30 +25,24 @@ function ($, _, props, initProps, extensionUtils, cssContent) {
 
         definition: props,
         initialProperties: initProps,
-
         snapshot: { canTakeSnapshot: true },
-
         resize : function( $element, layout ) {
             //do nothing
         },
-
 //        clearSelectedValues : function($element) {
 //
 //        },
 
 
-        // Angular Template
+        // Angular Support (uncomment to use)
         //template: '',
-        // (Angular Template)
-
         // Angular Controller
-        controller: ['$scope', function ($scope) {
-
-        }],
+        //controller: ['$scope', function ($scope) {
+		//
+        //}],
         // (Angular Controller)
 
 
-        // Paint Method
         paint: function ( $element, layout ) {
 
             console.groupCollapsed('Basic Objects');
@@ -65,7 +59,6 @@ function ($, _, props, initProps, extensionUtils, cssContent) {
             $element.append($helloWorld);
 
         }
-        // (Paint Method)
     };
 
 });
