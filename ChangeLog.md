@@ -1,10 +1,13 @@
 # ChangeLog
 
-## Version 0.0.21
-Date: 
+## Version 0.0.23
+Date: 2015-01-19
 * Fixes:
   * Included namespace for the Grunt deployment to the local desktop.
   * Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
+  * Qualified name not necessary for intialproperties.js and properties.js
+* Improvements:
+  * Added parameters $element and layout to the resize function (main.js)
 
 ## Version 0.0.20
 Date: 2015-01-19
