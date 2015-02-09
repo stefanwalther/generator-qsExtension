@@ -2,8 +2,8 @@
 define( [
   'jquery',
   'underscore'
-], function ($,_) {
-'use strict';
+], function ( $, _ ) {
+  'use strict';
 
   return {
 
@@ -12,7 +12,7 @@ define( [
      * @param cssContent (String)
      */
     addStyleToHeader: function ( cssContent ) {
-      $("<style>").html(cssContent).appendTo("head");
+      $( "<style>" ).html( cssContent ).appendTo( "head" );
     }
 
   };

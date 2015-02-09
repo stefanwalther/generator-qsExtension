@@ -2,6 +2,6 @@
 
 /* Recommended pattern for styling your objects */
 .qv-object-<%= extensionNamespace.toLowerCase()%><%= extensionNameSafe.toLowerCase()%> .hello-world {
-    color:#333;
-    font-weight:bold;
+  color:#333;
+  font-weight:bold;
 }
