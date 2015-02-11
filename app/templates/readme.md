@@ -20,8 +20,9 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Change Log
 
-See [CHANGELOG.md](ChangeLog.md)
+See [CHANGELOG.md](CHANGELOG.md)
 
 ## License & Copyright
+The software is made available "AS IS" without any warranty of any kind under the MIT License (MIT).
 
-See [LICENSE.md](License.md)
+See [Additional license information for this solution.](LICENSE.md)
