@@ -75,7 +75,8 @@ module.exports = function (grunt) {
         'copy:copy_to_desktop',
 
         // Zip
-        'compress:release'
+        'compress:release',
+        'compress:release_latest'
 
 
     ]);

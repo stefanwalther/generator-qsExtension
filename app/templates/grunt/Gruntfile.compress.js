@@ -31,6 +31,19 @@ module.exports = function (grunt) {
                 }
             ]
         },
+		release_latest: {
+			options: {
+				archive: '../build/<%=projectConfig.general.ExtensionNameSafe%>_latest.zip'
+			},
+			files: [
+				{
+					expand: true,
+					cwd: '../dist/',
+					src: ['**'],
+					dest: '/'
+				}
+			]
+		},
         source: {
             options: {
                 archive: '../build/<%=projectConfig.general.ExtensionNameSafe%>_src_v<%=projectConfig.general.Version%>.zip'
