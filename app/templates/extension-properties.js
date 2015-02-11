@@ -37,7 +37,8 @@ define( [], function () {
 	// Property Panel Definition
 	// ****************************************************************************************
 
-	var propertyPanelDefinition = {
+	// Appearance Panel
+	var appearancePanel = {
 		uses: "settings",
 		items: {
 			settings: {
@@ -59,7 +60,7 @@ define( [], function () {
 			measures: measures,
 			sorting: sorting,
 			//addons: addons,
-			settings: propertyPanelDefinition
+			appearance: appearancePanel
 
 		}
 	};
