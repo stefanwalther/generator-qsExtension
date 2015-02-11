@@ -1,5 +1,9 @@
 # ChangeLog
 
+## Version 0.0.24
+Date: 2015-02-11
+* Minor improvements
+
 ## Version 0.0.23
 Date: 2015-01-19
 * Fixes:
