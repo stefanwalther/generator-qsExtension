@@ -26,7 +26,9 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Author
 
-* <%= authorName%>
+**<%= authorName%>**
+* http://www.yourwebsite.com
+* http://github.com/yourname
 
 
 ## Change Log
