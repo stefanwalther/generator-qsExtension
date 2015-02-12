@@ -4,6 +4,6 @@
 	"icon" : "<%= extensionType%>",
 	"type" : "visualization",
 	"version": "0.1",
-	"preview" : "bar",
+	"preview" : "<%= extensionNameSafe.toLowerCase() %>.png",
 	"author": "<%= authorName %>"
 }
