@@ -24,6 +24,11 @@ Contributing to this project is welcome. The process to do so is outlined below:
 
 I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
+## Author
+
+* <%= authorName%>
+
+
 ## Change Log
 
 See [CHANGELOG.md](CHANGELOG.md)
