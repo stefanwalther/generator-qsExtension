@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.25
+Date: 2014-02-14
+* Improvements:
+	* Default preview image for the visualization extensions
+	* Added some further defaults for the README.md
+
 ## Version 0.0.24
 Date: 2015-02-11
 * Minor improvements
