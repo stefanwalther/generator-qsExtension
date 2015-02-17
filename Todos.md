@@ -10,6 +10,7 @@
 - [X] Add LESS support (as an option)
 - [ ] Add a default image (with the required image dimensions)
 - [ ] Sync the usage of the version defined in grunt-config.yml
+- [ ] Update Grunt plugins
 
 ### Script.js template
 - [ ] Pre-generate some comments
