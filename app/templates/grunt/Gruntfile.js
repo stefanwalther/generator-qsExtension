@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 
         // Less support: <%= lessSupport %>
         <% if (lessSupport) {%>'less:dev',<% } %>
-        <% if (lessSupport) {%>'less:allInPlace',<% } %>
+        <% if (lessSupport) {%>//'less:allInPlace',<% } %>
 
         // Cleanup
         'clean:devFiles',
