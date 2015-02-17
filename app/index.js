@@ -88,7 +88,7 @@
 				{
 					type: 'confirm',
 					name: 'lessSupport',
-					message: 'Would you like to include Less suppport?',
+					message: 'Would you like to write your styles in Less (instead of pure CSS)?',
 					default: true
 				},
 				{
