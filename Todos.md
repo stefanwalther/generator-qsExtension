@@ -9,6 +9,7 @@
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
 - [ ] Add a default image (with the required image dimensions)
+- [ ] Sync the usage of the version defined in grunt-config.yml
 
 ### Script.js template
 - [ ] Pre-generate some comments
@@ -16,7 +17,7 @@
 - [ ] Create options to work with Angular best-practices (controller, etc.)
 - [ ] Offer different templates
 
-### gruntfile.js
+### Build System
 - [x] Create a zip-file 
 - [ ] Add a possibility to distribute at the same time also to another path (server)
 - [ ] Automatically upload the extension to the server using the Qlik Sense Repository API
