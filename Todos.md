@@ -28,3 +28,6 @@
 - [X] Add parameters for 'debug', 'release'
 - [ ] Add jsLint support
 
+### Angular Support
+- [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)
+
