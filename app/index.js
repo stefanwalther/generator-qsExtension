@@ -126,7 +126,9 @@
 
 			// Grunt
 			this.mkdir( 'grunt' );
+			this.copy( 'grunt/.jshintrc', 'grunt/.jshintrc' );
 			this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml' );
+			this.copy( 'grunt/_package.json', 'grunt/package.json' );
 			this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectConfig.js' );
 			this.copy( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
 			this.copy( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
@@ -135,21 +137,21 @@
 
 			// Gruntfile.Less will be added in the createStyles task
 			this.template( 'grunt/gruntfile.js', 'grunt/Gruntfile.js' );
+			this.copy( 'grunt/gruntfile.jshint.js', 'grunt/Gruntfile.jshint.js' );
 			this.copy( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
 			this.copy( 'grunt/gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
-			this.copy( 'grunt/_package.json', 'grunt/package.json' );
 			this.copy( 'grunt/gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
 			this.copy( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
 			this.copy( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
 			// src dir
 			this.mkdir( 'src' );
+			this.copy( '.jshintrc', 'src/.jshintrc' );
 			this.template( 'extension.js', 'src/' + this.extensionNamespace.toLowerCase() + this.extensionNameSafe.toLowerCase() + '.js' );
 			this.template( 'extension.qext', 'src/' + this.extensionNamespace.toLowerCase() + this.extensionNameSafe.toLowerCase() + '.qext' );
 			this.copy( 'extension.png', 'src/' + this.extensionNameSafe.toLowerCase() + '.png' );
 			this.template( 'extension-properties.js', 'src/properties.js' );
 			this.template( 'extension-initialproperties.js', 'src/initialproperties.js' );
-			this.copy( '.jshintrc', 'src/.jshintrc' );
 
 			// src/lib
 			this.mkdir( 'src/lib' );

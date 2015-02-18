@@ -71,6 +71,7 @@
     "describe": true,
     "context": true,
     "it": true,
-    "flush": true
+    "flush": true,
+    "_": true
   }
 }

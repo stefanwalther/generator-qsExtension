@@ -9,7 +9,7 @@
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
 - [ ] Add a default image (with the required image dimensions)
-- [ ] Sync the usage of the version defined in grunt-config.yml
+- [X] Sync the usage of the version defined in grunt-config.yml
 - [ ] Update Grunt plugins
 
 ### Script.js template
@@ -27,7 +27,7 @@
 - [X] Delete the 'dist' folder immediately after the build (??)
 - [ ] Create some basic log-files (?)
 - [X] Add parameters for 'debug', 'release'
-- [ ] Add jsLint support
+- [X] Add ~~jsLint~~ jsHint support
 
 ### Angular Support
 - [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)

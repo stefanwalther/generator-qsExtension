@@ -1,14 +1,28 @@
 # ChangeLog
 
+## Version 0.0.26
+Date: 2015-02-18
+
+* Bugfixes:
+	* Several minor bug fixes
+
+* Enhancements:
+	* New grunt task based on grunt-contrib-jshint
+	* Optimized handling of grunt tasks in general
+	* Improved existing tests
+	* Improved documentation of grunt-config.yml
+	* The extensions' version can now be defined in grunt-config.yml (general.Version) and will be re-used in several places
+
+
 ## Version 0.0.25
-Date: 2014-02-14
-* Improvements:
+Date: 2015-02-14
+* Enhancements:
 	* Default preview image for the visualization extensions
 	* Added some further defaults for the README.md
 
 ## Version 0.0.24
 Date: 2015-02-11
-* Minor improvements
+* Minor Enhancements
 
 ## Version 0.0.23
 Date: 2015-01-19
@@ -16,7 +30,7 @@ Date: 2015-01-19
   * Included namespace for the Grunt deployment to the local desktop.
   * Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
   * Qualified name not necessary for intialproperties.js and properties.js
-* Improvements:
+* Enhancements:
   * Added parameters $element and layout to the resize function (main.js)
 
 ## Version 0.0.20

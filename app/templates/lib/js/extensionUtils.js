@@ -1,20 +1,19 @@
-/*global define*/
 define( [
-  'jquery',
-  'underscore'
-], function ( $, _ ) {
-  'use strict';
+	'jquery',
+	'underscore'
+], function ( $ /*, _*/ ) {
+	'use strict';
 
-  return {
+	return {
 
-    /**
-     * Add a style to the document's header.
-     * @param cssContent (String)
-     */
-    addStyleToHeader: function ( cssContent ) {
-      $( "<style>" ).html( cssContent ).appendTo( "head" );
-    }
+		/**
+		 * Add a style to the document's header.
+		 * @param cssContent (String)
+		 */
+		addStyleToHeader: function ( cssContent ) {
+			$( "<style>" ).html( cssContent ).appendTo( "head" );
+		}
 
-  };
+	};
 
 } );

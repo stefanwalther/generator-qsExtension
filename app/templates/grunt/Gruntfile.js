@@ -20,75 +20,99 @@ module.exports = function (grunt) {
 
     grunt.initConfig( cfg );
 
+	function addTask( taskList, task, condition ) {
 
-    grunt.registerTask('dev', [
+		if (arguments.length  < 3) {
+			condition = true;
+		}
 
-        // Clean 'dist' and copy all relevant files to 'dist'
-        'clean:empty_dist',
-        'copy:copy_to_dist',
+		if ( condition ) {
+			taskList.push( task );
+		}
+	}
 
-        // Replacements
-        'replace:general',
-        'replace:dev',
+	// ****************************************************************************************
+	// "dev" Task
+	// ****************************************************************************************
+	var devTasks = [];
 
-        // Less support: <%= lessSupport %>
-        <% if (lessSupport) {%>'less:dev',<% } %>
-        <% if (lessSupport) {%>//'less:allInPlace',<% } %>
+	// Clean 'dist' and copy all relevant files to 'dist'
+    addTask( devTasks, 'clean:empty_dist');
+    addTask( devTasks, 'copy:copy_to_dist');
 
-        // Cleanup
-        'clean:devFiles',
-        'cleanempty:all',
+    // Replacements
+    addTask( devTasks, 'replace:general');
+    addTask( devTasks, 'replace:dev');
 
+    // JSHint
+    addTask( devTasks, 'jshint', cfg.projectConfig.dev.jshint);
 
-        // Deploy to Qlik Sense Desktop
-        'clean:empty_desktop',
-        'copy:copy_to_desktop',
+    // Less Support
+    addTask( devTasks, 'less:dev', cfg.projectConfig.setup.lessSupport );
+    //addTask( devTasks, 'less:allInPlace', cfg.projectConfig.setup.lessSupport );
 
-        // Zip
-        'compress:dev'
+	// Cleanup
+    addTask( devTasks, 'clean:devFiles');
+    addTask( devTasks, 'cleanempty:all');
 
+	// Deploy to Qlik Sense Desktop
+	addTask( devTasks, 'clean:empty_desktop');
+	addTask( devTasks, 'copy:copy_to_desktop');
 
+	// Zip to xxx_dev.zip
+	addTask( devTasks, 'compress:dev');
 
-    ]);
-
-    grunt.registerTask('release', [
-
-        // Clean 'dist' and copy all relevant files to 'dist'
-        'clean:empty_dist',
-        'copy:copy_to_dist',
-
-        // Replacements
-        'replace:general',
-        'replace:release',
-
-        // Less support: <%= lessSupport %>
-        <% if (lessSupport) {%>'less:release',<% } %>
-
-        // Cleanup
-        'clean:devFiles',
-        'cleanempty:all',
-
-        // Optimization & Uglification
-        'uglify:release',
-
-        // Deploy to Qlik Sense Desktop
-        'clean:empty_desktop',
-        'copy:copy_to_desktop',
-
-        // Zip
-        'compress:release',
-        'compress:release_latest'
+	grunt.registerTask( 'dev', devTasks );
 
 
-    ]);
+	// ****************************************************************************************
+	// "release" Task
+	// ****************************************************************************************
 
+	var releaseTasks = [];
+
+	// Clean 'dist' and copy all relevant files to 'dist'
+	addTask( releaseTasks, 'clean:empty_dist');
+	addTask( releaseTasks, 'copy:copy_to_dist');
+
+	// Replacements
+	addTask( releaseTasks, 'replace:general');
+	addTask( releaseTasks, 'replace:release');
+
+	// Less support: <%= lessSupport %>
+	addTask( releaseTasks, 'less:release', cfg.projectConfig.setup.lessSupport);
+
+	// Cleanup
+	addTask( releaseTasks, 'clean:devFiles');
+	addTask( releaseTasks, 'cleanempty:all');
+
+	// Optimization & Uglification
+	addTask( releaseTasks, 'uglify:release');
+
+	// Deploy to Qlik Sense Desktop
+	addTask( releaseTasks, 'clean:empty_desktop');
+	addTask( releaseTasks, 'copy:copy_to_desktop');
+
+	// Zip
+	addTask( releaseTasks, 'compress:release');
+	addTask( releaseTasks, 'compress:release_latest');
+	addTask( releaseTasks, 'compress:dev');
+	addTask( releaseTasks, 'compress:dev');
+
+
+    grunt.registerTask('release', releaseTasks);
+
+	// ****************************************************************************************
+	// "source" Task
+	// ****************************************************************************************
     grunt.registerTask('source', [
-
         'compress:source'
     ]);
 
 
-    // Pointer to dev task
+    // ****************************************************************************************
+    // "default" Task
+    // ****************************************************************************************
     grunt.registerTask('default', 'dev');
 
 };

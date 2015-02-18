@@ -25,6 +25,7 @@ general:
 # Settings for the 'dev' Grunt task
 # -------------------------------------------------------------------
 dev:
+  jshint: false
   less: # Documentation: https://github.com/gruntjs/grunt-contrib-less
     lessCompress: false
     lessYuiCompress: false
@@ -41,6 +42,7 @@ dev:
 # Settings for the 'release' Grunt task
 # -------------------------------------------------------------------
 release:
+  jshint: false
   less: # Documentation: https://github.com/gruntjs/grunt-contrib-less
     lessCompress: true
     lessYuiCompress: true
@@ -52,3 +54,23 @@ release:
     beautify: false
     preserveCommments: false
     compress: true
+
+# -------------------------------------------------------------------
+# Grunt task specific default settings
+# -------------------------------------------------------------------
+jsSources:
+  - "../src/**/*.js"
+  - "!../src/**/*.min.js"
+
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Do not make any changes below, this might break your project
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# -------------------------------------------------------------------
+# Setup
+# Do not modify these changes afterwards, these settings are setup
+# after the questions in the Yeoman generator have been answered.
+# -------------------------------------------------------------------
+setup:
+  lessSupport: <%= lessSupport %>
