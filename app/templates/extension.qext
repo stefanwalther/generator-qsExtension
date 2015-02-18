@@ -3,7 +3,7 @@
 	"description" : "<%= extensionDescription %>",
 	"icon" : "<%= extensionType%>",
 	"type" : "visualization",
-	"version": "0.1",
+	"version": "@@version",
 	"preview" : "<%= extensionNameSafe.toLowerCase() %>.png",
 	"author": "<%= authorName %>"
 }
