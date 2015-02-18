@@ -1,1 +1,8 @@
-version: 0.0.1
+# -------------------------------------------------------------------
+# General replacements
+# ---
+# Add variables here which should be replaced in both the dev and release
+# task
+#
+# In your code just use @@variable
+# -------------------------------------------------------------------

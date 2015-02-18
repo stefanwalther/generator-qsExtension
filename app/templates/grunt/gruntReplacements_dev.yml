@@ -1,1 +1,8 @@
+# -------------------------------------------------------------------
+# General replacements
+# ---
+# Add variables here which should be replaced in the dev task
+#
+# In your code just e.g @@isDebug
+# -------------------------------------------------------------------
 isDebug: true
