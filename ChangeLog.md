@@ -131,6 +131,8 @@ Date: 2014-10-26
 
 * Determine folder for local deployment automatically (%USERPROFILE%\My Documents\Qlik\Sense\Extensions)
 
-## Version 0.0.6 (2014-10-05)
+## Version 0.0.6
+Date: 2014-10-05
+
 * Prepared for NPM
 * Added basic documentation in README.md
