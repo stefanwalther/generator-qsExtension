@@ -42,7 +42,7 @@ dev:
 # Settings for the 'release' Grunt task
 # -------------------------------------------------------------------
 release:
-  jshint: false
+  jshint: true
   less: # Documentation: https://github.com/gruntjs/grunt-contrib-less
     lessCompress: true
     lessYuiCompress: true
@@ -59,9 +59,12 @@ release:
 # Grunt task specific default settings
 # -------------------------------------------------------------------
 jsSources:
-  - "../src/**/*.js"
-  - "!../src/**/*.min.js"
-
+  dev:
+    - "../dist/**/*.js"
+    - "!../dist/**/*.min.js"
+  release:
+    - "../dist/**/*.js"
+    - "!../dist/**/*.min.js"
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # Do not make any changes below, this might break your project
