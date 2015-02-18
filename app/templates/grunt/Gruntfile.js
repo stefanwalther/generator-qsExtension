@@ -89,6 +89,10 @@ module.exports = function (grunt) {
 	// Optimization & Uglification
 	addTask( releaseTasks, 'uglify:release');
 
+	// JSHint
+    addTask( devTasks, 'jshint', cfg.projectConfig.dev.jshint);
+
+
 	// Deploy to Qlik Sense Desktop
 	addTask( releaseTasks, 'clean:empty_desktop');
 	addTask( releaseTasks, 'copy:copy_to_desktop');
@@ -98,7 +102,6 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'compress:release_latest');
 	addTask( releaseTasks, 'compress:dev');
 	addTask( releaseTasks, 'compress:dev');
-
 
     grunt.registerTask('release', releaseTasks);
 

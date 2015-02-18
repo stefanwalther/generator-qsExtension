@@ -69,7 +69,8 @@
 				'build/',
 
 				// grunt
-				'grunt/.jshintrc',
+				'grunt/.jshintrc-dev',
+				'grunt/.jshintrc-release',
 				'grunt/package.json',
 				'grunt/grunt-config.yml',
 				'grunt/Gruntfile.projectConfig.js',

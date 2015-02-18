@@ -126,7 +126,8 @@
 
 			// Grunt
 			this.mkdir( 'grunt' );
-			this.copy( 'grunt/.jshintrc', 'grunt/.jshintrc' );
+			this.copy( 'grunt/.jshintrc-dev', 'grunt/.jshintrc-dev' );
+			this.copy( 'grunt/.jshintrc-release', 'grunt/.jshintrc-release' );
 			this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml' );
 			this.copy( 'grunt/_package.json', 'grunt/package.json' );
 			this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectConfig.js' );

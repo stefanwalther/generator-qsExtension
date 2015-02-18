@@ -4,10 +4,20 @@ module.exports = function ( grunt ) {
 
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	return {
-		options: {
-			jshintrc: ".jshintrc",
-			ignores: []
+		dev: {
+			options: {
+				jshintrc: ".jshintrc-dev",
+				ignores: []
+			},
+			defaults: ["<%=projectConfig.jsSources.dev%>"]
 		},
-		defaults: ["<%=projectConfig.jsSources%>"]
+		release: {
+			options: {
+				jshintrc: ".jshintrc-release",
+				ignores: []
+			},
+			defaults: ["<%=projectConfig.jsSources.release%>"]
+		}
+
 	};
 };

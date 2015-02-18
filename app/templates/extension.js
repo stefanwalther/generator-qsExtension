@@ -11,6 +11,8 @@ function ($, /*_,*/ props, initProps, extensionUtils, cssContent) {
 
     extensionUtils.addStyleToHeader(cssContent);
 
+    console.log('Initializing - remove me');
+
     return {
 
         definition: props,

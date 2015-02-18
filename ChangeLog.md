@@ -1,5 +1,13 @@
 # ChangeLog
 
+## Version -- not released ---
+Date: --
+
+**Enhancements:**
+
+* Different jshint definitions for dev and release
+* jshint is disabled by default for dev, enabled for release
+
 ## Version 0.0.26
 Date: 2015-02-18
 
