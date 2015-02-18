@@ -4,22 +4,24 @@
 Date: 2015-02-18
 
 **Bugfixes:**
-	* Several minor bug fixes
+
+* Several minor bug fixes
 
 **Enhancements:**
-	* New grunt task based on grunt-contrib-jshint
-	* Optimized handling of grunt tasks in general
-	* Improved existing tests
-	* Improved documentation of grunt-config.yml
-	* The extensions' version can now be defined in grunt-config.yml (general.Version) and will be re-used in several places
+
+* New grunt task based on grunt-contrib-jshint
+* Optimized handling of grunt tasks in general
+* Improved existing tests
+* Improved documentation of grunt-config.yml
+* The extensions' version can now be defined in grunt-config.yml (general.Version) and will be re-used in several places
 
 
 ## Version 0.0.25
 Date: 2015-02-14
 
 **Enhancements:**
-	* Default preview image for the visualization extensions
-	* Added some further defaults for the README.md
+* Default preview image for the visualization extensions
+* Added some further defaults for the README.md
 
 ## Version 0.0.24
 Date: 2015-02-11
@@ -30,85 +32,100 @@ Date: 2015-02-11
 Date: 2015-01-19
 
 **Bugfixes:**
-  * Included namespace for the Grunt deployment to the local desktop.
-  * Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
-  * Qualified name not necessary for intialproperties.js and properties.js
+
+* Included namespace for the Grunt deployment to the local desktop.
+* Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
+* Qualified name not necessary for intialproperties.js and properties.js
 
 **Enhancements:**
-  * Added parameters $element and layout to the resize function (main.js)
+
+* Added parameters $element and layout to the resize function (main.js)
 
 ## Version 0.0.20
 Date: 2015-01-19
 
 **Bugfixes:**
-  * Fixed an issue that images in Dev get corrupted during the Grunt deployment.
+
+* Fixed an issue that images in Dev get corrupted during the Grunt deployment.
 
 ## Version 0.0.19
 Date: 2014-11-16
 
 **Bugfixes:**
-  * Fixed minor bugfix in extension file which caused an "Invalid Visualization"
+
+* Fixed minor bugfix in extension file which caused an "Invalid Visualization"
 
 ## Version 0.0.18
 Date: 2014-10-26
 
 **Enhancements:**
-  * Added `lib/js/extensionUtils.js` file to be able to add common functions to an extension
-  * Improved generated `CHANGELOG.md`
-  * Improved generated `README.md`
-  * Added `.jshintrc` to `src` directory
+
+* Added `lib/js/extensionUtils.js` file to be able to add common functions to an extension
+* Improved generated `CHANGELOG.md`
+* Improved generated `README.md`
+* Added `.jshintrc` to `src` directory
+
 **Bugfixes:**
   * Fixed `npm install` test in `tests/00-test-grunt.js`
 
 ## Version 0.0.17
 
 **Bugfixes:**
-    * Images were corrupted during deployment
+
+* Images were corrupted during deployment
 
 ## Version 0.0.16
 
 **Enhancements:**
-    * Added an additional Grunt task to create a ZIP-file containing only the source (without installed Node packages)
+
+* Added an additional Grunt task to create a ZIP-file containing only the source (without installed Node packages)
 
 ## Version 0.0.15
 
 **Enhancements:**
-    * Added support for the release Grunt task
-    * Added Mocha tests for the Grunt tasks
-    * Extended documentation (Readme.md)
-    * All Grunt tasks (both dev and release) are fully configurable using the grunt-config.yml file
-    * Documentation for the Grunt configuration (grunt/grunt-config.yml)
+
+* Added support for the release Grunt task
+* Added Mocha tests for the Grunt tasks
+* Extended documentation (Readme.md)
+* All Grunt tasks (both dev and release) are fully configurable using the grunt-config.yml file
+* Documentation for the Grunt configuration (grunt/grunt-config.yml)
 
 ## Version 0.0.14
 
 **Enhancements:**
-    * Added (optional) support for Less
+
+* Added (optional) support for Less
     
 ## Version 0.0.13
 
 **Bugfixes:**
-    * Restrict package only for Win32 (#2)
+
+* Restrict package only for Win32 (#2)
 
 ## Version 0.0.12
 
 **Enhancements:**
-    * Added tests to run both the dev and release task of the generated Grunt deployments
+
+* Added tests to run both the dev and release task of the generated Grunt deployments
 
 ## Version 0.0.11
 
 **Enhancements:**
-    * Added tests to install the npm packages of the generated Grunt deployments
+
+* Added tests to install the npm packages of the generated Grunt deployments
 
 ## Version 0.0.9
 
 **Bugfixes:**
-    * Extension Name with whitespaces
-    * Fixed script file
+
+* Extension Name with whitespaces
+* Fixed script file
 
 **Enhancements:**
-    * Separated Grunt tasks to a separate folder
-    * Documented grunt tasks for dev
-    * Improved tests
+
+* Separated Grunt tasks to a separate folder
+* Documented grunt tasks for dev
+* Improved tests
 
 ## Version 0.0.7
 
