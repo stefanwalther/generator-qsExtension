@@ -47,5 +47,10 @@
   "bugs": {
     "url": "https://github.com/qlikdev/generator-qsExtension/issues"
   },
-  "homepage": "https://github.com/qlikdev/generator-qsExtension"
+  "homepage": "https://github.com/qlikdev/generator-qsExtension",
+  "scripts": {
+    "test": "cd tests && ,mocha --timeout 30000",
+    "grunt_dev": "grunt dev --verbose",
+    "grunt_release": "grunt release --verbose"
+  }
 }
