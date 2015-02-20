@@ -26,21 +26,21 @@
     "Sense"
   ],
   "dependencies": {
+    "async": "^0.9.0",
+    "chalk": "~0.4.0",
+    "coffee-script": "^1.9.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "mocha": "^2.0.1",
-    "rimraf": "^2.2.8",
-    "wrench": "^1.5.8",
-    "async": "^0.9.0",
-    "chalk": "~0.4.0",
     "moment": "~2.8.3",
     "q": "^1.0.1",
+    "rimraf": "^2.2.8",
     "underscore": "^1.7.0",
     "winreg": "0.0.12",
+    "wrench": "^1.5.8",
     "yeoman-generator": "^0.17.7"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "yo": ">=1.0.4"
   },
@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/qlikdev/generator-qsExtension",
   "scripts": {
-    "test": "cd tests && ,mocha --timeout 30000",
+    "test": "mocha tests --timeout 30000",
     "grunt_dev": "grunt dev --verbose",
     "grunt_release": "grunt release --verbose"
   }
