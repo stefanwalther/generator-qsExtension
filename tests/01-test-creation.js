@@ -12,7 +12,7 @@
 
 	describe( 'Running qsExtension Generator ', function () {
 
-		var options = {
+		var gruntOptions = {
 			'skip-install-message': true,
 			'skip-install': true,
 			'skip-welcome-message': true,
@@ -99,9 +99,9 @@
 			it( 'the expected files with default options', function ( done ) {
 
 				helpers.run( path.join( __dirname, '../app' ) )
-					.inDir( path.join( __dirname, './try' ) )  // Clear the directory and set it as the CWD
-					.withOptions( options )            // Mock options passed in
-					.withPrompts( _.extend( inputs, {lessSupport: false} ) )          // Mock the prompt answers
+					.inDir( path.join( __dirname, 'try' ) ) // Clear the directory and set it as the CWD
+					.withOptions( gruntOptions ) // Mock options passed in
+					.withPrompts( _.extend( inputs, {lessSupport: false} ) ) // Mock the prompt answers
 					.on( 'end', function () {
 						assert.file( expectedFiles );
 						assert.noFile( expectedFilesLess );
@@ -113,8 +113,8 @@
 			it( 'the expected files if lessSupport is TRUE', function ( done ) {
 
 				helpers.run( path.join( __dirname, '../app' ) )
-					.inDir( path.join( __dirname, './try' ) )  // Clear the directory and set it as the CWD
-					.withOptions( options )            // Mock options passed in
+					.inDir( path.join( __dirname, 'try' ) )  // Clear the directory and set it as the CWD
+					.withOptions( gruntOptions )            // Mock options passed in
 					.withPrompts( _.extend( inputs, {lessSupport: true} ) )          // Mock the prompt answers
 					.on( 'end', function () {
 						assert.file( _.extend( expectedFiles, expectedFilesLess ) );
