@@ -7,7 +7,7 @@
 	//var assert = require( 'assert' );
 	var assert = require( 'yeoman-generator' ).assert;
 	var fs = require( 'fs' );
-	var utils = require( './utils' );
+	//var utils = require( './utils' );
 	var _ = require( 'underscore' );
 
 	describe( 'Running qsExtension Generator ', function () {

@@ -3,7 +3,7 @@
 var async = require( 'async' );
 var Winreg = require( 'winreg' );
 var path = require( 'path' );
-var Q = require( 'Q' );
+var Q = require( 'q' );
 
 module.exports = {
 
