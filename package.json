@@ -50,8 +50,6 @@
   },
   "homepage": "https://github.com/qlikdev/generator-qsExtension",
   "scripts": {
-    "test": "mocha tests --timeout 30000",
-    "grunt_dev": "grunt dev --verbose",
-    "grunt_release": "grunt release --verbose"
+    "test": "mocha tests --timeout 30000"
   }
 }
