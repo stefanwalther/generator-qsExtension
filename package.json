@@ -37,10 +37,11 @@
     "rimraf": "^2.2.8",
     "underscore": "^1.7.0",
     "wrench": "^1.5.8",
-    "yeoman-generator": "^0.17.7"
+    "yeoman-generator": "^0.17.7",
+    "winreg": "0.0.12",
+    "q": "^1.2.0"
   },
   "devDependencies": {
-    "winreg": "0.0.12"
   },
   "peerDependencies": {
     "yo": ">=1.0.4"
