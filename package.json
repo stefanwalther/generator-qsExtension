@@ -34,14 +34,13 @@
     "lodash": "^3.2.0",
     "mocha": "^2.0.1",
     "moment": "~2.8.3",
-    "q": "^1.0.1",
     "rimraf": "^2.2.8",
     "underscore": "^1.7.0",
-    "winreg": "0.0.12",
     "wrench": "^1.5.8",
     "yeoman-generator": "^0.17.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "peerDependencies": {
     "yo": ">=1.0.4"
   },
