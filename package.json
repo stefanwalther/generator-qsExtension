@@ -40,6 +40,7 @@
     "yeoman-generator": "^0.17.7"
   },
   "devDependencies": {
+    "winreg": "0.0.12"
   },
   "peerDependencies": {
     "yo": ">=1.0.4"
