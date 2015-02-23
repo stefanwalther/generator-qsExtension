@@ -29,6 +29,9 @@
 - [X] Add parameters for 'debug', 'release'
 - [X] Add ~~jsLint~~ jsHint support
 
+### Tests
+- [ ] Add some tests to double-check if all console.log etc has been removed after the release task ...
+
 ### Angular Support
 - [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)
 
