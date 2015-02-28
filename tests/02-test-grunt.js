@@ -18,10 +18,10 @@ describe( 'Grunt tasks', function () {
 		};
 		var inputs = {
 			'extensionName': 'My Extension',
-			'extensionNameSafe': 'MyExtension',
+			//'extensionNameSafe': 'MyExtension',
 			'extensionNamespace': 'swr',
 			'extensionDescription': 'A simple extension to test',
-			'extensionType': 'line-chart',
+			'extensionType': 'extension',
 			'authorName': 'Stefan Walther',
 			'lessSupport': true
 		};
@@ -53,8 +53,12 @@ describe( 'Grunt tasks', function () {
 				cwd: gruntDir
 			},
 			function ( err, stdout, stderr ) {
-				if ( err ) { throw err; }
-
+				if ( err ) {
+					console.log( 'err:', err );
+					console.log( 'stdout:', stdout );
+					console.log( 'stderr:', stderr );
+					throw err;
+				}
 				assert( !err );
 				done();
 			} );
@@ -62,12 +66,14 @@ describe( 'Grunt tasks', function () {
 
 	it( 'dev task works properly', function ( done ) {
 		require( 'child_process' ).exec(
-			'grunt',
+			'grunt --verbose',
 			{cwd: gruntDir},
 			function ( err, stdout, stderr ) {
-				console.log( err );
-				console.log( stdout );
-				console.log( stderr );
+				if ( err ) {
+					console.log( 'err:', err );
+					console.log( 'stdout:', stdout );
+					console.log( 'stderr:', stderr );
+				}
 				assert( !err );
 				done();
 			} );
@@ -75,10 +81,12 @@ describe( 'Grunt tasks', function () {
 
 	it( 'release task works properly', function ( done ) {
 		require( 'child_process' ).exec(
-			'grunt -release',
+			'grunt release --verbose',
 			{cwd: gruntDir},
 			function ( err, stdout, stderr ) {
 				assert( !err );
+				console.log( 'stdout:', stdout );
+				console.log( 'stderr:', stderr );
 				done();
 			} );
 

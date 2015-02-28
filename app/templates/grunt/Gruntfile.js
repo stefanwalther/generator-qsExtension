@@ -14,7 +14,6 @@ module.exports = function (grunt) {
         if ( file.indexOf( "Gruntfile." ) === 0 && file !== "Gruntfile.js" ) {
             var name = file.split( "Gruntfile." )[1].split( ".js" )[0];
             cfg[name] = require( "./Gruntfile." + name )( grunt );
-
         }
     } );
 

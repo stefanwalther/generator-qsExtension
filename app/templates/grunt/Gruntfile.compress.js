@@ -13,7 +13,7 @@ module.exports = function ( grunt ) {
 				{
 					expand: true,
 					cwd: '../dist/',
-					src: ['**'],
+					src: ['**/*.*'],
 					dest: '/'
 				}
 			]
@@ -26,7 +26,7 @@ module.exports = function ( grunt ) {
 				{
 					expand: true,
 					cwd: '../dist/',
-					src: ['**'],
+					src: ['**/*.*'],
 					dest: '/'
 				}
 			]
@@ -39,7 +39,7 @@ module.exports = function ( grunt ) {
 				{
 					expand: true,
 					cwd: '../dist/',
-					src: ['**'],
+					src: ['**/*.*'],
 					dest: '/'
 				}
 			]

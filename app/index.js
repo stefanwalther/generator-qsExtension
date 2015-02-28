@@ -175,7 +175,7 @@
 
 		createStyles: function () {
 
-			console.log( 'lessSupport: ', this.lessSupport );
+			//console.log( 'lessSupport: ', this.lessSupport );
 
 			if ( this.lessSupport === true ) {
 				this.mkdir( 'src/lib/less' );
