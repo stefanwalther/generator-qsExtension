@@ -1,10 +1,10 @@
 # ChangeLog
 
-## Version -- not released ---
-Date: --
+## Version 0.0.27
+Date: 2015-03-01
 
 **Enhancements:**
-
+* Updated all grunt packages
 * Different jshint definitions for dev and release
 * jshint is disabled by default for dev, enabled for release
 
