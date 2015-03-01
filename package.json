@@ -32,6 +32,7 @@
     "chalk": "^1.0.0",
     "grunt": "^0.4.5",
     "mocha": "^2.1.0",
+    "moment": "^2.9.0",
     "rimraf": "^2.2.8",
     "underscore": "^1.8.2",
     "wrench": "^1.5.8"
