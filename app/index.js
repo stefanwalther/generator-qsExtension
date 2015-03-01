@@ -183,7 +183,7 @@
 				this.template( 'styles.less', 'src/lib/less/styles.less' );
 				this.template( 'variables.less', 'src/lib/less/variables.less' );
 				this.template( 'style_Less.css', 'src/lib/css/style.css' );
-				this.copy( 'grunt/gruntfile.less.js', 'grunt/Gruntfile.less.js' );
+				this.copy( 'grunt/Gruntfile.less.js', 'grunt/Gruntfile.less.js' );
 
 			} else {
 				this.template( 'style_noLess.css', 'src/lib/css/style.css' );
