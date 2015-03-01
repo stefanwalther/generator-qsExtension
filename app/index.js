@@ -54,10 +54,19 @@
 
 			var prompts = [
 				{
+					type: "confirm",
+					name: "advancedMode",
+					message: "Do you want to choose advanced mode? (Choose [N]o if you are unsure).",
+					default: false
+				},
+				{
 					name: 'extensionName',
 					message: 'What\'s the name of the extension?'
 				},
 				{
+					when: function ( props ) {
+						return (/y/i).test( props.advancedMode );
+					},
 					name: 'extensionNamespace',
 					message: 'What\'s the namespace for your extension? (Leave it blank if you are unsure).'
 				},
@@ -66,6 +75,9 @@
 					message: 'Describe your extension:'
 				},
 				{
+					when: function ( props ) {
+						return (/y/i).test( props.advancedMode );
+					},
 					type: 'list',
 					name: 'extensionType',
 					message: 'What\'s the type of your extension? This will define the icon used (Default: extension).',
@@ -85,10 +97,13 @@
 					]
 				},
 				{
+					when: function ( props ) {
+						return (/y/i).test( props.advancedMode );
+					},
 					type: 'confirm',
 					name: 'lessSupport',
 					message: 'Would you like to write your styles in Less (instead of pure CSS)?',
-					default: true
+					default: false
 				},
 				{
 					name: 'authorName',
