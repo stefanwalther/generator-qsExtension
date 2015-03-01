@@ -44,11 +44,11 @@ module.exports = function (grunt) {
     addTask( devTasks, 'replace:dev');
 
     // JSHint
-    addTask( devTasks, 'jshint', cfg.projectConfig.dev.jshint);
+    addTask( devTasks, 'jshint', cfg.projectconfig.dev.jshint);
 
     // Less Support
-    addTask( devTasks, 'less:dev', cfg.projectConfig.setup.lessSupport );
-    //addTask( devTasks, 'less:allInPlace', cfg.projectConfig.setup.lessSupport );
+    addTask( devTasks, 'less:dev', cfg.projectconfig.setup.lessSupport );
+    //addTask( devTasks, 'less:allInPlace', cfg.projectconfig.setup.lessSupport );
 
 	// Cleanup
     addTask( devTasks, 'clean:devFiles');
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'replace:release');
 
 	// Less support: <%= lessSupport %>
-	addTask( releaseTasks, 'less:release', cfg.projectConfig.setup.lessSupport);
+	addTask( releaseTasks, 'less:release', cfg.projectconfig.setup.lessSupport);
 
 	// Cleanup
 	addTask( releaseTasks, 'clean:devFiles');
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'uglify:release');
 
 	// JSHint
-    addTask( devTasks, 'jshint', cfg.projectConfig.dev.jshint);
+    addTask( devTasks, 'jshint', cfg.projectconfig.dev.jshint);
 
 
 	// Deploy to Qlik Sense Desktop

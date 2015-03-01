@@ -7,7 +7,7 @@ module.exports = function ( grunt ) {
 
 		dev: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_dev.zip'
+				archive: '../build/<%=projectconfig.general.ExtensionNamespace%><%=projectconfig.general.ExtensionNameSafe.toLowerCase()%>_dev.zip'
 			},
 			files: [
 				{
@@ -20,7 +20,7 @@ module.exports = function ( grunt ) {
 		},
 		release: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_v<%=projectConfig.general.Version%>.zip'
+				archive: '../build/<%=projectconfig.general.ExtensionNamespace%><%=projectconfig.general.ExtensionNameSafe.toLowerCase()%>_v<%=projectconfig.general.Version%>.zip'
 			},
 			files: [
 				{
@@ -33,7 +33,7 @@ module.exports = function ( grunt ) {
 		},
 		release_latest: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_latest.zip'
+				archive: '../build/<%=projectconfig.general.ExtensionNamespace%><%=projectconfig.general.ExtensionNameSafe.toLowerCase()%>_latest.zip'
 			},
 			files: [
 				{
@@ -46,7 +46,7 @@ module.exports = function ( grunt ) {
 		},
 		source: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe%>_src_v<%=projectConfig.general.Version%>.zip'
+				archive: '../build/<%=projectconfig.general.ExtensionNamespace%><%=projectconfig.general.ExtensionNameSafe%>_src_v<%=projectconfig.general.Version%>.zip'
 			},
 			files: [
 				{

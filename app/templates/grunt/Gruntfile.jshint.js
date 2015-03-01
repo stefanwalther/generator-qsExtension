@@ -9,14 +9,14 @@ module.exports = function ( grunt ) {
 				jshintrc: ".jshintrc-dev",
 				ignores: []
 			},
-			defaults: ["<%=projectConfig.jsSources.dev%>"]
+			defaults: ["<%=projectconfig.jsSources.dev%>"]
 		},
 		release: {
 			options: {
 				jshintrc: ".jshintrc-release",
 				ignores: []
 			},
-			defaults: ["<%=projectConfig.jsSources.release%>"]
+			defaults: ["<%=projectconfig.jsSources.release%>"]
 		}
 
 	};

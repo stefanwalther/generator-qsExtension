@@ -31,6 +31,8 @@
 
 ### Tests
 - [ ] Add some tests to double-check if all console.log etc has been removed after the release task ...
+- [ ] Add test for source build
+- [ ] Add more variants
 
 ### Angular Support
 - [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)

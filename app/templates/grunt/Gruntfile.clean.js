@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                 force: true
             },
             src: [
-                '<%=projectConfig.general.ExtensionNamespace%>/<%=projectConfig.general.ExtensionNameSafe%>/**/*'
+                '<%=projectconfig.general.ExtensionNamespace%>/<%=projectconfig.general.ExtensionNameSafe%>/**/*'
             ]
         }
     };
