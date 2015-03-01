@@ -2,7 +2,7 @@
 'use strict';
 var async = require( 'async' );
 var Winreg = require( 'winreg' );
-var path = require( 'path' );
+var path = require( 'path-extra' );
 var Q = require( 'q' );
 
 module.exports = {
@@ -12,6 +12,7 @@ module.exports = {
 		var deferred = Q.defer();
 
 		if ( process.platform === 'win32' ) {
+
 			var regKey = new Winreg( {
 				hive: Winreg.HKCU,
 				key: '\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders'
