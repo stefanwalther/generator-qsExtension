@@ -130,7 +130,7 @@
 			this.copy( 'grunt/.jshintrc-release', 'grunt/.jshintrc-release' );
 			this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml' );
 			this.copy( 'grunt/_package.json', 'grunt/package.json' );
-			this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectConfig.js' );
+			this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectconfig.js' );
 			this.copy( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
 			this.copy( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
 			this.copy( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
