@@ -1,6 +1,6 @@
-/*global module*/
+/*global module, require*/
+var YAML = require( 'yamljs' );
 module.exports = function ( grunt ) {
-    'use strict';
-    return grunt.file.readYAML('grunt-config.yml');
-
+	'use strict';
+	return YAML.load( 'grunt-config.yml' );
 };
