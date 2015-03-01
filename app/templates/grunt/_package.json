@@ -1,7 +1,7 @@
 {
-  "name": "Grunt-Deployment-<%= extensionNameSafe%>",
+  "name": "Grunt-Deployment-<%= prompts.extensionNameSafe%>",
   "version": "0.0.1",
-  "description": "Grunt tasks (dev + release) for the Qlik Sense extension <%= extensionName %>",
+  "description": "Grunt tasks (dev + release) for the Qlik Sense extension <%= prompts.extensionName %>",
   "main": "gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "QlikSense",
     "Extension"
   ],
-  "author": "<%=authorName%>",
+  "author": "<%= prompts.authorName %>",
   "license": "MIT",
   "dependencies": {
     "grunt": "~0.4.5",

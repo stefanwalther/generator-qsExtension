@@ -78,7 +78,6 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'replace:general');
 	addTask( releaseTasks, 'replace:release');
 
-	// Less support: <%= lessSupport %>
 	addTask( releaseTasks, 'less:release', cfg.projectconfig.setup.lessSupport);
 
 	// Cleanup

@@ -72,15 +72,16 @@
 					message: 'What\'s your name?'
 				},
 				{
+					// see https://github.com/yeoman/generator/issues/278
 					when: function ( props ) {
-						return (/y/i).test( props.advancedMode );
+						return props.advancedMode;
 					},
 					name: 'extensionNamespace',
 					message: 'Advanced Mode: What\'s the namespace for your extension? (Leave it blank if you are unsure).'
 				},
 				{
 					when: function ( props ) {
-						return (/y/i).test( props.advancedMode );
+						return props.advancedMode;
 					},
 					type: 'list',
 					name: 'extensionType',
@@ -102,41 +103,78 @@
 				},
 				{
 					when: function ( props ) {
-						return (/y/i).test( props.advancedMode );
+						return props.advancedMode;
 					},
 					type: 'confirm',
 					name: 'lessSupport',
 					message: 'Advanced Mode: Would you like to write your styles in Less (instead of pure CSS)?',
 					default: false
+				},
+				{
+					when: function ( props ) {
+						return props.advancedMode;
+					},
+					type: 'list',
+					name: 'licence',
+					message: 'Advanced Mode: Choose the desired license.',
+					default: "mit",
+					choices: [
+						"agpl",
+						"apache",
+						"artistic",
+						"bsd-3-clause",
+						"bsd",
+						"cc0",
+						"eclipse",
+						"gpl-v2",
+						"gpl-v3",
+						"isc",
+						"lgpl-v2.1",
+						"lgpl-v3",
+						"mit",
+						"mozilla",
+						"no-license",
+						"unlicense",
+						"wtfpl"
+					]
 				}
 			];
 
 			this.prompt( prompts, function ( props ) {
 
-				this.advancedMode = props.advancedMode;
-				this.extensionName = props.extensionName;
-				this.extensionNameSafe = this.extensionName.replace( /\s/g, "" );
-				this.extensionType = props.extensionType;
-				this.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
-				this.extensionDescription = props.extensionDescription;
-				this.authorName = props.authorName;
-				this.lessSupport = props.lessSupport;
+				this.prompts = {};
+
+				this.prompts.advancedMode = props.advancedMode;
+				this.prompts.extensionName = props.extensionName;
+				this.prompts.extensionNameSafe = this.prompts.extensionName.replace( /\s/g, "" );
+				this.prompts.extensionType = props.extensionType;
+				this.prompts.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
+				this.prompts.extensionDescription = props.extensionDescription;
+				this.prompts.authorName = props.authorName;
+				this.prompts.lessSupport = props.lessSupport;
+				this.prompts.license = props.license || 'mit';
 
 				var d = new Date();
-				this.publishingYear = d.getFullYear();
-				this.creationDate = moment( d ).format( 'YYYY-MM-DD' );
+				this.prompts.publishingYear = d.getFullYear();
+				this.prompts.creationDate = moment( d ).format( 'YYYY-MM-DD' );
+
+				this.prompts.licenceGenerated = utils.getLicense( this.prompts );
 
 				// Debug
-				console.log( 'advancedMode', this.advancedMode );
-				console.log( 'extensionName', this.extensionName );
-				console.log( 'extensionNameSafe', this.extensionNameSafe );
-				console.log( 'extensionType', this.extensionType );
-				console.log( 'extensionNamespace', this.extensionNamespace );
-				console.log( 'extensionDescription', this.extensionDescription );
-				console.log( 'authorName', this.authorName );
-				console.log( 'lessSupport', this.lessSupport );
-				console.log( 'publishingYear', this.publishingYear );
-				console.log( 'creationDate', this.creationDate );
+				console.log( 'prompts', this.prompts );
+				//console.log( 'advancedMode', this.prompts.advancedMode );
+				//console.log( 'extensionName', this.prompts.extensionName );
+				//console.log( 'extensionNameSafe', this.prompts.extensionNameSafe );
+				//console.log( 'extensionType', this.prompts.extensionType );
+				//console.log( 'extensionNamespace', this.prompts.extensionNamespace );
+				//console.log( 'extensionDescription', this.prompts.extensionDescription );
+				//console.log( 'authorName', this.prompts.authorName );
+				//console.log( 'lessSupport', this.prompts.lessSupport );
+				//console.log( 'license', this.prompts.license );
+				//
+				//console.log( 'publishingYear', this.prompts.publishingYear );
+				//console.log( 'creationDate', this.prompts.creationDate );
+				//console.log( 'licenseGenerated', this.prompts.licenceGenerated );
 				done();
 			}.bind( this ) );
 		},
@@ -174,9 +212,9 @@
 			// src dir
 			this.mkdir( 'src' );
 			this.copy( '.jshintrc', 'src/.jshintrc' );
-			this.template( 'extension.js', 'src/' + this.extensionNamespace.toLowerCase() + this.extensionNameSafe.toLowerCase() + '.js' );
-			this.template( 'extension.qext', 'src/' + this.extensionNamespace.toLowerCase() + this.extensionNameSafe.toLowerCase() + '.qext' );
-			this.copy( 'extension.png', 'src/' + this.extensionNameSafe.toLowerCase() + '.png' );
+			this.template( 'extension.js', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.js' );
+			this.template( 'extension.qext', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.qext' );
+			this.copy( 'extension.png', 'src/' + this.prompts.extensionNameSafe.toLowerCase() + '.png' );
 			this.template( 'extension-properties.js', 'src/properties.js' );
 			this.template( 'extension-initialproperties.js', 'src/initialproperties.js' );
 
@@ -203,7 +241,7 @@
 
 			//console.log( 'lessSupport: ', this.lessSupport );
 
-			if ( this.lessSupport === true ) {
+			if ( this.prompts.lessSupport === true ) {
 				this.mkdir( 'src/lib/less' );
 				this.template( '_root.less', 'src/lib/less/_root.less' );
 				this.template( 'styles.less', 'src/lib/less/styles.less' );

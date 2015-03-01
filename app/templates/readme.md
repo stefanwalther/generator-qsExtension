@@ -1,5 +1,5 @@
-# <%= extensionName%>
-<%= extensionDescription%>
+# <%= prompts.extensionName%>
+<%= prompts.extensionDescription%>
 
 ## Purpose and Description
 
@@ -9,7 +9,7 @@
 
 1. Download the latest version
 2. Qlik Sense Desktop
-	* To install, copy all files in the .zip file to folder "C:\Users\[%Username%]\Documents\Qlik\Sense\Extensions\<%=extensionNamespace%><%= extensionNameSafe%>"
+	* To install, copy all files in the .zip file to folder "C:\Users\[%Username%]\Documents\Qlik\Sense\Extensions\<%= prompts.xtensionNamespace %><%= prompts.extensionNameSafe %>"
 3. Qlik Sense Server
 	* See instructions [how to import an extension on Qlik Sense Server](http://help.qlik.com/sense/en-US/online/#../Subsystems/Qlik_Management_Console_help/Content/QMC_Resources_Extensions_AddingExtensions.htm?Highlight=extension)
 
@@ -26,7 +26,7 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Author
 
-**<%= authorName%>**
+**<%= prompts.authorName%>**
 * http://www.yourwebsite.com
 * http://github.com/yourname
 

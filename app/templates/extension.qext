@@ -1,9 +1,9 @@
 {
-	"name" : "<%= extensionName %>",
-	"description" : "<%= extensionDescription %>",
-	"icon" : "<%= extensionType%>",
+	"name" : "<%= prompts.extensionName %>",
+	"description" : "<%= prompts.extensionDescription %>",
+	"icon" : "<%= prompts.extensionType%>",
 	"type" : "visualization",
 	"version": "@@version",
-	"preview" : "<%= extensionNameSafe.toLowerCase() %>.png",
-	"author": "<%= authorName %>"
+	"preview" : "<%= prompts.extensionNameSafe.toLowerCase() %>.png",
+	"author": "<%= prompts.authorName %>"
 }

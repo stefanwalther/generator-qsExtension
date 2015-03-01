@@ -53,7 +53,7 @@ function ($, /*_,*/ props, initProps, extensionUtils, cssContent) {
             $element.empty();
             var $helloWorld = $(document.createElement('div'));
             $helloWorld.addClass('hello-world');
-            $helloWorld.html('Hello World from the extension "<%= extensionName%>"');
+            $helloWorld.html('Hello World from the extension "<%= prompts.extensionName%>"');
             $element.append($helloWorld);
 
         }

@@ -3,19 +3,19 @@
 # -------------------------------------------------------------------
 general:
   # Path to the extension directory in Qlik Sense Desktop
-  LocalExtensionPath:   "<%= localExtensionDir %>"
+  LocalExtensionPath:   "<%= prompts.localExtensionDir %>"
 
   # Name of the Extension as defined in the generator
-  ExtensionName:        "<%= extensionName %>"
+  ExtensionName:        "<%= prompts.extensionName %>"
 
   # Name of the Extension, safe to be used for file-names
-  ExtensionNameSafe:    "<%= extensionNameSafe %>"
+  ExtensionNameSafe:    "<%= prompts.extensionNameSafe %>"
 
   # Namespace
-  ExtensionNamespace:   "<%= extensionNamespace %>"
+  ExtensionNamespace:   "<%= prompts.extensionNamespace %>"
 
   # Description of the Extension as defined in the generator
-  ExtensionDescription: "<%= extensionDescription %>"
+  ExtensionDescription: "<%= prompts.extensionDescription %>"
 
   # Version of the extension, will be re-used in several areas,
   # e.g the generated .zip-file in the 'release' Grunt-task
@@ -76,4 +76,4 @@ jsSources:
 # after the questions in the Yeoman generator have been answered.
 # -------------------------------------------------------------------
 setup:
-  lessSupport: <%= lessSupport %>
+  lessSupport: <%= prompts.lessSupport %>
