@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.28
+Date: 2015-03-01
+
+**Enhancements:**
+* Finally succeeded to get travis builds to work (with a lot of minor bugfixes and corrections)
+
 ## Version 0.0.27
 Date: 2015-03-01
 
