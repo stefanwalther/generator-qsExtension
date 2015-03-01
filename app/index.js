@@ -47,11 +47,10 @@
 		},
 
 		askFor: function () {
-			//console.log('3: askFor');
 			var done = this.async();
 
 			// replace it with a short and sweet description of your generator
-			this.log( chalk.magenta( 'You\'re using qsExtension generator.' ) );
+			this.log( chalk.magenta( 'You\'re using qsextension generator.' ) );
 
 			var prompts = [
 				{
@@ -60,7 +59,7 @@
 				},
 				{
 					name: 'extensionNamespace',
-					message: 'What\'s the namespace for your extension?'
+					message: 'What\'s the namespace for your extension? (Leave it blank if you are unsure).'
 				},
 				{
 					name: 'extensionDescription',
