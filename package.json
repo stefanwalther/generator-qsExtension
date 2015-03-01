@@ -29,6 +29,7 @@
     "yeoman-generator": "^0.17.7"
   },
   "devDependencies": {
+    "chalk": "^1.0.0",
     "grunt": "^0.4.5",
     "mocha": "^2.1.0",
     "rimraf": "^2.2.8",
