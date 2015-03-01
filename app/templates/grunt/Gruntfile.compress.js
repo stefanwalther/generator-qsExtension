@@ -7,7 +7,7 @@ module.exports = function ( grunt ) {
 
 		dev: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe%>_dev.zip'
+				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_dev.zip'
 			},
 			files: [
 				{
@@ -20,7 +20,7 @@ module.exports = function ( grunt ) {
 		},
 		release: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe%>_v<%=projectConfig.general.Version%>.zip'
+				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_v<%=projectConfig.general.Version%>.zip'
 			},
 			files: [
 				{
@@ -33,7 +33,7 @@ module.exports = function ( grunt ) {
 		},
 		release_latest: {
 			options: {
-				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe%>_latest.zip'
+				archive: '../build/<%=projectConfig.general.ExtensionNamespace%><%=projectConfig.general.ExtensionNameSafe.toLowerCase()%>_latest.zip'
 			},
 			files: [
 				{
