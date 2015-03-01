@@ -90,7 +90,7 @@
 				'grunt/.jshintrc-release',
 				'grunt/package.json',
 				'grunt/grunt-config.yml',
-				'grunt/Gruntfile.projectConfig.js',
+				'grunt/Gruntfile.projectconfig.js',
 				'grunt/Gruntfile.clean.js',
 				'grunt/Gruntfile.cleanempty.js',
 				'grunt/Gruntfile.compress.js',

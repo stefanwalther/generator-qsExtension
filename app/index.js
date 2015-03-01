@@ -130,17 +130,17 @@
 			this.copy( 'grunt/.jshintrc-release', 'grunt/.jshintrc-release' );
 			this.template( 'grunt/grunt-config.yml', 'grunt/grunt-config.yml' );
 			this.copy( 'grunt/_package.json', 'grunt/package.json' );
-			this.copy( 'grunt/gruntfile.projectconfig.js', 'grunt/Gruntfile.projectconfig.js' );
-			this.copy( 'grunt/gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
-			this.copy( 'grunt/gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
-			this.copy( 'grunt/gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
-			this.copy( 'grunt/gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
+			this.copy( 'grunt/Gruntfile.projectconfig.js', 'grunt/Gruntfile.projectconfig.js' );
+			this.copy( 'grunt/Gruntfile.clean.js', 'grunt/Gruntfile.clean.js' );
+			this.copy( 'grunt/Gruntfile.cleanempty.js', 'grunt/Gruntfile.cleanempty.js' );
+			this.copy( 'grunt/Gruntfile.compress.js', 'grunt/Gruntfile.compress.js' );
+			this.copy( 'grunt/Gruntfile.copy.js', 'grunt/Gruntfile.copy.js' );
 
 			// Gruntfile.Less will be added in the createStyles task
-			this.template( 'grunt/gruntfile.js', 'grunt/Gruntfile.js' );
-			this.copy( 'grunt/gruntfile.jshint.js', 'grunt/Gruntfile.jshint.js' );
-			this.copy( 'grunt/gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
-			this.copy( 'grunt/gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
+			this.template( 'grunt/Gruntfile.js', 'grunt/Gruntfile.js' );
+			this.copy( 'grunt/Gruntfile.jshint.js', 'grunt/Gruntfile.jshint.js' );
+			this.copy( 'grunt/Gruntfile.replace.js', 'grunt/Gruntfile.replace.js' );
+			this.copy( 'grunt/Gruntfile.uglify.js', 'grunt/Gruntfile.uglify.js' );
 			this.copy( 'grunt/gruntReplacements.yml', 'grunt/gruntReplacements.yml' );
 			this.copy( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
 			this.copy( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
