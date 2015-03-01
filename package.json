@@ -26,10 +26,12 @@
     "Sense"
   ],
   "dependencies": {
-    "mocha": "^2.1.0",
     "yeoman-generator": "^0.17.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "rimraf": "^2.2.8"
+  },
   "peerDependencies": {
     "yo": ">=1.4.5"
   },
