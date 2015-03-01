@@ -78,7 +78,7 @@
 				'src/.jshintrc',
 				'src/properties.js',
 				'src/initialproperties.js',
-				'src/' + inputs.extensionNamespace + '-' + inputs.extensionNameSafe + '.js',
+				'src/' + inputs.extensionNamespace.toLowerCase() + '-' + inputs.extensionNameSafe.toLowerCase() + '.js',
 				'src/.jshintrc',
 
 				// dist
