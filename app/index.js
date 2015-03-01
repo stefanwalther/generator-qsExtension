@@ -64,15 +64,19 @@
 					message: 'What\'s the name of the extension?'
 				},
 				{
+					name: 'extensionDescription',
+					message: 'Describe your extension:'
+				},
+				{
+					name: 'authorName',
+					message: 'What\'s your name?'
+				},
+				{
 					when: function ( props ) {
 						return (/y/i).test( props.advancedMode );
 					},
 					name: 'extensionNamespace',
-					message: 'What\'s the namespace for your extension? (Leave it blank if you are unsure).'
-				},
-				{
-					name: 'extensionDescription',
-					message: 'Describe your extension:'
+					message: 'Advanced Mode: What\'s the namespace for your extension? (Leave it blank if you are unsure).'
 				},
 				{
 					when: function ( props ) {
@@ -80,7 +84,7 @@
 					},
 					type: 'list',
 					name: 'extensionType',
-					message: 'What\'s the type of your extension? This will define the icon used (Default: extension).',
+					message: 'Advanced Mode: What\'s the type of your extension? This will define the icon used (Default: extension).',
 					default: "extension",
 					choices: [
 						"extension",
@@ -102,17 +106,14 @@
 					},
 					type: 'confirm',
 					name: 'lessSupport',
-					message: 'Would you like to write your styles in Less (instead of pure CSS)?',
+					message: 'Advanced Mode: Would you like to write your styles in Less (instead of pure CSS)?',
 					default: false
-				},
-				{
-					name: 'authorName',
-					message: 'What\'s your name?'
 				}
 			];
 
 			this.prompt( prompts, function ( props ) {
 
+				this.advancedMode = props.advancedMode;
 				this.extensionName = props.extensionName;
 				this.extensionNameSafe = this.extensionName.replace( /\s/g, "" );
 				this.extensionType = props.extensionType;
@@ -126,6 +127,7 @@
 				this.creationDate = moment( d ).format( 'YYYY-MM-DD' );
 
 				// Debug
+				console.log( 'advancedMode', this.advancedMode );
 				console.log( 'extensionName', this.extensionName );
 				console.log( 'extensionNameSafe', this.extensionNameSafe );
 				console.log( 'extensionType', this.extensionType );
