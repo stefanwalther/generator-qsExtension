@@ -111,6 +111,16 @@
 				this.publishingYear = d.getFullYear();
 				this.creationDate = moment( d ).format( 'YYYY-MM-DD' );
 
+				// Debug
+				console.log( 'extensionName', this.extensionName );
+				console.log( 'extensionNameSafe', this.extensionNameSafe );
+				console.log( 'extensionType', this.extensionType );
+				console.log( 'extensionNamespace', this.extensionNamespace );
+				console.log( 'extensionDescription', this.extensionDescription );
+				console.log( 'authorName', this.authorName );
+				console.log( 'lessSupport', this.lessSupport );
+				console.log( 'publishingYear', this.publishingYear );
+				console.log( 'creationDate', this.creationDate );
 				done();
 			}.bind( this ) );
 		},
