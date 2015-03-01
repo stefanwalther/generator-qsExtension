@@ -26,6 +26,7 @@ module.exports = {
 
 							dir = dir.replace( '%USERPROFILE%', process.env['USERPROFILE'].replace( /\\/g, "\\\\" ) );
 
+							console.info( 'getExtensionPath:win32', dir );
 							deferred.resolve( dir );
 						}
 					}
@@ -36,7 +37,9 @@ module.exports = {
 			}
 		}
 		else {
-			deferred.resolve( path.homedir() + '\\Documents\\Qlik\\Sense\\Extensions' );
+			var dir = path.homedir() + '\\Documents\\Qlik\\Sense\\Extensions';
+			console.info( 'getExtensionPath:non-win32', dir );
+			deferred.resolve( dir );
 		}
 		return deferred.promise;
 
