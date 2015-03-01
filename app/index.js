@@ -120,9 +120,9 @@
 			// root
 			this.copy( 'gitattributes.txt', '.gitattributes' );
 			this.copy( 'gitignore.txt', '.gitignore' );
-			this.template( 'README.md', 'README.md' );
-			this.template( 'LICENSE.md', 'LICENSE.md' );
-			this.template( 'CHANGELOG.md', 'CHANGELOG.md' );
+			this.template( 'readme.md', 'README.md' );
+			this.template( 'license.md', 'LICENSE.md' );
+			this.template( 'changelog.md', 'CHANGELOG.md' );
 
 			// Grunt
 			this.mkdir( 'grunt' );
