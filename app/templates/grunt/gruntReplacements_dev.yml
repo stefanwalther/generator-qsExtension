@@ -3,6 +3,6 @@
 # ---
 # Add variables here which should be replaced in the dev task
 #
-# In your code just e.g @@isDebug
+# In your code just use e.g @@isDebug
 # -------------------------------------------------------------------
 isDebug: true
