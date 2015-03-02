@@ -7,8 +7,8 @@
 	var oldSpawn = childProcess.spawn;
 
 	function mySpawn () {
-		console.info( 'spawn called' );
-		console.trace( arguments );
+		//console.info( 'spawn called' );
+		//console.trace( arguments );
 		var result = oldSpawn.apply( this, arguments );
 		return result;
 	}
@@ -120,7 +120,7 @@
 					.withOptions( gruntOptions ) // Mock options passed in
 					.withPrompts( _.extend( inputs, {lessSupport: false} ) ) // Mock the prompt answers
 					.on( 'ready', function () {
-						console.info( 'ready' );
+						//console.info( 'ready' );
 					} )
 					.on( 'end', function () {
 						assert.file( expectedFiles );

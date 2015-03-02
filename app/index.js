@@ -11,175 +11,125 @@
 	var _ = require( 'underscore' );
 	var moment = require( 'moment' );
 	var utils = require( './utils' );
+	var promptDef = require( './prompts' );
 
 	var qsExtension = yeoman.generators.Base.extend( {
 
-		init: function () {
-
+		constructor: function () {
+			yeoman.generators.Base.apply( this, arguments );
 			this.pkg = require( "../package.json" );
 
-			this.on( 'end', function () {
-				if ( !this.options['skip-install'] ) {
-					var npmdir = process.cwd() + '/grunt';
-					process.chdir( npmdir );
+			if ( this.options['grunt'] ) {
+				this.mode = 'grunt';
+			} else {
+				this.mode = 'default';
+			}
 
-					this.installDependencies( {
-						bower: false,
-						npm: true
-					} );
-				}
-			} );
 		},
 
-		// Retrieve the local extension folder, e.g. %USERPROFILE%\My Documents\Qlik\Sense\Extensions\
-		getLocalExtensionDir: function () {
+		init: {
 
-			var done = this.async();
-			var that = this;
+			/**
+			 * Retrieve the local extension folder
+			 *
+			 * @example
+			 * e.g. %USERPROFILE%\My Documents\Qlik\Sense\Extensions\
+			 */
+			getLocalExtensionDir: function () {
 
-			utils.getExtensionPath().then( function ( result ) {
-				that.localExtensionDir = result;
-				done();
-			} ).catch( function ( err ) {
-				console.error( 'Could  not retrieve the local extension path', err );
-				done();
-			} );
+				this.log( 'getLocalExtensionDir' );
+
+				var done = this.async();
+				var that = this;
+
+				utils.getExtensionPath().then( function ( result ) {
+					that.localExtensionDir = result;
+					done();
+				} ).catch( function ( err ) {
+					console.error( 'Could  not retrieve the local extension path', err );
+					done();
+				} );
+			}
+
 		},
 
 		askFor: function () {
-			var done = this.async();
 
-			// replace it with a short and sweet description of your generator
-			this.log( chalk.magenta( 'You\'re using qsextension generator.' ) );
+			if ( this.mode === 'default' ) {
+				var done = this.async();
+				this.log( chalk.magenta( 'You\'re using qsextension generator.' ) );
 
-			var prompts = [
-				{
-					type: "confirm",
-					name: "advancedMode",
-					message: "Do you want to choose advanced mode? (Choose [N]o if you are unsure).",
-					default: false
-				},
-				{
-					name: 'extensionName',
-					message: 'What\'s the name of the extension?'
-				},
-				{
-					name: 'extensionDescription',
-					message: 'Describe your extension:'
-				},
-				{
-					name: 'authorName',
-					message: 'What\'s your name?'
-				},
-				{
-					// see https://github.com/yeoman/generator/issues/278
-					when: function ( props ) {
-						return props.advancedMode;
-					},
-					name: 'extensionNamespace',
-					message: 'Advanced Mode: What\'s the namespace for your extension? (Leave it blank if you are unsure).'
-				},
-				{
-					when: function ( props ) {
-						return props.advancedMode;
-					},
-					type: 'list',
-					name: 'extensionType',
-					message: 'Advanced Mode: What\'s the type of your extension? This will define the icon used (Default: extension).',
-					default: "extension",
-					choices: [
-						"extension",
-						"bar-chart-vertical",
-						"line-chart",
-						"pie-chart",
-						"gauge-chart",
-						"scatter-chart",
-						"text-image",
-						"table",
-						"list",
-						"filterpane",
-						"treemap"
-					]
-				},
-				{
-					when: function ( props ) {
-						return props.advancedMode;
-					},
-					type: 'confirm',
-					name: 'lessSupport',
-					message: 'Advanced Mode: Would you like to write your styles in Less (instead of pure CSS)?',
-					default: false
-				},
-				{
-					when: function ( props ) {
-						return props.advancedMode;
-					},
-					type: 'list',
-					name: 'licence',
-					message: 'Advanced Mode: Choose the desired license.',
-					default: "mit",
-					choices: [
-						"agpl",
-						"apache",
-						"artistic",
-						"bsd-3-clause",
-						"bsd",
-						"cc0",
-						"eclipse",
-						"gpl-v2",
-						"gpl-v3",
-						"isc",
-						"lgpl-v2.1",
-						"lgpl-v3",
-						"mit",
-						"mozilla",
-						"no-license",
-						"unlicense",
-						"wtfpl"
-					]
-				}
-			];
+				this.prompt( promptDef, function ( props ) {
 
-			this.prompt( prompts, function ( props ) {
+					this.prompts = {};
 
-				this.prompts = {};
+					this.prompts.advancedMode = props.advancedMode;
+					this.prompts.extensionName = props.extensionName;
+					this.prompts.extensionNameSafe = props.extensionName.replace( /\s/g, "" );
+					this.prompts.extensionType = props.extensionType;
+					this.prompts.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
+					this.prompts.extensionDescription = props.extensionDescription;
+					this.prompts.authorName = props.authorName;
+					this.prompts.lessSupport = props.lessSupport;
+					this.prompts.license = props.license || 'mit';
 
-				this.prompts.advancedMode = props.advancedMode;
-				this.prompts.extensionName = props.extensionName;
-				this.prompts.extensionNameSafe = this.prompts.extensionName.replace( /\s/g, "" );
-				this.prompts.extensionType = props.extensionType;
-				this.prompts.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
-				this.prompts.extensionDescription = props.extensionDescription;
-				this.prompts.authorName = props.authorName;
-				this.prompts.lessSupport = props.lessSupport;
-				this.prompts.license = props.license || 'mit';
+					var d = new Date();
+					this.prompts.publishingYear = d.getFullYear();
+					this.prompts.creationDate = moment( d ).format( 'YYYY-MM-DD' );
 
-				var d = new Date();
-				this.prompts.publishingYear = d.getFullYear();
-				this.prompts.creationDate = moment( d ).format( 'YYYY-MM-DD' );
+					this.prompts.licenceGenerated = utils.getLicense( this.prompts );
 
-				this.prompts.licenceGenerated = utils.getLicense( this.prompts );
+					// Debug
+					// this.log( 'prompts', this.prompts );
 
-				// Debug
-				console.log( 'prompts', this.prompts );
-				//console.log( 'advancedMode', this.prompts.advancedMode );
-				//console.log( 'extensionName', this.prompts.extensionName );
-				//console.log( 'extensionNameSafe', this.prompts.extensionNameSafe );
-				//console.log( 'extensionType', this.prompts.extensionType );
-				//console.log( 'extensionNamespace', this.prompts.extensionNamespace );
-				//console.log( 'extensionDescription', this.prompts.extensionDescription );
-				//console.log( 'authorName', this.prompts.authorName );
-				//console.log( 'lessSupport', this.prompts.lessSupport );
-				//console.log( 'license', this.prompts.license );
-				//
-				//console.log( 'publishingYear', this.prompts.publishingYear );
-				//console.log( 'creationDate', this.prompts.creationDate );
-				//console.log( 'licenseGenerated', this.prompts.licenceGenerated );
-				done();
-			}.bind( this ) );
+					done();
+
+				}.bind( this ) );
+			} else {
+
+				// do nothing right now ...
+				// later on get the values from the config file
+
+			}
 		},
 
-		root: function () {
+		writing: function () {
+
+			switch ( this.mode ) {
+				case 'default':
+					this._root();
+					this._dirs();
+					this._src();
+					this._srcLib();
+					this._styles();
+					this._grunt();
+					break;
+				case 'grunt':
+					// not implemented, yet
+					//this._grunt();
+					break;
+				default:
+					break;
+			}
+
+		},
+
+		end: function () {
+
+			if ( !this.options['skip-install'] ) {
+				var npmdir = process.cwd() + '/grunt';
+				process.chdir( npmdir );
+
+				this.installDependencies( {
+					bower: false,
+					npm: true,
+					skipMessage: true
+				} );
+			}
+
+		},
+
+		_root: function () {
 
 			// root
 			this.copy( 'gitattributes.txt', '.gitattributes' );
@@ -187,6 +137,49 @@
 			this.template( 'readme.md', 'README.md' );
 			this.template( 'license.md', 'LICENSE.md' );
 			this.template( 'changelog.md', 'CHANGELOG.md' );
+
+		},
+
+		_dirs: function () {
+
+			// Build Dir
+			this.mkdir( 'build' );
+			this.mkdir( 'dist' );
+
+		},
+
+		_src: function () {
+
+			// src dir
+			this.mkdir( 'src' );
+			this.copy( '.jshintrc', 'src/.jshintrc' );
+			this.template( 'extension.js', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.js' );
+			this.template( 'extension.qext', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.qext' );
+			this.copy( 'extension.png', 'src/' + this.prompts.extensionNameSafe.toLowerCase() + '.png' );
+			this.template( 'extension-properties.js', 'src/properties.js' );
+			this.template( 'extension-initialproperties.js', 'src/initialproperties.js' );
+
+		},
+
+		_srcLib: function () {
+
+			// src/lib
+			this.mkdir( 'src/lib' );
+			this.mkdir( 'src/lib/css' );
+			this.mkdir( 'src/lib/js' );
+			this.mkdir( 'src/lib/external' );
+			this.mkdir( 'src/lib/images' );
+			this.mkdir( 'src/lib/fonts' );
+			this.mkdir( 'src/lib/icons' );
+			this.mkdir( 'src/lib/data' );
+			this.mkdir( 'src/lib/partials' );
+
+			// src/lib/content
+			this.copy( 'lib/js/extensionUtils.js', 'src/lib/js/extensionUtils.js' );
+
+		},
+
+		_grunt: function () {
 
 			// Grunt
 			this.mkdir( 'grunt' );
@@ -209,37 +202,13 @@
 			this.copy( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
 			this.copy( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
-			// src dir
-			this.mkdir( 'src' );
-			this.copy( '.jshintrc', 'src/.jshintrc' );
-			this.template( 'extension.js', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.js' );
-			this.template( 'extension.qext', 'src/' + this.prompts.extensionNamespace.toLowerCase() + this.prompts.extensionNameSafe.toLowerCase() + '.qext' );
-			this.copy( 'extension.png', 'src/' + this.prompts.extensionNameSafe.toLowerCase() + '.png' );
-			this.template( 'extension-properties.js', 'src/properties.js' );
-			this.template( 'extension-initialproperties.js', 'src/initialproperties.js' );
+			//var done = this.async();
+			//this.composeWith( 'gengrunt', {options: {}} );
+			//done();
 
-			// src/lib
-			this.mkdir( 'src/lib' );
-			this.mkdir( 'src/lib/css' );
-			this.mkdir( 'src/lib/js' );
-			this.mkdir( 'src/lib/external' );
-			this.mkdir( 'src/lib/images' );
-			this.mkdir( 'src/lib/fonts' );
-			this.mkdir( 'src/lib/icons' );
-			this.mkdir( 'src/lib/data' );
-			this.mkdir( 'src/lib/partials' );
-
-			// src/lib/content
-			this.copy( 'lib/js/extensionUtils.js', 'src/lib/js/extensionUtils.js' );
-
-			// Build Dir
-			this.mkdir( 'build' );
-			this.mkdir( 'dist' );
 		},
 
-		createStyles: function () {
-
-			//console.log( 'lessSupport: ', this.lessSupport );
+		_styles: function () {
 
 			if ( this.prompts.lessSupport === true ) {
 				this.mkdir( 'src/lib/less' );

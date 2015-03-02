@@ -7,7 +7,7 @@
 
 ## License
 
-> <%= prompts.licenceGenerated %>
+<%= prompts.licenceGenerated %>
 
 ## External Libraries
 
