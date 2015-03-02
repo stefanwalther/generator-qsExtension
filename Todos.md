@@ -2,7 +2,7 @@
 
 ### Trivial Additions/Changes
 - [X] Add version
-- [ ] Add MIT license only if appropriate
+- [X] Add MIT license only if appropriate
 
 ### General
 - [ ] Add parameters to check in to a GitHub repository automatically (should also be added to gruntfile.js)

@@ -1,5 +1,13 @@
 # ChangeLog
 
+## Version -- not released --
+Date: unknown
+
+**Enhancements:**
+* There is now a default and an advanced mode (first question in the wizard).
+* In the advanced mode the user can select a license type, LICENSE.md will be generated accordingly.
+* By using the option --grunt on the grunt based deployment system will be updated.
+
 ## Version 0.0.28
 Date: 2015-03-01
 
