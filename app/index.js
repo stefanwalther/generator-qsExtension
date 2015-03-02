@@ -14,6 +14,8 @@
 	var utils = require( './utils' );
 	var promptDef = require( './prompts' );
 
+	function noop () {}
+
 	var qsExtension = yeoman.generators.Base.extend( {
 
 		constructor: function () {
@@ -89,7 +91,7 @@
 			} else {
 
 				// do nothing right now ...
-				// later on get the values from the config file
+				noop();
 
 			}
 		},
