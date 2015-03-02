@@ -7,6 +7,8 @@ Date: unknown
 * There is now a default and an advanced mode (first question in the wizard).
 * In the advanced mode the user can select a license type, LICENSE.md will be generated accordingly.
 * By using the option --grunt on the grunt based deployment system will be updated.
+* Update to all dependencies and used modules
+* A default image is now added to the extension (using the correct dimensions).
 
 ## Version 0.0.28
 Date: 2015-03-01

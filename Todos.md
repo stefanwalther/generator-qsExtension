@@ -8,15 +8,21 @@
 - [ ] Add parameters to check in to a GitHub repository automatically (should also be added to gruntfile.js)
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
-- [ ] Add a default image (with the required image dimensions)
+- [X] Add a default image (with the required image dimensions)
 - [X] Sync the usage of the version defined in grunt-config.yml
-- [ ] Update Grunt plugins
+- [X] Update Grunt plugins
+
+### Documentation
+- [ ] License file
 
 ### Script.js template
 - [ ] Pre-generate some comments
 - [ ] Generate some console-logging (could also be placed to an optional file??)
 - [ ] Create options to work with Angular best-practices (controller, etc.)
 - [ ] Offer different templates
+
+### Angular Support
+- [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)
 
 ### Build System
 - [x] Create a zip-file 
@@ -34,6 +40,4 @@
 - [ ] Add test for source build
 - [ ] Add more variants
 
-### Angular Support
-- [ ] Add some basic directives to be used in extensions (e.g. swr-simpletable)
 
