@@ -8,7 +8,10 @@
     "type": "git",
     "url": "http://github.com/qlikdev/generator-qsExtension"
   },
-  "author": "Stefan Walther (https://github.com/stefanwalther)",
+  "author": {
+    "name": "Stefan Walther",
+    "url": "https://github.com/stefanwalther"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
