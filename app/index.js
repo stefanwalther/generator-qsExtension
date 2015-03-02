@@ -6,6 +6,7 @@
 	'use strict';
 	var util = require( 'util' );
 	var path = require( 'path' );
+	var fs = require( 'fs' );
 	var yeoman = require( 'yeoman-generator' );
 	var chalk = require( 'chalk' );
 	var _ = require( 'underscore' );
@@ -103,10 +104,17 @@
 					this._srcLib();
 					this._styles();
 					this._grunt();
+					this._saveConfig();
 					break;
 				case 'grunt':
 					// not implemented, yet
-					//this._grunt();
+					var existingConfig = this.config.getAll();
+					if ( !_.isEmpty( existingConfig ) ) {
+						this.prompts = existingConfig;
+						this._grunt();
+					} else {
+						this.log.error( chalk.red( 'Grunt update not possible, cannot load existing configuration!' ) + ' .yo-rc.json is missing.' );
+					}
 					break;
 				default:
 					break;
@@ -117,14 +125,20 @@
 		end: function () {
 
 			if ( !this.options['skip-install'] ) {
-				var npmdir = process.cwd() + '/grunt';
-				process.chdir( npmdir );
 
-				this.installDependencies( {
-					bower: false,
-					npm: true,
-					skipMessage: true
-				} );
+				// for future changes check if grunt based deployment is existing
+				if ( fs.existsSync( path.join( process.cwd() + '/grunt' ) ) ) {
+
+					var npmdir = process.cwd() + '/grunt';
+					process.chdir( npmdir );
+
+					this.installDependencies( {
+						bower: false,
+						npm: true,
+						skipMessage: true
+					} );
+
+				}
 			}
 
 		},
@@ -202,10 +216,6 @@
 			this.copy( 'grunt/gruntReplacements_dev.yml', 'grunt/gruntReplacements_dev.yml' );
 			this.copy( 'grunt/gruntReplacements_release.yml', 'grunt/gruntReplacements_release.yml' );
 
-			//var done = this.async();
-			//this.composeWith( 'gengrunt', {options: {}} );
-			//done();
-
 		},
 
 		_styles: function () {
@@ -221,6 +231,11 @@
 			} else {
 				this.template( 'style_noLess.css', 'src/lib/css/style.css' );
 			}
+		},
+
+		_saveConfig: function () {
+			this.config.set( this.prompts );
+			this.config.save();
 		}
 	} );
 
