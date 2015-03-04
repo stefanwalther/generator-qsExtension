@@ -55,8 +55,8 @@ module.exports = function (grunt) {
     addTask( devTasks, 'cleanempty:all');
 
 	// Deploy to Qlik Sense Desktop
-	addTask( devTasks, 'clean:empty_desktop', process.env.platform === 'win32');
-	addTask( devTasks, 'copy:copy_to_desktop', process.env.platform === 'win32');
+	addTask( devTasks, 'clean:empty_desktop', process.platform === 'win32');
+	addTask( devTasks, 'copy:copy_to_desktop', process.platform === 'win32');
 
 	// Zip to xxx_dev.zip
 	addTask( devTasks, 'compress:dev');
@@ -92,8 +92,8 @@ module.exports = function (grunt) {
 
 
 	// Deploy to Qlik Sense Desktop
-	addTask( releaseTasks, 'clean:empty_desktop', process.env.platform === 'win32');
-	addTask( releaseTasks, 'copy:copy_to_desktop', process.env.platform === 'win32');
+	addTask( releaseTasks, 'clean:empty_desktop', process.platform === 'win32');
+	addTask( releaseTasks, 'copy:copy_to_desktop', process.platform === 'win32');
 
 	// Zip
 	addTask( releaseTasks, 'compress:release');
