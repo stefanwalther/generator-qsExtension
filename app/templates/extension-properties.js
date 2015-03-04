@@ -25,7 +25,7 @@ define( [], function () {
 	// ****************************************************************************************
 
 	var testSetting = {
-		ref: "settings.test",
+		ref: "props.test",
 		label: "Test Setting:",
 		type: "string",
 		expression: "optional",
