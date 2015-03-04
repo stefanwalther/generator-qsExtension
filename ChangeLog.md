@@ -10,6 +10,9 @@ Date: unknown
 * Update to all dependencies and used modules
 * A default image is now added to the extension (using the correct dimensions).
 
+**Buggfixes:**
+* Issue with some grunt tasks being ignored because of wrong platform detection.
+
 ## Version 0.0.28
 Date: 2015-03-01
 
