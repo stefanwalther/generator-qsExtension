@@ -1,5 +1,8 @@
 ## Todos & Ideas:
 
+## Bugfixes
+- [ ] Fix version replacement in .qext file
+
 ### Trivial Additions/Changes
 - [X] Add version
 - [X] Add MIT license only if appropriate
@@ -13,6 +16,7 @@
 - [X] Update Grunt plugins
 
 ### Documentation
+- [ ] Update documentation in general to reflect recent changes
 - [ ] License file
 
 ### Script.js template
