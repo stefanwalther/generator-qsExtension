@@ -17,7 +17,6 @@ module.exports = function (grunt) {
         }
     } );
 
-	console.log('grunt.initConfig', cfg);
 	grunt.initConfig( cfg );
 
 	grunt.config('projectConfig', grunt.file.readYAML('grunt-config.yml'));
@@ -57,7 +56,7 @@ module.exports = function (grunt) {
     //addTask( devTasks, 'less:allInPlace_dev', cfg.projectconfig.setup.lessSupport );
 
 	// Cleanup
-    addTask( devTasks, 'clean:devFiles');
+    addTask( devTasks, 'clean:dev');
     addTask( devTasks, 'cleanempty:all');
 
 	// Deploy to Qlik Sense Desktop
@@ -87,7 +86,7 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'less:release', cfg.projectconfig.setup.lessSupport);
 
 	// Cleanup
-	addTask( releaseTasks, 'clean:devFiles');
+	addTask( releaseTasks, 'clean:release');
 	addTask( releaseTasks, 'cleanempty:all');
 
 	// Optimization & Uglification
