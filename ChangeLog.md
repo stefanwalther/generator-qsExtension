@@ -1,7 +1,7 @@
 # ChangeLog
 
-## Version -- not released --
-Date: unknown
+## Version 0.0.29
+Date: 2015-03-08
 
 **Enhancements:**
 * There is now a default and an advanced mode (first question in the wizard).
