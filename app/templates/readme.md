@@ -1,5 +1,5 @@
 # <%= prompts.extensionName%>
-<%= prompts.extensionDescription%>
+> <%= prompts.extensionDescription%>
 
 ## Purpose and Description
 
