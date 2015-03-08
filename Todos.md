@@ -2,13 +2,14 @@
 
 ## Bugfixes
 - [X] Fix version replacement in .qext file
+- [ ] LocalExtensionPath is not always initialized correctly
 
 ### Trivial Additions/Changes
 - [X] Add version
 - [X] Add MIT license only if appropriate
 
 ### General
-- [ ] Re-write configuration system
+- [ ] Re-write and document configuration system (!!!)
 - [ ] Add parameters to check in to a GitHub repository automatically (should also be added to gruntfile.js)
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
