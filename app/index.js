@@ -18,6 +18,7 @@
 
 	var qsExtension = yeoman.generators.Base.extend( {
 
+		// yo qsextension --grunt
 		constructor: function () {
 			yeoman.generators.Base.apply( this, arguments );
 			this.pkg = require( "../package.json" );
