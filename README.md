@@ -4,7 +4,7 @@
 
 I have created this tool for my daily work. Instead of always reinventing the wheel and setting up a project structure for Qlik Sense Extensions, I prefer to let it generated. 
 
-Generator-qsExtension is based on YEOMAN (http://yeoman.io/) and allows you to create a starter-kit for Qlik Sense Extensions in **less than two minutes**.
+Generator-qsExtension is based on YEOMAN (http://yeoman.io/) and allows you to create a boilerplate for Qlik Sense Visualization Extensions in **less than two minutes**.
 
 
 ## Demo
@@ -47,7 +47,7 @@ Based on your answers, your customized extension structure will be generated.
 ## Features
 
 The generator-qsExtension
-* Generates a default structure of a working Qlik Sense Extension
+* Generates a default structure of a working Qlik Sense Visualization Extension
 * Creates a deployment system based on [Grunt](http://gruntjs.com/)
 
 ### Generated Folder Structure
@@ -55,9 +55,10 @@ The generator-qsExtension
 | Folder 				| Description 											|
 | --------------------- | -----------------------------------------------------	|
 | **`build`**			| Destination of compressed automated builds (.zip-files), defined in the Grunt task "`grunt/Gruntfile.compress.js`"
-| **`dist`**			| Distribution target of automated builds
+| **`dist`**			| Distribution target of automated builds (release mode)
+| **`dist_dev`**		| Distribution target of automated builds (dev mode)
 | **`grunt`**			| Source of the [Grunt-based](http://gruntjs.com/) build system.
-| **`src`**				| Root of source files.
+| **`src`**				| Root of source files. **Start working here**
 | **`src/lib`**			| Suggested folder structure for assets included in the extension.
 | **`src/lib/css`**		| Style sheets for your solution. If you've chosen to use Less-support, then do not modify the style.css, it will be overwritten by the `Less` task in Grunt.
 | **`src/lib/less`**	| Folder for your Less definitions. Only applicable if you have chosen to use Less-support.

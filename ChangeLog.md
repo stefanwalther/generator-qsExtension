@@ -9,8 +9,9 @@ Date: unknown
 * By using the option --grunt on the grunt based deployment system will be updated.
 * Update to all dependencies and used modules
 * A default image is now added to the extension (using the correct dimensions).
+* Different destinations for Grunt builds (```dist```for release builds and ```dist_dev``` for dev builds)
 
-**Buggfixes:**
+**Bugfixes:**
 * Issue with some grunt tasks being ignored because of wrong platform detection.
 
 ## Version 0.0.28

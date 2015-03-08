@@ -1,7 +1,7 @@
 ## Todos & Ideas:
 
 ## Bugfixes
-- [ ] Fix version replacement in .qext file
+- [X] Fix version replacement in .qext file
 
 ### Trivial Additions/Changes
 - [X] Add version
@@ -40,6 +40,7 @@
 - [X] Add ~~jsLint~~ jsHint support
 
 ### Tests
+- [ ] Better test coverage (more scenarios)
 - [ ] Add some tests to double-check if all console.log etc has been removed after the release task ...
 - [ ] Add test for source build
 - [ ] Add more variants

@@ -14,7 +14,12 @@ module.exports = function ( grunt ) {
 				patterns: [
 					{
 						json: grunt.file.readYAML( 'gruntReplacements.yml' )
+					},
+					{
+						match: "version",
+						replacement: "<%= projectconfig.general.Version %>"
 					}
+
 				]
 			},
 			files: [
@@ -31,40 +36,10 @@ module.exports = function ( grunt ) {
 				patterns: [
 					{
 						json: grunt.file.readYAML( 'gruntReplacements.yml' )
-					}
-				]
-			},
-			files: [
-				{
-					expand: true,
-					flatten: false,
-					src: ['../dist/**/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
-					dest: '../dist/'
-				}
-			]
-		},
-		dev: {
-			options: {
-				patterns: [
+					},
 					{
-						json: grunt.file.readYAML( 'gruntReplacements_dev.yml' )
-					}
-				]
-			},
-			files: [
-				{
-					expand: true,
-					flatten: false,
-					src: ['../dist/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
-					dest: '../dist/'
-				}
-			]
-		},
-		release: {
-			options: {
-				patterns: [
-					{
-						json: grunt.file.readYAML( 'gruntReplacements_release.yml' )
+						match: "version",
+						replacement: "<%= projectconfig.general.Version %>"
 					}
 				]
 			},
@@ -77,5 +52,45 @@ module.exports = function ( grunt ) {
 				}
 			]
 		}
-	};
-};
+		,
+		dev: {
+			options: {
+				patterns: [
+					{
+						json: grunt.file.readYAML( 'gruntReplacements_dev.yml' )
+					}
+				]
+			}
+			,
+			files: [
+				{
+					expand: true,
+					flatten: false,
+					src: ['../dist/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
+					dest: '../dist/'
+				}
+			]
+		}
+		,
+		release: {
+			options: {
+				patterns: [
+					{
+						json: grunt.file.readYAML( 'gruntReplacements_release.yml' )
+					}
+				]
+			}
+			,
+			files: [
+				{
+					expand: true,
+					flatten: false,
+					src: ['../dist/**/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
+					dest: '../dist/'
+				}
+			]
+		}
+	}
+		;
+}
+;
