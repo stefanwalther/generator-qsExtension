@@ -9,7 +9,24 @@ module.exports = function ( grunt ) {
 	 */
 	return {
 
-		general: {
+		general_dev: {
+			options: {
+				patterns: [
+					{
+						json: grunt.file.readYAML( 'gruntReplacements.yml' )
+					}
+				]
+			},
+			files: [
+				{
+					expand: true,
+					flatten: false,
+					src: ['../dist_dev/**/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
+					dest: '../dist_dev/'
+				}
+			]
+		},
+		general_release: {
 			options: {
 				patterns: [
 					{

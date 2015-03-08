@@ -12,7 +12,7 @@ module.exports = function ( grunt ) {
 			files: [
 				{
 					expand: true,
-					cwd: '../dist/',
+					cwd: '../dist_dev/',
 					src: ['**/*.*'],
 					dest: '/'
 				}

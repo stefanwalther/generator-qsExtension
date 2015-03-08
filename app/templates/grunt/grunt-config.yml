@@ -60,8 +60,8 @@ release:
 # -------------------------------------------------------------------
 jsSources:
   dev:
-    - "../dist/**/*.js"
-    - "!../dist/**/*.min.js"
+    - "../dist_dev/**/*.js"
+    - "!../dist_dev/**/*.min.js"
   release:
     - "../dist/**/*.js"
     - "!../dist/**/*.min.js"

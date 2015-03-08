@@ -6,20 +6,20 @@ module.exports = function ( grunt ) {
 	return {
 
 		// If used converts all the objects in place (mainly used for debugging purposes)
-		allInPlace: {
+		allInPlace_dev: {
 			options: {
 				compress: false,
 				yuicompress: false,
 				optimization: 2,
 				cleancss: false,
-				paths: ['../dist']
+				paths: ['../dist_dev']
 			},
 			files: [{
 				expand: true,
-				cwd: "../dist",
+				cwd: "../dist_dev",
 				src: ["**/*.less"],
 				ext: ".css",
-				dest: "../dist"
+				dest: "../dist_dev"
 			}]
 		},
 		dev: {
@@ -30,7 +30,7 @@ module.exports = function ( grunt ) {
 				cleancss: ('<%= projectconfig.dev.less.lessCleanCss%>' === 'true')
 			},
 			files: {
-				"../dist/lib/css/style.css": "../src/lib/less/_root.less"
+				"../dist_dev/lib/css/style.css": "../src/lib/less/_root.less"
 			}
 		},
 		release: {
