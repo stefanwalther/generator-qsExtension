@@ -128,10 +128,10 @@ See [ChangeLog](ChangeLog.md).
 
 ## Author
 **Stefan Walther** 
-* [qlikblog.at](http://qlikblog.at)
+* [qliksite.io](http://qliksite.io)
 * [github.com/stefanwalther](http://github.com/stefanwalther)
 * [twitter.com/waltherstefan](http://twitter.com/waltherstefan)
 
 ## License
-Copyright (c) 2014-2015 Stefan Walther, contributors.
-Release under the MIT license.
+Copyright (c) 2014-2015 Stefan Walther.
+Release under the [MIT license](LICENSE.md).

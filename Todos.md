@@ -8,6 +8,7 @@
 - [X] Add MIT license only if appropriate
 
 ### General
+- [ ] Re-write configuration system
 - [ ] Add parameters to check in to a GitHub repository automatically (should also be added to gruntfile.js)
 - [X] Add automated tests
 - [X] Add LESS support (as an option)
@@ -17,7 +18,7 @@
 
 ### Documentation
 - [ ] Update documentation in general to reflect recent changes
-- [ ] License file
+- [X] License file
 
 ### Script.js template
 - [ ] Pre-generate some comments
