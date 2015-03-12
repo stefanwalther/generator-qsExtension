@@ -26,7 +26,7 @@ module.exports = function ( grunt ) {
 				{
 					expand: true,
 					flatten: false,
-					src: ['../dist_dev/**/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
+					src: ['../dist_dev/**/*.*', '!../dist_dev/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
 					dest: '../dist_dev/'
 				}
 			]
@@ -51,8 +51,7 @@ module.exports = function ( grunt ) {
 					dest: '../dist/'
 				}
 			]
-		}
-		,
+		},
 		dev: {
 			options: {
 				patterns: [
@@ -60,14 +59,13 @@ module.exports = function ( grunt ) {
 						json: grunt.file.readYAML( 'gruntReplacements_dev.yml' )
 					}
 				]
-			}
-			,
+			},
 			files: [
 				{
 					expand: true,
 					flatten: false,
-					src: ['../dist/*.*', '!../dist/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
-					dest: '../dist/'
+					src: ['../dist_dev/*.*', '!../dist_dev/**/*.{min.js,png,gif,jpg,ico,psd,eot,svg,ttf,woff}'],
+					dest: '../dist_dev/'
 				}
 			]
 		}
