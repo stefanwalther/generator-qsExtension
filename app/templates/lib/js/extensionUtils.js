@@ -1,7 +1,7 @@
 define( [
 	'jquery',
 	'underscore'
-], function ( $ /*, _*/ ) {
+], function ( $, _ ) {
 	'use strict';
 
 	// Taken from http://www.briangrinstead.com/blog/console-log-helper-function
@@ -20,22 +20,21 @@ define( [
 		var length = methods.length;
 		var console = (window.console = window.console || {});
 
-		while (length--) {
+		while ( length-- ) {
 			method = methods[length];
 
 			// Only stub undefined methods.
-			if (!console[method]) {
+			if ( !console[method] ) {
 				console[method] = noop;
 			}
 		}
 
-
-		if (Function.prototype.bind) {
-			window.log = Function.prototype.bind.call(console.log, console);
+		if ( Function.prototype.bind ) {
+			window.log = Function.prototype.bind.call( console.log, console );
 		}
 		else {
-			window.log = function() {
-				Function.prototype.apply.call(console.log, console, arguments);
+			window.log = function () {
+				Function.prototype.apply.call( console.log, console, arguments );
 			};
 		}
 	})();
@@ -48,9 +47,28 @@ define( [
 		 */
 		addStyleToHeader: function ( cssContent ) {
 			$( "<style>" ).html( cssContent ).appendTo( "head" );
+		},
+
+		/**
+		 * Add as style link to the document's header
+		 * @param linkUrl Url to the CSS file
+		 * @param id If an id is passed, the function will check if this style link has already been added or not.
+		 * If yes, it will not be added again.
+		 */
+		addStyleLinkToHeader: function ( linkUrl, id ) {
+			if ( id && !_.isEmpty( id ) ) {
+				if ( !$( '#id' ).length ) {
+					var $styleLink = $( document.createElement( 'link' ) );
+					$styleLink.attr( 'rel', 'stylesheet' );
+					$styleLink.attr( 'type', 'text/css' );
+					$styleLink.attr( 'href', linkUrl );
+					if ( id && !_.isEmpty( id ) ) {
+						$styleLink.attr( 'id', id );
+					}
+					$( 'head' ).append( $styleLink );
+				}
+			}
 		}
-
-
 
 	};
 
