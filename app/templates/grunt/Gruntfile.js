@@ -41,7 +41,7 @@ module.exports = function (grunt) {
 	var devTasks = [];
 
 	// Clean 'dist' and copy all relevant files to 'dist'
-    addTask( devTasks, 'clean:empty_dist');
+    addTask( devTasks, 'clean:empty_dist_dev');
     addTask( devTasks, 'copy:copy_to_dist_dev');
 
     // Replacements
@@ -103,8 +103,6 @@ module.exports = function (grunt) {
 	// Zip
 	addTask( releaseTasks, 'compress:release');
 	addTask( releaseTasks, 'compress:release_latest');
-	addTask( releaseTasks, 'compress:dev');
-	addTask( releaseTasks, 'compress:dev');
 
     grunt.registerTask('release', releaseTasks);
 

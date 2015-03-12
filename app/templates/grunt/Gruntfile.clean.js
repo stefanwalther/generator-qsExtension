@@ -27,6 +27,14 @@ module.exports = function ( grunt ) {
 			],
 			filter: 'isFile'
 		},
+		empty_dist_dev: {
+			options: {
+				force: true
+			},
+			src: [
+				'../dist_dev/**/*'
+			]
+		},
 		empty_dist: {
 			options: {
 				force: true
