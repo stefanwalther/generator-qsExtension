@@ -3,7 +3,7 @@
 ## Version 0.0.30
 Date: 2015-03-18
 
-*Fixes:*
+**Fixes:**
 * Extension path in grunt-config.yml was not determined correctly during generation of the project.
 
 ## Version 0.0.29
