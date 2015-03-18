@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.30
+Date: 2015-03-18
+
+*Fixes:*
+* Extension path in grunt-config.yml was not determined correctly during generation of the project.
+
 ## Version 0.0.29
 Date: 2015-03-08
 
@@ -11,14 +17,14 @@ Date: 2015-03-08
 * A default image is now added to the extension (using the correct dimensions).
 * Different destinations for Grunt builds (```dist```for release builds and ```dist_dev``` for dev builds)
 
-**Bugfixes:**
+**Fixes:**
 * Issue with some grunt tasks being ignored because of wrong platform detection.
 
 ## Version 0.0.28
 Date: 2015-03-01
 
 **Enhancements:**
-* Finally succeeded to get travis builds to work (with a lot of minor bugfixes and corrections)
+* Finally succeeded to get travis builds to work (with a lot of minor Fixes and corrections)
 
 ## Version 0.0.27
 Date: 2015-03-01
@@ -31,7 +37,7 @@ Date: 2015-03-01
 ## Version 0.0.26
 Date: 2015-02-18
 
-**Bugfixes:**
+**Fixes:**
 
 * Several minor bug fixes
 
@@ -59,7 +65,7 @@ Date: 2015-02-11
 ## Version 0.0.23
 Date: 2015-01-19
 
-**Bugfixes:**
+**Fixes:**
 
 * Included namespace for the Grunt deployment to the local desktop.
 * Extension path sometimes not resolved correctly (folder %USERPROFILE% created instead).
@@ -72,14 +78,14 @@ Date: 2015-01-19
 ## Version 0.0.20
 Date: 2015-01-19
 
-**Bugfixes:**
+**Fixes:**
 
 * Fixed an issue that images in Dev get corrupted during the Grunt deployment.
 
 ## Version 0.0.19
 Date: 2014-11-16
 
-**Bugfixes:**
+**Fixes:**
 
 * Fixed minor bugfix in extension file which caused an "Invalid Visualization"
 
@@ -93,12 +99,12 @@ Date: 2014-10-26
 * Improved generated `README.md`
 * Added `.jshintrc` to `src` directory
 
-**Bugfixes:**
+**Fixes:**
   * Fixed `npm install` test in `tests/00-test-grunt.js`
 
 ## Version 0.0.17
 
-**Bugfixes:**
+**Fixes:**
 
 * Images were corrupted during deployment
 
@@ -126,7 +132,7 @@ Date: 2014-10-26
     
 ## Version 0.0.13
 
-**Bugfixes:**
+**Fixes:**
 
 * Restrict package only for Win32 (#2)
 
@@ -144,7 +150,7 @@ Date: 2014-10-26
 
 ## Version 0.0.9
 
-**Bugfixes:**
+**Fixes:**
 
 * Extension Name with whitespaces
 * Fixed script file

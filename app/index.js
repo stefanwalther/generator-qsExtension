@@ -13,6 +13,7 @@
 	var moment = require( 'moment' );
 	var utils = require( './utils' );
 	var promptDef = require( './prompts' );
+	var extloc = require( 'extloc' );
 
 	function noop () {}
 
@@ -46,13 +47,15 @@
 				var done = this.async();
 				var that = this;
 
-				utils.getExtensionPath().then( function ( result ) {
-					that.localExtensionDir = result;
-					done();
-				} ).catch( function ( err ) {
-					console.error( 'Could  not retrieve the local extension path', err );
-					done();
-				} );
+				extloc.getPath()
+					.then( function ( result ) {
+						that.prompts.localExtensionDir = result;
+						done();
+					} ).catch( function ( err ) {
+						that.prompts.localExtensionDir = 'PUT PATH TO EXTENSION ROOT FOLDER HERE';
+						console.error( 'Could  not retrieve the local extension path', err );
+						done();
+					} );
 			}
 
 		},

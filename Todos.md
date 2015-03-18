@@ -2,7 +2,7 @@
 
 ## Bugfixes
 - [X] Fix version replacement in .qext file
-- [ ] LocalExtensionPath is not always initialized correctly
+- [X] LocalExtensionPath is not always initialized correctly
 
 ### Trivial Additions/Changes
 - [X] Add version
