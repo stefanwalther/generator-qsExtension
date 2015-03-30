@@ -32,33 +32,7 @@
 
 		},
 
-		init: {
-
-			/**
-			 * Retrieve the local extension folder
-			 *
-			 * @example
-			 * e.g. %USERPROFILE%\My Documents\Qlik\Sense\Extensions\
-			 */
-			getLocalExtensionDir: function () {
-
-				this.log( 'getLocalExtensionDir' );
-
-				var done = this.async();
-				var that = this;
-
-				extloc.getPath()
-					.then( function ( result ) {
-						that.prompts.localExtensionDir = result;
-						done();
-					} ).catch( function ( err ) {
-						that.prompts.localExtensionDir = 'PUT PATH TO EXTENSION ROOT FOLDER HERE';
-						console.error( 'Could  not retrieve the local extension path', err );
-						done();
-					} );
-			}
-
-		},
+		init: {},
 
 		askFor: function () {
 
@@ -98,6 +72,32 @@
 				noop();
 
 			}
+		},
+
+		/**
+		 * Retrieve the local extension folder
+		 *
+		 * @example
+		 * e.g. %USERPROFILE%\My Documents\Qlik\Sense\Extensions\
+		 */
+		getLocalExtensionDir: function () {
+
+			this.log( 'getLocalExtensionDir' );
+
+			var done = this.async();
+			var that = this;
+
+			extloc.getPath()
+				.then( function ( result ) {
+					that.prompts.localExtensionDir = result;
+				} )
+				.catch( function ( err ) {
+					that.prompts.localExtensionDir = 'PUT PATH TO EXTENSION ROOT FOLDER HERE';
+					console.error( 'Could  not retrieve the local extension path', err );
+				} )
+				.done( function () {
+					done();
+				} );
 		},
 
 		writing: function () {

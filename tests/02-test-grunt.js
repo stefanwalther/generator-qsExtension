@@ -18,7 +18,6 @@ describe( 'Grunt tasks', function () {
 		};
 		var inputs = {
 			'extensionName': 'My Extension',
-			//'extensionNameSafe': 'MyExtension',
 			'extensionNamespace': 'swr',
 			'extensionDescription': 'A simple extension to test',
 			'extensionType': 'extension',

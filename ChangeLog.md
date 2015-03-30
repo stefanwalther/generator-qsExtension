@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.31
+Date: 2015-03-30
+
+**Fixes:**
+* Finally fixing the bug to fetch the local extension directory. hopefully ... ;-)
+
 ## Version 0.0.30
 Date: 2015-03-18
 
