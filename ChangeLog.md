@@ -1,5 +1,11 @@
 # ChangeLog
 
+## Version 0.0.32
+Date: 2015-04-02
+
+*Improvements:**
+* Making the uglify release task more generic to work automatically with all *.js files (but excluding *.min.js files)
+
 ## Version 0.0.31
 Date: 2015-03-30
 

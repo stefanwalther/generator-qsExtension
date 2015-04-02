@@ -19,16 +19,9 @@ module.exports = function ( grunt ) {
 		release: {
 			files: [
 				{
-					src: ['../dist/<%= projectconfig.general.ExtensionNamespace %><%= projectconfig.general.ExtensionNameSafe%>.js'],
-					dest: '../dist/<%= projectconfig.general.ExtensionNamespace %><%= projectconfig.general.ExtensionNameSafe%>.js'
-				},
-				{
-					src: ['../dist/properties.js'],
-					dest: '../dist/properties.js'
-				},
-				{
-					src: ['../dist/initialproperties.js'],
-					dest: '../dist/initialproperties.js'
+					src: ['./../dist/**/*.js', '!./../dist/**/*.min.js'],
+					dest: './../dist/',
+					expand: true
 				}
 			]
 		}
