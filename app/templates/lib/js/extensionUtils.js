@@ -48,7 +48,7 @@ define( [
 		 */
 		addStyleToHeader: function ( cssContent, id ) {
 			if ( id && typeof id === 'string' ) {
-				if ( !$( '#id' ).length ) {
+				if ( !$( '#' + id ).length ) {
 					$( "<style>" )
 						.attr( 'id', id )
 						.html( cssContent ).appendTo( "head" );
@@ -66,7 +66,7 @@ define( [
 		 */
 		addStyleLinkToHeader: function ( linkUrl, id ) {
 			if ( id && !_.isEmpty( id ) ) {
-				if ( !$( '#id' ).length ) {
+				if ( !$( '#' + id ).length ) {
 					var $styleLink = $( document.createElement( 'link' ) );
 					$styleLink.attr( 'rel', 'stylesheet' );
 					$styleLink.attr( 'type', 'text/css' );
