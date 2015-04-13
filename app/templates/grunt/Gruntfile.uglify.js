@@ -9,11 +9,11 @@ module.exports = function ( grunt ) {
 	return {
 
 		options: {
-			mangle: ('<%= projectconfig.release.uglify.mangle%>' === 'true'),
-			beautify: ('<%= projectconfig.release.uglify.beautify%>' === 'true'),
-			preserveComments: ('<%= projectconfig.release.uglify.preserveComments%>' === 'true'),
+			mangle: '<%= projectconfig.release.uglify.mangle%>',
+			beautify: '<%= projectconfig.release.uglify.beautify%>',
+			preserveComments: '<%= projectconfig.release.uglify.preserveComments%>',
 			compress: {
-				drop_console: ('<%= projectconfig.release.uglify.drop_console%>' === 'true')
+				drop_console: '<%= projectconfig.release.uglify.drop_console%>'
 			}
 		},
 		release: {

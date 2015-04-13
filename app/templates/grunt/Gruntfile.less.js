@@ -24,10 +24,10 @@ module.exports = function ( grunt ) {
 		},
 		dev: {
 			options: {
-				compress: ('<%= projectconfig.dev.less.lessCompress%>' === 'true'),
-				yuicompress: ('<%= projectconfig.dev.less.lessYuiCompress%>' === 'true'),
+				compress: '<%= projectconfig.dev.less.lessCompress%>',
+				yuicompress: '<%= projectconfig.dev.less.lessYuiCompress%>',
 				optimization: parseInt( 'projectconfig.dev.less.lessOptimization' ),
-				cleancss: ('<%= projectconfig.dev.less.lessCleanCss%>' === 'true')
+				cleancss: '<%= projectconfig.dev.less.lessCleanCss%>'
 			},
 			files: {
 				"../dist_dev/lib/css/style.css": "../src/lib/less/_root.less"
@@ -35,10 +35,10 @@ module.exports = function ( grunt ) {
 		},
 		release: {
 			options: {
-				compress: ('<%= projectconfig.release.less.lessCompress%>' === 'true'),
-				yuicompress: ('<%= projectconfig.release.less.lessYuiCompress%>' === 'true'),
+				compress: '<%= projectconfig.release.less.lessCompress%>',
+				yuicompress: '<%= projectconfig.release.less.lessYuiCompress%>',
 				optimization: parseInt( 'projectconfig.release.less.lessOptimization' ),
-				cleancss: ('<%= projectconfig.release.less.lessCleanCss%>' === 'true')
+				cleancss: '<%= projectconfig.release.less.lessCleanCss%>'
 			},
 			files: {
 				"../dist/lib/css/style.css": "../src/lib/less/_root.less"
