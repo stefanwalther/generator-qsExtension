@@ -3,6 +3,7 @@
 ## Bugfixes
 - [X] Fix version replacement in .qext file
 - [X] LocalExtensionPath is not always initialized correctly
+- [ ] Change the way how paths are stored in the grunt-config.yml
 
 ### Trivial Additions/Changes
 - [X] Add version
@@ -19,6 +20,7 @@
 
 ### Documentation
 - [ ] Update documentation in general to reflect recent changes
+- [ ] Document yo `extension --grunt`
 - [X] License file
 
 ### Script.js template
@@ -40,11 +42,31 @@
 - [ ] Create some basic log-files (?)
 - [X] Add parameters for 'debug', 'release'
 - [X] Add ~~jsLint~~ jsHint support
+- [ ] Separate general grunt configuration from project configuration
 
 ### Tests
 - [ ] Better test coverage (more scenarios)
 - [ ] Add some tests to double-check if all console.log etc has been removed after the release task ...
 - [ ] Add test for source build
 - [ ] Add more variants
+
+
+---
+Version 0.2.0
+
+Collection of ideas for a completely rebuild (based on all the learnings of the first version)
+
+### YO Generator
+- [ ] Update option for build system
+- [ ] Import option for existing projects
+
+### Configuration System
+
+### Build System
+- [ ] Separate task configuration from task execution
+
+
+### Content
+- [ ] ChangeLog as YML with "New", "Fixed", "Improved"
 
 
