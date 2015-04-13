@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
 	grunt.initConfig( cfg );
 
-	grunt.config('projectConfig', grunt.file.readYAML('grunt-config.yml'));
+	grunt.config('projectconfig', grunt.file.readYAML('grunt-config.yml'));
 
 	/**
 	* Add grunt tasks to a given task list.
