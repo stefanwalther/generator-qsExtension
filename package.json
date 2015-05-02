@@ -29,9 +29,7 @@
   ],
   "dependencies": {
     "extloc": "^0.1.2",
-    "yeoman-generator": "^0.17.7"
-  },
-  "devDependencies": {
+    "yeoman-generator": "^0.17.7",
     "async": "^0.9.0",
     "chalk": "^1.0.0",
     "grunt": "^0.4.5",
