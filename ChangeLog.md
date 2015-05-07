@@ -1,6 +1,6 @@
 # ChangeLog
 
-t## Version 0.0.32
+## Version 0.0.32
 Date: 2015-04-02
 
 *Improvements:**
