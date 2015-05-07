@@ -13,7 +13,7 @@
 	var moment = require( 'moment' );
 	var utils = require( './utils' );
 	var promptDef = require( './prompts' );
-	var extloc = require( 'extloc' );
+	var qlikloc = require( 'qlikloc' );
 
 	function noop () {}
 
@@ -87,7 +87,7 @@
 			var done = this.async();
 			var that = this;
 
-			extloc.getPath()
+			qlikloc.getExtensionPath()
 				.then( function ( result ) {
 					that.prompts.localExtensionDir = result;
 				} )
