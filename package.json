@@ -51,6 +51,10 @@
   },
   "homepage": "https://github.com/qlikdev/generator-qsExtension",
   "scripts": {
-    "test": "mocha tests --timeout 1000000"
+    "test": "mocha test --timeout 1000000"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
   }
 }

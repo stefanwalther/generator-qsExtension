@@ -2,9 +2,9 @@
 
 # YeoMan Generator for Qlik Sense Extensions
 
-I have created this tool for my daily work. Instead of always reinventing the wheel and setting up a project structure for Qlik Sense Extensions, I prefer to let it generated. 
+I have created this tool for my daily work. Instead of always reinventing the wheel and setting up a project structure for Qlik Sense Visualization Extensions, I prefer to let it generated. 
 
-Generator-qsExtension is based on YEOMAN (http://yeoman.io/) and allows you to create a boilerplate for Qlik Sense Visualization Extensions in **less than two minutes**.
+generator-qsextension is based on YEOMAN (http://yeoman.io/) and allows you to create a boilerplate for Qlik Sense Visualization Extensions in **less than two minutes**.
 
 
 ## Demo
