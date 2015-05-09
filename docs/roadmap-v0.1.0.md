@@ -13,7 +13,7 @@
 
 ## Documentation support
 - [ ] Optional support for verb
-- [ ] Better Changelog support
+- [ ] Better Changelog support (.yml)
 
 ## Test support
 - [ ] Provide best practices how to automatically test the extension
