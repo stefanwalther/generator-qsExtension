@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/stefanwalther/generator-qsExtension.svg?branch=master)](https://travis-ci.org/stefanwalther/generator-qsExtension)
-
+<!--[![Build Status](https://travis-ci.org/stefanwalther/generator-qsExtension.svg?branch=master)](https://travis-ci.org/stefanwalther/generator-qsExtension)-->
 # YeoMan Generator for Qlik Sense Extensions
 
 I have created this tool for my daily work. Instead of always reinventing the wheel and setting up a project structure for Qlik Sense Extensions, I prefer to let it generated. 
