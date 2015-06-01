@@ -1,0 +1,6 @@
+v0.0.1:
+  date: "<%= prompts.creationDate%>"
+  new:
+    - Initial Commit
+  enhancements:
+  

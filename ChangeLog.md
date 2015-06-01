@@ -1,9 +1,15 @@
 # ChangeLog
 
+# Version 0.0.35
+Date: 2015-06-01
+
+**Improvements:**
+* Switched over to a changelog.yml instead of a changelog.md
+
 ## Version 0.0.32
 Date: 2015-04-02
 
-*Improvements:**
+**Improvements:**
 * Making the uglify release task more generic to work automatically with all *.js files (but excluding *.min.js files)
 
 ## Version 0.0.31

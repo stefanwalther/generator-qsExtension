@@ -33,7 +33,7 @@ I cannot guarantee that I will merge all PRs but I will evaluate them all.
 
 ## Change Log
 
-See [CHANGELOG.md](CHANGELOG.md)
+See [CHANGELOG](CHANGELOG.yml)
 
 ## License & Copyright
 The software is made available "AS IS" without any warranty of any kind under the MIT License (MIT).

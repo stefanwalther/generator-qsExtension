@@ -1,6 +1,6 @@
 {
   "name": "generator-qsextension",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Yeoman generator for Qlik Sense Visualization Extensions",
   "license": "MIT",
   "main": "app/index.js",
@@ -52,5 +52,8 @@
   "homepage": "https://github.com/qlikdev/generator-qsExtension",
   "scripts": {
     "test": "mocha tests --timeout 1000000"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
   }
 }

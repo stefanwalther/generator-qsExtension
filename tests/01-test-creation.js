@@ -70,7 +70,7 @@
 				// root
 				'.gitattributes',
 				'.gitignore',
-				'CHANGELOG.md',
+				'CHANGELOG.yml',
 				'LICENSE.md',
 				'README.md',
 

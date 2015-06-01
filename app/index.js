@@ -156,7 +156,7 @@
 			this.copy( 'gitignore.txt', '.gitignore' );
 			this.template( 'readme.md', 'README.md' );
 			this.template( 'license.md', 'LICENSE.md' );
-			this.template( 'changelog.md', 'CHANGELOG.md' );
+			this.template( 'changelog.yml', 'CHANGELOG.yml' );
 
 		},
 
