@@ -16,29 +16,20 @@ function ($, /*_,*/ props, initProps, extensionUtils, cssContent) {
     return {
 
         definition: props,
-
         initialProperties: initProps,
-
         snapshot: { canTakeSnapshot: true },
-
         resize : function( /*$element, layout*/ ) {
             //do nothing
         },
-
 		//clearSelectedValues : function($element) {
 		//
 		//},
-
-
         // Angular Support (uncomment to use)
         //template: '',
-
         // Angular Controller
         //controller: ['$scope', function ($scope) {
 		//
         //}],
-
-
         paint: function ( $element /*, layout*/ ) {
 
             /*
