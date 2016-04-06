@@ -4,7 +4,6 @@
   "description": "Grunt tasks (dev + release) for the Qlik Sense extension <%= prompts.extensionName %>",
   "main": "gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "Qlik Sense Extension",
@@ -22,7 +21,12 @@
     "grunt-contrib-compress": "~0.13.0",
     "grunt-contrib-copy": "~0.8.0",
     "grunt-contrib-jshint": "^0.11.0",
+    <% if (prompts.lessSupport) { %>
     "grunt-contrib-less": "~1.0.0",
+    <% } %>
+    <% if (prompts.sassSupport) { %>
+    "grunt-sass": "~1.1.0",
+    <% } %>
     "grunt-replace": "~0.8.0",
     "grunt-contrib-uglify": "~0.8.0",
     "q": "^1.2.0",

@@ -52,8 +52,26 @@ var prompts = [
 			return props.advancedMode;
 		},
 		type: 'confirm',
+		name: 'bowerSupport',
+		message: 'Advanced Mode: Would you like to use Bower to manage client-side dependencies?',
+		default: false
+	},
+	{
+		when: function ( props ) {
+			return props.advancedMode;
+		},
+		type: 'confirm',
 		name: 'lessSupport',
 		message: 'Advanced Mode: Would you like to write your styles in Less (instead of pure CSS)?',
+		default: false
+	},
+	{
+		when: function ( props ) {
+			return props.advancedMode && !props.lessSupport;
+		},
+		type: 'confirm',
+		name: 'sassSupport',
+		message: 'Advanced Mode: Would you like to write your styles in SASS (instead of pure CSS)?',
 		default: false
 	},
 	{

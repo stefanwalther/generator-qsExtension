@@ -51,7 +51,9 @@
 					this.prompts.extensionNamespace = _.isEmpty( props.extensionNamespace ) ? '' : props.extensionNamespace + '-';
 					this.prompts.extensionDescription = props.extensionDescription;
 					this.prompts.authorName = props.authorName;
+					this.prompts.bowerSupport = props.bowerSupport;
 					this.prompts.lessSupport = props.lessSupport;
+					this.prompts.sassSupport = props.sassSupport;
 					this.prompts.license = props.license || 'mit';
 
 					var d = new Date();
@@ -109,6 +111,7 @@
 					this._src();
 					this._srcLib();
 					this._styles();
+					this._bower();
 					this._grunt();
 					this._saveConfig();
 					break;
@@ -224,6 +227,12 @@
 
 		},
 
+		_bower: function() {
+			if ( this.prompts.bowerSupport === true ) {
+				this.copy( 'bower.json', 'src/bower.json' );
+			}
+		},
+
 		_styles: function () {
 
 			if ( this.prompts.lessSupport === true ) {
@@ -233,7 +242,13 @@
 				this.template( 'variables.less', 'src/lib/less/variables.less' );
 				this.template( 'style_Less.css', 'src/lib/css/style.css' );
 				this.copy( 'grunt/Gruntfile.less.js', 'grunt/Gruntfile.less.js' );
-
+			} else if ( this.prompts.sassSupport === true ) {
+				this.mkdir( 'src/lib/sass' );
+				this.template( '_root.scss', 'src/lib/sass/_root.scss' );
+				this.template( 'styles.scss', 'src/lib/sass/styles.scss' );
+				this.template( 'variables.scss', 'src/lib/sass/variables.scss' );
+				this.template( 'style_Less.css', 'src/lib/css/style.css' );
+				this.copy( 'grunt/Gruntfile.sass.js', 'grunt/Gruntfile.sass.js' );
 			} else {
 				this.template( 'style_noLess.css', 'src/lib/css/style.css' );
 			}
