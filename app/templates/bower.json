@@ -1,0 +1,20 @@
+{
+  "name": "Ext-Lib-<%= prompts.extensionNameSafe%>",
+  "version": "0.0.1",
+  "description": "External libraries for the Qlik Sense extension <%= prompts.extensionName %>",
+  "keywords": [
+    "Qlik Sense Extension",
+    "qliksense-visualization-extension",
+    "Qlik Sense",
+    "QlikSense",
+    "Extension"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
