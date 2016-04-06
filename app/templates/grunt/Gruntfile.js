@@ -54,6 +54,7 @@ module.exports = function (grunt) {
     // Less Support
     addTask( devTasks, 'less:dev', cfg.projectconfig.setup.lessSupport );
     //addTask( devTasks, 'less:allInPlace_dev', cfg.projectconfig.setup.lessSupport );
+    addTask( devTasks, 'sass:dev', cfg.projectconfig.setup.sassSupport );
 
 	// Cleanup
     addTask( devTasks, 'clean:dev');
@@ -84,6 +85,7 @@ module.exports = function (grunt) {
 	addTask( releaseTasks, 'replace:release');
 
 	addTask( releaseTasks, 'less:release', cfg.projectconfig.setup.lessSupport);
+  addTask( releaseTasks, 'sass:release', cfg.projectconfig.setup.sassSupport);
 
 	// Cleanup
 	addTask( releaseTasks, 'clean:release');

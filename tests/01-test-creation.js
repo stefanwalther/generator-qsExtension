@@ -112,6 +112,15 @@
 				'src/lib/less/variables.less',
 				'grunt/Gruntfile.less.js'
 			];
+			var expectedFilesSass = [
+				'src/lib/sass/_root.scss',
+				'src/lib/sass/styles.scss',
+				'src/lib/sass/variables.scss',
+				'grunt/Gruntfile.sass.js'
+			];
+			var expectedFilesBower = [
+				'src/bower.json',
+			];
 
 			it( 'the expected files with default options', function ( done ) {
 
@@ -142,6 +151,33 @@
 					} );
 
 			} );
+
+			it( 'the expected files if sassSupport is TRUE', function ( done ) {
+
+				helpers.run( path.join( __dirname, '../app' ) )
+					.inDir( path.join( __dirname, 'try' ) )  // Clear the directory and set it as the CWD
+					.withOptions( gruntOptions )            // Mock options passed in
+					.withPrompts( _.extend( inputs, {lessSupport: false, sassSupport: true} ) )          // Mock the prompt answers
+					.on( 'end', function () {
+						assert.file( _.extend( expectedFiles, expectedFilesSass ) );
+						done();
+					} );
+
+			} );
+
+			it( 'the expected files if bowerSupport is TRUE', function ( done ) {
+
+				helpers.run( path.join( __dirname, '../app' ) )
+					.inDir( path.join( __dirname, 'try' ) )  // Clear the directory and set it as the CWD
+					.withOptions( gruntOptions )            // Mock options passed in
+					.withPrompts( _.extend( inputs, {bowerSupport: true} ) )          // Mock the prompt answers
+					.on( 'end', function () {
+						assert.file( _.extend( expectedFiles, expectedFilesBower ) );
+						done();
+					} );
+
+			} );
+
 
 		} );
 
