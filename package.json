@@ -28,20 +28,20 @@
     "Sense"
   ],
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^2.4.0",
     "chalk": "^1.0.0",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "mocha": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "mocha": "^3.3.0",
     "moment": "^2.9.0",
-    "path-extra": "^1.0.0",
+    "path-extra": "^4.1.0",
     "q": "^1.2.0",
     "qlikloc": "^0.1.6",
     "rimraf": "^2.2.8",
     "underscore": "^1.8.2",
-    "winreg": "0.0.12",
+    "winreg": "1.2.3",
     "wrench": "^1.5.8",
-    "yeoman-generator": "^0.17.7"
+    "yeoman-generator": "^1.1.1"
   },
   "peerDependencies": {
     "yo": ">=1.4.5"
@@ -54,6 +54,6 @@
     "test": "mocha tests --timeout 1000000"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^3.3.0"
   }
 }
